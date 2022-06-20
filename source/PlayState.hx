@@ -187,7 +187,12 @@ class PlayState extends MusicBeatState
 	public var iconP2:HealthIcon;
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
-	public var camNote:FlxCamera;
+
+	public var camNoteWhite:FlxCamera;
+	public var camNoteDark:FlxCamera;
+	public var camNoteNormal:FlxCamera;
+
+
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
 
@@ -280,13 +285,26 @@ class PlayState extends MusicBeatState
 	//Blur
 	public var isTrailOn:Bool = true;
 	var filters:Array<BitmapFilter> = [];
-	var noteFilters:Array<BitmapFilter> = [];
 
 	public var BlurX:Float = 0;
 	public var BlurY:Float = 0;
 	//-------------------------------------
-	
-	public var _emitter:FlxEmitter;
+	//Glow
+
+	var noteFiltersNormal:Array<BitmapFilter> = [];
+	var noteFiltersWhite:Array<BitmapFilter> = [];
+	var noteFiltersDark:Array<BitmapFilter> = [];
+
+	public var normalNoteGlowColor:FlxColor = FlxColor.BLACK;
+
+	public var normalNoteGlowAlpha:Float = 1;
+	public var normalNoteGlowBlur:Float = 32;
+	public var normalNoteGlowStrength:Float = 2;
+
+	public var specialNoteGlowAlpha:Float = 1;
+	public var specialNoteGlowBlur:Float = 32;
+	public var specialNoteGlowStrength:Float = 2;
+
 	
 //-----------------------------------------
 
@@ -295,33 +313,8 @@ class PlayState extends MusicBeatState
 		//---------------------------------------------------------------
 		//blur
 		filters.push(new BlurFilter());
-		noteFilters.push(new GlowFilter(0xFF9D5DFF,1,32,32,2,3,false,false));
 		//------------------------------------------------------------
 		
-				//------------------------------------------------------
-				//Particle
-				
-				// _emitter = new FlxEmitter(FlxG.width / 2, FlxG.height / 2, 200);
-
-				// for (i in 0 ... 20)
-				// {
-				// 	var p = new FlxParticle();
-					
-				// 	p.makeGraphic(32, 32, 0xFFFFFFFF);
-
-				// 	p.visible = false;
-				// 	//p.loadGraphic("assets/shared/images/Round_Particle.png", false, 32, 32);
-				// 	//p.loadGraphic(Paths.image('Round_Particle'));
-				// 	_emitter.add(p);
-				// }
-
-				// _emitter.width = FlxG.width;
-				// _emitter.launchMode = SQUARE;
-				// //_emitter.velocity.set(-80, 80, -120, -0);
-				
-				// _emitter.velocity.set(-10, 80, 0, 120);
-
-		//------------------------------------------------------
 
 		Paths.clearStoredMemory();
 
@@ -358,23 +351,36 @@ class PlayState extends MusicBeatState
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
-		camNote = new FlxCamera();
+
+		camNoteNormal = new FlxCamera();
+		camNoteDark = new FlxCamera();
+		camNoteWhite = new FlxCamera();
+
 		camOther = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
-		camNote.bgColor.alpha = 0;
+
+		camNoteNormal.bgColor.alpha = 0;
+		camNoteDark.bgColor.alpha = 0;
+		camNoteWhite.bgColor.alpha = 0;
 
 //----------------------------------------------------------------
 
 		camGame.setFilters(filters);
-		camNote.setFilters(noteFilters);
+
+		camNoteNormal.setFilters(noteFiltersNormal);
+		camNoteDark.setFilters(noteFiltersDark);
+		camNoteWhite.setFilters(noteFiltersWhite);
 
 
 //----------------------------------------------------------------
 
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
-		FlxG.cameras.add(camNote);
+		FlxG.cameras.add(camNoteNormal);
+		FlxG.cameras.add(camNoteDark);
+		FlxG.cameras.add(camNoteWhite);
+
 		FlxG.cameras.add(camOther);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 
@@ -1116,9 +1122,10 @@ class PlayState extends MusicBeatState
 			botplayTxt.y = timeBarBG.y - 78;
 		}
 
-		strumLineNotes.cameras = [camNote];
-		grpNoteSplashes.cameras = [camNote];
-		notes.cameras = [camNote];
+		strumLineNotes.cameras = [camNoteNormal];
+		grpNoteSplashes.cameras = [camNoteNormal];
+		notes.cameras = [camNoteNormal];
+
 		healthBar.cameras = [camHUD];
 		healthBarBG.cameras = [camHUD];
 		iconP1.cameras = [camHUD];
@@ -1263,6 +1270,20 @@ class PlayState extends MusicBeatState
 		Conductor.safeZoneOffset = (ClientPrefs.safeFrames / 60) * 1000;
 		callOnLuas('onCreatePost', []);
 		
+		var glowNormal = new GlowFilter(normalNoteGlowColor,normalNoteGlowAlpha,normalNoteGlowBlur,normalNoteGlowBlur,normalNoteGlowStrength,3,false,false);
+		var glowDark = new GlowFilter(FlxColor.WHITE,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,3,false,false);
+		var glowWhite = new GlowFilter(FlxColor.BLACK,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,3,false,false);
+
+		
+		FlxTween.tween(glowNormal,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
+		FlxTween.tween(glowDark,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
+		FlxTween.tween(glowWhite,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
+
+		noteFiltersNormal.push(glowNormal);
+		noteFiltersWhite.push(glowDark);
+		noteFiltersDark.push(glowWhite);
+
+
 		super.create();
 
 		Paths.clearUnusedMemory();

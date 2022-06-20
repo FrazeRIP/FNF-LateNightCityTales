@@ -46,6 +46,7 @@ import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import openfl.filters.BitmapFilter;
 import openfl.filters.BlurFilter;
+import openfl.filters.GlowFilter;
 import openfl.utils.Assets as OpenFlAssets;
 import editors.ChartingState;
 import editors.CharacterEditorState;
@@ -186,6 +187,7 @@ class PlayState extends MusicBeatState
 	public var iconP2:HealthIcon;
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
+	public var camNote:FlxCamera;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
 
@@ -278,6 +280,7 @@ class PlayState extends MusicBeatState
 	//Blur
 	public var isTrailOn:Bool = true;
 	var filters:Array<BitmapFilter> = [];
+	var noteFilters:Array<BitmapFilter> = [];
 
 	public var BlurX:Float = 0;
 	public var BlurY:Float = 0;
@@ -292,6 +295,7 @@ class PlayState extends MusicBeatState
 		//---------------------------------------------------------------
 		//blur
 		filters.push(new BlurFilter());
+		noteFilters.push(new GlowFilter(0xFF9D5DFF,1,32,32,2,3,false,false));
 		//------------------------------------------------------------
 		
 				//------------------------------------------------------
@@ -354,19 +358,23 @@ class PlayState extends MusicBeatState
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
+		camNote = new FlxCamera();
 		camOther = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
+		camNote.bgColor.alpha = 0;
 
 //----------------------------------------------------------------
 
 		camGame.setFilters(filters);
+		camNote.setFilters(noteFilters);
 
 
 //----------------------------------------------------------------
 
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
+		FlxG.cameras.add(camNote);
 		FlxG.cameras.add(camOther);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 
@@ -1108,9 +1116,9 @@ class PlayState extends MusicBeatState
 			botplayTxt.y = timeBarBG.y - 78;
 		}
 
-		strumLineNotes.cameras = [camHUD];
-		grpNoteSplashes.cameras = [camHUD];
-		notes.cameras = [camHUD];
+		strumLineNotes.cameras = [camNote];
+		grpNoteSplashes.cameras = [camNote];
+		notes.cameras = [camNote];
 		healthBar.cameras = [camHUD];
 		healthBarBG.cameras = [camHUD];
 		iconP1.cameras = [camHUD];
@@ -2245,13 +2253,6 @@ class PlayState extends MusicBeatState
 	{
 
 		filters[0] = new BlurFilter(BlurX,BlurY,openfl.filters.BitmapFilterQuality.LOW);
-
-
-
-
-
-
-
 
 
 

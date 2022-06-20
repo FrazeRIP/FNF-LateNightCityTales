@@ -276,6 +276,15 @@ class FunkinLua {
 			}
 		});
 
+		
+		Lua_helper.add_callback(lua, "setGlow", function(tag:String,color:String,alpha:Float,blur:Float,strength:Float) {
+
+			if(!color.startsWith('0x')) color = '0xff' + color;
+			var prasedColor = Std.parseInt(color);
+
+			PlayState.instance.setGlow(tag,prasedColor,alpha,blur,strength);
+		});
+
 		Lua_helper.add_callback(lua, "clearUnusedMemory", function() {
 			Paths.clearUnusedMemory();
 			return true;

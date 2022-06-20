@@ -295,7 +295,7 @@ class PlayState extends MusicBeatState
 	var noteFiltersWhite:Array<BitmapFilter> = [];
 	var noteFiltersDark:Array<BitmapFilter> = [];
 
-	public var normalNoteGlowColor:FlxColor = FlxColor.BLACK;
+	public var normalNoteGlowColor:FlxColor = FlxColor.CYAN;
 
 	public var normalNoteGlowAlpha:Float = 1;
 	public var normalNoteGlowBlur:Float = 32;
@@ -307,6 +307,23 @@ class PlayState extends MusicBeatState
 
 	
 //-----------------------------------------
+
+	public function setGlow(tag:String,color:FlxColor,alpha:Float,blur:Float,strength:Float){
+		
+		switch(tag){
+			case "normal":
+				normalNoteGlowColor=color;
+				normalNoteGlowAlpha= alpha;
+				normalNoteGlowBlur = blur;
+				normalNoteGlowStrength = strength;
+			case "special":
+				specialNoteGlowAlpha= alpha;
+				specialNoteGlowBlur= blur;
+				specialNoteGlowStrength= strength;
+		}
+	}
+
+
 
 	override public function create()
 	{
@@ -1270,15 +1287,15 @@ class PlayState extends MusicBeatState
 		Conductor.safeZoneOffset = (ClientPrefs.safeFrames / 60) * 1000;
 		callOnLuas('onCreatePost', []);
 		
-		var glowNormal = new GlowFilter(normalNoteGlowColor,normalNoteGlowAlpha,normalNoteGlowBlur,normalNoteGlowBlur,normalNoteGlowStrength,3,false,false);
-		var glowDark = new GlowFilter(FlxColor.WHITE,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,3,false,false);
-		var glowWhite = new GlowFilter(FlxColor.BLACK,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,3,false,false);
 
 		
-		FlxTween.tween(glowNormal,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
-		FlxTween.tween(glowDark,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
-		FlxTween.tween(glowWhite,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
+		// FlxTween.tween(glowNormal,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
+		// FlxTween.tween(glowDark,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
+		// FlxTween.tween(glowWhite,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
 
+		var glowNormal = new GlowFilter(normalNoteGlowColor,normalNoteGlowAlpha,normalNoteGlowBlur,normalNoteGlowBlur,normalNoteGlowStrength,3,false,false);
+		var glowDark = new GlowFilter(FlxColor.BLACK,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,3,false,false);
+		var glowWhite = new GlowFilter(FlxColor.WHITE,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,3,false,false);
 		noteFiltersNormal.push(glowNormal);
 		noteFiltersWhite.push(glowDark);
 		noteFiltersDark.push(glowWhite);
@@ -2275,6 +2292,11 @@ class PlayState extends MusicBeatState
 
 		filters[0] = new BlurFilter(BlurX,BlurY,openfl.filters.BitmapFilterQuality.LOW);
 
+		noteFiltersNormal[0] = new GlowFilter(normalNoteGlowColor,normalNoteGlowAlpha,normalNoteGlowBlur,normalNoteGlowBlur,normalNoteGlowStrength,1,false,false);
+		noteFiltersWhite[0] = new GlowFilter(FlxColor.WHITE,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,1,false,false);
+		noteFiltersDark[0] = new GlowFilter(FlxColor.BLACK,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,1,false,false);
+
+
 
 
 		/*if (FlxG.keys.justPressed.NINE)
@@ -2572,7 +2594,14 @@ class PlayState extends MusicBeatState
 			while (unspawnNotes.length > 0 && unspawnNotes[0].strumTime - Conductor.songPosition < time)
 			{
 				var dunceNote:Note = unspawnNotes[0];
+				
 				notes.insert(0, dunceNote);
+
+				if(dunceNote.noteType=="white"){
+					dunceNote.camera = camNoteWhite;
+				}else if(dunceNote.noteType=="black"){
+					dunceNote.camera = camNoteDark;
+				}
 
 				var index:Int = unspawnNotes.indexOf(dunceNote);
 				unspawnNotes.splice(index, 1);

@@ -55,6 +55,9 @@ import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
+import flixel.effects.particles.FlxParticle;
+import flixel.effects.particles.FlxEmitter;
+import flixel.addons.editors.pex.FlxPexParser;
 #if sys
 import sys.FileSystem;
 #end
@@ -421,6 +424,13 @@ class PlayState extends MusicBeatState
 					stageCurtains.updateHitbox();
 					add(stageCurtains);
 				}
+
+				var _starEmitter:FlxEmitter;
+				_starEmitter = new FlxEmitter(FlxG.width / 2, FlxG.height / 2);
+				FlxPexParser.parse("shared:assets/shared/images/star.pex", "shared:assets/shared/images/star.png", _starEmitter, 1);
+				add(_starEmitter);
+				_starEmitter.cameras = [camHUD];
+				_starEmitter.start(false, 0.01);
 
 			case 'spooky': //Week 2
 				if(!ClientPrefs.lowQuality) {

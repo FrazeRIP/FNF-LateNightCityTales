@@ -59,6 +59,7 @@ import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
+import flixel.addons.editors.pex.FlxPexParser;
 #if sys
 import sys.FileSystem;
 #end
@@ -305,7 +306,10 @@ class PlayState extends MusicBeatState
 	public var specialNoteGlowBlur:Float = 32;
 	public var specialNoteGlowStrength:Float = 2;
 
-	
+	//----------------------------------------------
+	var _starEmitter:FlxEmitter;
+
+
 //-----------------------------------------
 
 	public function setGlow(tag:String,color:FlxColor,alpha:Float,blur:Float,strength:Float){
@@ -331,7 +335,12 @@ class PlayState extends MusicBeatState
 		//blur
 		filters.push(new BlurFilter());
 		//------------------------------------------------------------
+		//particle
+		// _starEmitter = new FlxEmitter(FlxG.width / 2, FlxG.height / 2);
+		// FlxPexParser.parse("assets/shared/images/star.pex", "assets/shared/images/star.png", _starEmitter, 1);
+		// _starEmitter.start(false, 0.01);
 		
+		//------------------------------------------------------------
 
 		Paths.clearStoredMemory();
 
@@ -1300,6 +1309,14 @@ class PlayState extends MusicBeatState
 		noteFiltersWhite.push(glowDark);
 		noteFiltersDark.push(glowWhite);
 
+
+		_starEmitter = new FlxEmitter(FlxG.width /2, FlxG.height/2);
+		FlxPexParser.parse("shared:assets/shared/images/star.pex","shared:assets/shared/images/star.png",_starEmitter,1);
+
+		add(_starEmitter);
+		
+		_starEmitter.cameras = [camHUD];
+		_starEmitter.start(false,0.01);
 
 		super.create();
 

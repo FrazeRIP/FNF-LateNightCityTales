@@ -450,7 +450,7 @@ class ModsMenuState extends MusicBeatState
 			FlxG.sound.music.fadeOut(0.3);
 			FlxG.camera.fade(FlxColor.BLACK, 0.5, false, FlxG.resetGame, false);
 			}else{
-			MusicBeatState.switchState(new MainMenuState());
+			MusicBeatState.switchState(new TitleState());
 				
 			}
 		}

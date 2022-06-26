@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Title_Text.png"><SubTexture name="Title_Text Credit0000" x="0" y="0" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text PressEnter0000" x="2946" y="0" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text Story0000" x="5892" y="0" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text Easy0000" x="8838" y="0" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text Freeplay0000" x="0" y="141" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text Hard0000" x="2946" y="141" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text Normal0000" x="5892" y="141" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text Options0000" x="8838" y="141" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+<SubTexture name="Title_Text Tip0000" x="0" y="282" width="2946" height="141" frameX="0" frameY="0" frameWidth="2946" frameHeight="141" />
+</TextureAtlas>

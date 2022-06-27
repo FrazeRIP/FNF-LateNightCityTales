@@ -40,6 +40,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
+import editors.MasterEditorMenu;
 
 using StringTools;
 
@@ -100,8 +101,12 @@ class TitleState extends MusicBeatState
 
 	var transitioning:Bool = false;
 
+	var debugKeys:Array<FlxKey>;
+
+
 	override public function create():Void
 	{
+		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
@@ -215,6 +220,7 @@ class TitleState extends MusicBeatState
 	var pressedEnter:Bool;
 	var isTransing:Bool=false;
 
+
 	override function update(elapsed:Float)
 	{
 		pressedCancel = FlxG.keys.justPressed.ESCAPE || controls.BACK;
@@ -240,6 +246,11 @@ class TitleState extends MusicBeatState
 
 		if(isStoryMain)
 			storyMainUpdate();
+
+		if (FlxG.keys.anyJustPressed(debugKeys))
+		{
+			MusicBeatState.switchState(new MasterEditorMenu());
+		}
 	
 		
 		super.update(elapsed);

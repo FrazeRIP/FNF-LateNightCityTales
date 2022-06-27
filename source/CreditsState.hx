@@ -1,5 +1,7 @@
 package;
 
+import flixel.addons.effects.chainable.FlxShakeEffect;
+import flixel.addons.effects.chainable.FlxEffectSprite;
 #if desktop
 import Discord.DiscordClient;
 #end
@@ -13,6 +15,15 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
+import flixel.addons.effects.chainable.FlxEffectSprite;
+import flixel.addons.effects.chainable.FlxGlitchEffect;
+import flixel.addons.effects.chainable.FlxOutlineEffect;
+import flixel.addons.effects.chainable.FlxRainbowEffect;
+import flixel.addons.effects.chainable.FlxShakeEffect;
+import flixel.addons.effects.chainable.FlxTrailEffect;
+import flixel.addons.effects.chainable.FlxWaveEffect;
+import flixel.addons.effects.chainable.IFlxEffect;
+
 #if MODS_ALLOWED
 import sys.FileSystem;
 import sys.io.File;
@@ -23,287 +34,83 @@ using StringTools;
 
 class CreditsState extends MusicBeatState
 {
-	var curSelected:Int = -1;
+	var creditsName:Array<String> = [
+		//"fraze",
+		"bonk",
+		"danke"
+	];
+	var creditCharacter:FlxSprite;
+	var creditBG:FlxSprite;
+	var creditFrame:FlxSprite;
+	var creditTextNormal:FlxSprite;
+	var creditTextSpecial:FlxSprite;
+	var creditControlNum:Int=0;
 
-	private var grpOptions:FlxTypedGroup<Alphabet>;
-	private var iconArray:Array<AttachedSprite> = [];
-	private var creditsStuff:Array<Array<String>> = [];
-
-	var bg:FlxSprite;
-	var descText:FlxText;
-	var intendedColor:Int;
-	var colorTween:FlxTween;
-	var descBox:AttachedSprite;
-
-	var offsetThing:Float = -75;
-
-	override function create()
+	var _effectCreditTextSpecial:FlxEffectSprite;
+	var _effectShake:FlxShakeEffect;
+	public function init():Void
 	{
-		#if desktop
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
-		#end
-
-		persistentUpdate = true;
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-		add(bg);
-		bg.screenCenter();
-		
-		grpOptions = new FlxTypedGroup<Alphabet>();
-		add(grpOptions);
-
-		#if MODS_ALLOWED
-		//trace("finding mod shit");
-		for (folder in Paths.getModDirectories())
-		{
-			var creditsFile:String = Paths.mods(folder + '/data/credits.txt');
-			if (FileSystem.exists(creditsFile))
-			{
-				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
-				for(i in firstarray)
-				{
-					var arr:Array<String> = i.replace('\\n', '\n').split("::");
-					if(arr.length >= 5) arr.push(folder);
-					creditsStuff.push(arr);
-				}
-				creditsStuff.push(['']);
-			}
-		};
-		var folder = "";
-			var creditsFile:String = Paths.mods('data/credits.txt');
-			if (FileSystem.exists(creditsFile))
-			{
-				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
-				for(i in firstarray)
-				{
-					var arr:Array<String> = i.replace('\\n', '\n').split("::");
-					if(arr.length >= 5) arr.push(folder);
-					creditsStuff.push(arr);
-				}
-				creditsStuff.push(['']);
-			}
-		#end
-
-		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['Psych Engine Team'],
-			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'444444'],
-			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',					'https://twitter.com/river_oaken',		'C30085'],
-			['shubs',				'shubs',			'Additional Programmer of Psych Engine',				'https://twitter.com/yoshubs',			'4494E6'],
-			[''],
-			['Former Engine Members'],
-			['bb-panzu',			'bb-panzu',			'Ex-Programmer of Psych Engine',						'https://twitter.com/bbsub3',			'389A58'],
-			[''],
-			['Engine Contributors'],
-			['SqirraRNG',			'gedehari',			'Chart Editor\'s Sound Waveform base',					'https://twitter.com/gedehari',			'FF9300'],
-			['iFlicky',				'iflicky',			'Delay/Combo Menu Song Composer\nand Dialogue Sounds',	'https://twitter.com/flicky_i',			'C549DB'],
-			['PolybiusProxy',		'polybiusproxy',	'.MP4 Video Loader Extension',							'https://twitter.com/polybiusproxy',	'FFEAA6'],
-			['Keoiki',				'keoiki',			'Note Splash Animations',								'https://twitter.com/Keoiki_',			'FFFFFF'],
-			['Smokey',				'smokey',			'Spritemap Texture Support',							'https://twitter.com/Smokey_5_',		'0033CC'],
-			[''],
-			["Funkin' Crew"],
-			['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",					'https://twitter.com/ninja_muffin99',	'F73838'],
-			['PhantomArcade',		'phantomarcade',	"Animator of Friday Night Funkin'",						'https://twitter.com/PhantomArcade3K',	'FFBB1B'],
-			['evilsk8r',			'evilsk8r',			"Artist of Friday Night Funkin'",						'https://twitter.com/evilsk8r',			'53E52C'],
-			['kawaisprite',			'kawaisprite',		"Composer of Friday Night Funkin'",						'https://twitter.com/kawaisprite',		'6475F3']
-		];
-		
-		for(i in pisspoop){
-			creditsStuff.push(i);
-		}
-	
-		for (i in 0...creditsStuff.length)
-		{
-			var isSelectable:Bool = !unselectableCheck(i);
-			var optionText:Alphabet = new Alphabet(0, 70 * i, creditsStuff[i][0], !isSelectable, false);
-			optionText.isMenuItem = true;
-			optionText.screenCenter(X);
-			optionText.yAdd -= 70;
-			if(isSelectable) {
-				optionText.x -= 70;
-			}
-			optionText.forceX = optionText.x;
-			//optionText.yMult = 90;
-			optionText.targetY = i;
-			grpOptions.add(optionText);
-
-			if(isSelectable) {
-				if(creditsStuff[i][5] != null)
-				{
-					Paths.currentModDirectory = creditsStuff[i][5];
-				}
-
-				var icon:AttachedSprite = new AttachedSprite('credits/' + creditsStuff[i][1]);
-				icon.xAdd = optionText.width + 10;
-				icon.sprTracker = optionText;
-	
-				// using a FlxGroup is too much fuss!
-				iconArray.push(icon);
-				add(icon);
-				Paths.currentModDirectory = '';
-
-				if(curSelected == -1) curSelected = i;
-			}
-		}
-		
-		descBox = new AttachedSprite();
-		descBox.makeGraphic(1, 1, FlxColor.BLACK);
-		descBox.xAdd = -10;
-		descBox.yAdd = -10;
-		descBox.alphaMult = 0.6;
-		descBox.alpha = 0.6;
-		add(descBox);
-
-		descText = new FlxText(50, FlxG.height + offsetThing - 25, 1180, "", 32);
-		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER/*, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK*/);
-		descText.scrollFactor.set();
-		//descText.borderSize = 2.4;
-		descBox.sprTracker = descText;
-		add(descText);
-
-		bg.color = getCurrentBGColor();
-		intendedColor = bg.color;
-		changeSelection();
-		super.create();
+		creditCharacter = new FlxSprite();
+		creditBG=new FlxSprite(0,0);
+		creditFrame=new FlxSprite();
+		creditTextNormal = new FlxSprite();
+		creditTextSpecial = new FlxSprite();
+		_effectShake=new FlxShakeEffect(5,0.5,function()_effectShake.start());
+		_effectCreditTextSpecial = new FlxEffectSprite(creditTextSpecial,[_effectShake]);
+		creditCharacter.loadGraphic(Paths.image("credits/"+creditsName[0]+'/credit_'+creditsName[0]+'_char','nightmare'));
+		creditBG.loadGraphic(Paths.image("credits/"+creditsName[0]+'/credit_'+creditsName[0]+'_bg','nightmare'));
+		creditFrame.loadGraphic(Paths.image("credits/credit_frame",'nightmare'));
+		creditTextNormal.loadGraphic(Paths.image("credits/"+creditsName[0]+'/credit_'+creditsName[0]+'_text_white','nightmare'));
+		creditTextSpecial.loadGraphic(Paths.image("credits/"+creditsName[0]+'/credit_'+creditsName[0]+'_text_special','nightmare'));
+		add(creditBG);
+		add(creditFrame);
+		add(creditCharacter);
+		add(creditTextNormal);
+		add(_effectCreditTextSpecial);
+		_effectShake.start();
 	}
-
-	var quitting:Bool = false;
-	var holdTime:Float = 0;
+	override function create():Void
+	{
+			super.create();
+			init();
+	}
 	override function update(elapsed:Float)
 	{
-		if (FlxG.sound.music.volume < 0.7)
-		{
-			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-		}
-
-		if(!quitting)
-		{
-			if(creditsStuff.length > 1)
-			{
-				var shiftMult:Int = 1;
-				if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
-
-				var upP = controls.UI_UP_P;
-				var downP = controls.UI_DOWN_P;
-
-				if (upP)
-				{
-					changeSelection(-1 * shiftMult);
-					holdTime = 0;
-				}
-				if (downP)
-				{
-					changeSelection(1 * shiftMult);
-					holdTime = 0;
-				}
-
-				if(controls.UI_DOWN || controls.UI_UP)
-				{
-					var checkLastHold:Int = Math.floor((holdTime - 0.5) * 10);
-					holdTime += elapsed;
-					var checkNewHold:Int = Math.floor((holdTime - 0.5) * 10);
-
-					if(holdTime > 0.5 && checkNewHold - checkLastHold > 0)
-					{
-						changeSelection((checkNewHold - checkLastHold) * (controls.UI_UP ? -shiftMult : shiftMult));
-					}
-				}
-			}
-
-			if(controls.ACCEPT) {
-				CoolUtil.browserLoad(creditsStuff[curSelected][3]);
-			}
-			if (controls.BACK)
-			{
-				if(colorTween != null) {
-					colorTween.cancel();
-				}
-				FlxG.sound.play(Paths.sound('cancelMenu'));
-				MusicBeatState.switchState(new TitleState());
-				quitting = true;
-			}
-		}
 		
-		for (item in grpOptions.members)
+		if(controls.UI_RIGHT_P)
 		{
-			if(!item.isBold)
-			{
-				var lerpVal:Float = CoolUtil.boundTo(elapsed * 12, 0, 1);
-				if(item.targetY == 0)
-				{
-					var lastX:Float = item.x;
-					item.screenCenter(X);
-					item.x = FlxMath.lerp(lastX, item.x - 70, lerpVal);
-					item.forceX = item.x;
-				}
-				else
-				{
-					item.x = FlxMath.lerp(item.x, 200 + -40 * Math.abs(item.targetY), lerpVal);
-					item.forceX = item.x;
-				}
-			}
+			if(creditControlNum<creditsName.length-1)
+			creditControlNum++;
+			else
+			creditControlNum = 0;
+
+			_effectShake.start();
+			ReadCredit();
 		}
+		if(controls.UI_LEFT_P)
+		{
+			if(creditControlNum>0)
+			creditControlNum--;
+			else
+			creditControlNum = creditsName.length-1;
+
+			_effectShake.start();
+			ReadCredit();
+		}
+		if(controls.BACK)
+		{
+			MusicBeatState.switchState(new TitleState());
+		}
+		FlxG.watch.addQuick('CreaditNum', creditControlNum);
+		FlxG.watch.addQuick('ArrayLength', creditsName.length);
+
 		super.update(elapsed);
 	}
-
-	var moveTween:FlxTween = null;
-	function changeSelection(change:Int = 0)
+	public function ReadCredit()
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
-		do {
-			curSelected += change;
-			if (curSelected < 0)
-				curSelected = creditsStuff.length - 1;
-			if (curSelected >= creditsStuff.length)
-				curSelected = 0;
-		} while(unselectableCheck(curSelected));
-
-		var newColor:Int =  getCurrentBGColor();
-		if(newColor != intendedColor) {
-			if(colorTween != null) {
-				colorTween.cancel();
-			}
-			intendedColor = newColor;
-			colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
-				onComplete: function(twn:FlxTween) {
-					colorTween = null;
-				}
-			});
-		}
-
-		var bullShit:Int = 0;
-
-		for (item in grpOptions.members)
-		{
-			item.targetY = bullShit - curSelected;
-			bullShit++;
-
-			if(!unselectableCheck(bullShit-1)) {
-				item.alpha = 0.6;
-				if (item.targetY == 0) {
-					item.alpha = 1;
-				}
-			}
-		}
-
-		descText.text = creditsStuff[curSelected][2];
-		descText.y = FlxG.height - descText.height + offsetThing - 60;
-
-		if(moveTween != null) moveTween.cancel();
-		moveTween = FlxTween.tween(descText, {y : descText.y + 75}, 0.25, {ease: FlxEase.sineOut});
-
-		descBox.setGraphicSize(Std.int(descText.width + 20), Std.int(descText.height + 25));
-		descBox.updateHitbox();
-	}
-
-	function getCurrentBGColor() {
-		var bgColor:String = creditsStuff[curSelected][4];
-		if(!bgColor.startsWith('0x')) {
-			bgColor = '0xFF' + bgColor;
-		}
-		return Std.parseInt(bgColor);
-	}
-
-	private function unselectableCheck(num:Int):Bool {
-		return creditsStuff[num].length <= 1;
+		creditCharacter.loadGraphic(Paths.image("credits/"+creditsName[creditControlNum]+'/credit_'+creditsName[creditControlNum]+'_char','nightmare'));
+		creditBG.loadGraphic(Paths.image("credits/"+creditsName[creditControlNum]+'/credit_'+creditsName[creditControlNum]+'_bg','nightmare'));
+		creditTextNormal.loadGraphic(Paths.image("credits/"+creditsName[creditControlNum]+'/credit_'+creditsName[creditControlNum]+'_text_white','nightmare'));
+		creditTextSpecial.loadGraphic(Paths.image("credits/"+creditsName[creditControlNum]+'/credit_'+creditsName[creditControlNum]+'_text_special','nightmare'));
 	}
 }

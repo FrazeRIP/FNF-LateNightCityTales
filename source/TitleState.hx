@@ -741,7 +741,6 @@ class TitleState extends MusicBeatState
 					textGroup.add(money);
 				}
 			}
-			#end
 		}
 
 	function addMoreText(text:String, ?offset:Float = 0)

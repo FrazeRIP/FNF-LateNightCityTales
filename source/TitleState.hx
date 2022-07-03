@@ -348,7 +348,6 @@ class TitleState extends MusicBeatState
 		upText.updateHitbox();
 		upText.alpha=0;
 
-		
 
 		//storyMainState object
 		fog=new FlxSprite(-350,900);
@@ -362,7 +361,6 @@ class TitleState extends MusicBeatState
 		rain.animation.addByPrefix("rainning",'Rain Rain',24,true);
 		rain.setGraphicSize(Std.int(rain.width *1),Std.int(rain.height*1));
 		rain.animation.play("rainning");
-		rain.visible= false;
 		rain.updateHitbox();
 		
 		rain.cameras=[camUI];
@@ -476,7 +474,7 @@ class TitleState extends MusicBeatState
 						new FlxTimer().start(1, function(tmr:FlxTimer)
 						{
 							//MusicBeatState.switchState(new TitleState());
-							FlxTween.tween(FlxG.camera.scroll,{y:1120},1.5);
+							FlxTween.tween(FlxG.camera.scroll,{y:1120},3,{ease: FlxEase.expoOut});
 							FlxTween.tween(logoBl,{alpha:0},1);
 						});
 					}
@@ -524,7 +522,7 @@ class TitleState extends MusicBeatState
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 					{
 						//MusicBeatState.switchState(new TitleState());
-						FlxTween.tween(FlxG.camera.scroll,{y:0},1.5);
+						FlxTween.tween(FlxG.camera.scroll,{y:0},3,{ease: FlxEase.expoOut});
 						FlxTween.tween(downText,{alpha:0},1);
 						FlxTween.tween(upText,{alpha:0},1);
 					});
@@ -574,7 +572,7 @@ class TitleState extends MusicBeatState
 				// mountains.animation.play('mountainsClear');
 				new FlxTimer().start(0.5, function(tmr:FlxTimer)
 					{
-						FlxTween.tween(FlxG.camera,{zoom:1},1.5);
+						// FlxTween.tween(FlxG.camera,{zoom:1},1.5);
 						// FlxTween.tween(grass,{y:1200},1.5);
 						// FlxTween.tween(treeLeft,{x:-1000},1.5);
 						// FlxTween.tween(treeRight,{x:100},1.5);
@@ -635,7 +633,7 @@ class TitleState extends MusicBeatState
 
 				new FlxTimer().start(0.5, function(tmr:FlxTimer)
 					{
-						FlxTween.tween(FlxG.camera,{zoom:0.7},1.5);
+						// FlxTween.tween(FlxG.camera,{zoom:0.7},1.5);
 						// FlxTween.tween(grass,{y:910},1.5);
 						// FlxTween.tween(treeLeft,{x:-490},1.5);
 						// FlxTween.tween(treeRight,{x:-130},1.5);
@@ -750,7 +748,7 @@ class TitleState extends MusicBeatState
 			credGroup.add(coolText);
 			textGroup.add(coolText);
 		}
-	}
+	}	
 
 	function deleteCoolText()
 	{
@@ -861,7 +859,6 @@ class TitleState extends MusicBeatState
 
 			remove(credGroup);
 			skippedIntro = true;
-			rain.visible = true;
 		}
 	}
 

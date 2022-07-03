@@ -12,6 +12,7 @@ import flixel.FlxCamera;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import openfl.filters.BitmapFilter;
+import openfl.filters.BlurFilter;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
@@ -73,6 +74,13 @@ class CreditsState extends MusicBeatState
 
 	var _effectCreditTextSpecial:FlxEffectSprite;
 	var _effectShake:FlxShakeEffect;
+	//-------------BlurFilter----------------
+	public var isTrailOn:Bool = true;
+	var filters:Array<BitmapFilter> = [];
+
+	public var BlurX:Float = 0;
+	public var BlurY:Float = 0;
+	//---------------------------------------
 
 	var camBG:FlxCamera;
 	var camTX:FlxCamera;
@@ -80,6 +88,8 @@ class CreditsState extends MusicBeatState
 
 	public function init():Void
         {  	
+			filters.push(new BlurFilter());
+
 			creditCharacterA = new FlxSprite();
 			creditCharacterB = new FlxSprite(-1280,0);
 			creditCharacterC = new FlxSprite(1280,0);
@@ -141,6 +151,8 @@ class CreditsState extends MusicBeatState
 
 			animPlaying=true;
 			
+			camTX.setFilters(filters);
+
 			BGLoad();
             CharacterLoad();
 			LoadTextImage();
@@ -175,6 +187,8 @@ class CreditsState extends MusicBeatState
 	}
 	override function update(elapsed:Float)
 	{
+		filters[0] = new BlurFilter(BlurX,BlurY,openfl.filters.BitmapFilterQuality.LOW);
+		
 		if(controls.UI_RIGHT_P&&!animPlaying)
 		{
 			if(creditOperand<creditsName.length-1)

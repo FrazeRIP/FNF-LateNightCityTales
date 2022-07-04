@@ -92,7 +92,6 @@ class CreditsState extends MusicBeatState
         {  	
 			filters.push(new BlurFilter());
 
-			
 			FlxG.sound.playMusic(Paths.music("credit","nightmare"),0.8);
 
 			creditCharacterA = new FlxSprite();
@@ -112,13 +111,14 @@ class CreditsState extends MusicBeatState
 
 			movieDots.frames=Paths.getSparrowAtlas("credits/MovieDots","nightmare");
 			movieDots.animation.addByPrefix("play","MovieDots",24,true);
-			movieDots.alpha=0.5;
-			movieDots.blend=OVERLAY;
+			movieDots.alpha=1;
+			movieDots.blend=LIGHTEN;
 			movieDots.animation.play("play");
 
 			blackEdge.loadGraphic(Paths.image("credits/BlackEdge",'nightmare'));
-			blackEdge.alpha=0.5;
-			blackEdge.blend=OVERLAY;
+			blackEdge.alpha=0.4;
+			FlxTween.tween(blackEdge,{alpha:0.7},1,{type: FlxTween.PINGPONG, ease: FlxEase.quadInOut});
+			//blackEdge.blend=DARKEN;
 
 			creditCharacters=[creditCharacterA,creditCharacterB,creditCharacterC];
 			creditBGs=[creditBGA,creditBGB,creditBGC];
@@ -128,10 +128,11 @@ class CreditsState extends MusicBeatState
 			camCH=new FlxCamera();
 			camFX=new FlxCamera();
 
-			glowDark= new GlowFilter(0xFF000000,1,20,20,2,3,false,false);
+			glowDark= new GlowFilter(0xFF000000,1,30,30,5,3,false,false);
 			textFiltersDark.push(glowDark);
 
 			camTX.setFilters(textFiltersDark);
+			//camCH.setFilters(textFiltersDark);
 
 			FlxG.cameras.reset(camBG);
 			FlxG.cameras.add(camCH);
@@ -358,7 +359,7 @@ class CreditsState extends MusicBeatState
 			FlxTween.tween(creditCharacters[characterOperandRight],{x:0,alpha:1},1,
 				{ease: FlxEase.expoOut,onComplete:function(twn:FlxTween)
 				{
-					FlxTween.tween(creditTextNormal,{alpha:1},0.5,{onComplete:function(twn:FlxTween)
+					FlxTween.tween(creditTextNormal,{alpha:1},1,{onComplete:function(twn:FlxTween)
 					{
 					creditFX.visible=true;
 					camFX.flash(FlxColor.BLACK, 0.5);

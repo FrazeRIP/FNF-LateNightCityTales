@@ -63,6 +63,7 @@ class TitleState extends MusicBeatState
 	var camBG:FlxCamera;
 	var camUI:FlxCamera;
 
+
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
@@ -116,9 +117,11 @@ class TitleState extends MusicBeatState
 
 	var loadedWeek:WeekData;
 
+	var startTick:Int = 3;
 
 	override public function create():Void
 	{
+
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
@@ -408,7 +411,7 @@ class TitleState extends MusicBeatState
 		if(FlxG.sound.music==null||FlxG.sound.music.length!=109565)
 		FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.7);
 
-		Conductor.changeBPM(102);
+		Conductor.changeBPM(138);
 		persistentUpdate = true;
 
 		add(bg);
@@ -449,7 +452,7 @@ class TitleState extends MusicBeatState
 
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
+		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('DaytimefishStudio_logo'));
 		add(ngSpr);
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
@@ -828,66 +831,69 @@ class TitleState extends MusicBeatState
 			sickBeats++;
 			switch (sickBeats)
 			{
-				case 1:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 15);
-					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-					#end
-				// credTextShit.visible = true;
+
 				case 3:
-					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 15);
-					addMoreText('RiverOaken', 15);
-					addMoreText('shubs', 15);
-					#else
-					addMoreText('present');
-					#end
-				// credTextShit.text += '\npresent...';
-				// credTextShit.addText();
-				case 4:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = 'In association \nwith';
-				// credTextShit.screenCenter();
-				case 5:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
-					#else
-					createCoolText(['In association', 'with'], -40);
-					#end
-				case 7:
-					addMoreText('newgrounds', -40);
+					createCoolText(['Daytimefish Studio'], 15);
+				
+				case 9:
+
+					addMoreText('Presents', 15);
 					ngSpr.visible = true;
-				// credTextShit.text += '\nNewgrounds';
-				case 8:
+				
+				case 14:
 					deleteCoolText();
 					ngSpr.visible = false;
-				// credTextShit.visible = false;
-
-				// credTextShit.text = 'Shoutouts Tom Fulp';
-				// credTextShit.screenCenter();
-				case 9:
-					createCoolText([curWacky[0]]);
-				// credTextShit.visible = true;
-				case 11:
-					addMoreText(curWacky[1]);
-				// credTextShit.text += '\nlmao';
-				case 12:
-					deleteCoolText();
-				// credTextShit.visible = false;
-				// credTextShit.text = "Friday";
-				// credTextShit.screenCenter();
-				case 13:
-					addMoreText('Friday');
-				// credTextShit.visible = true;
-				case 14:
-					addMoreText('Night');
-				// credTextShit.text += '\nNight';
+				
 				case 15:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+					createCoolText(['Psych Engine by'], 15);
+				
+				case 21:
+					addMoreText('Shadow Mario', 15);
+				case 22:
+					addMoreText('RiverOaken', 15);
+				case 23:
+					addMoreText('shubs', 15);
+				case 24:
+					addMoreText('other contributers', 15);
+				case 26:
+					deleteCoolText();
 
-				case 16:
+				case 27:
+					createCoolText(['A mod for Friday Night Funkin'], 15);
+				
+				case 33:
+					addMoreText('Developed by', 15);
+					addMoreText('ninjamuffin99', 15);
+					addMoreText('phantomArcade', 15);
+					addMoreText('kawaisprite', 15);
+					addMoreText('evilsk8er', 15);
+				
+				case 38: 
+					deleteCoolText();
+
+				case 39:
+					createCoolText(['Late'], 15);
+				
+				case 40:
+					addMoreText('Night', 15);
+
+				case 42:
+					addMoreText('City', 15);
+				 
+				case 43:
+					addMoreText('Tales', 15);
+				
+				case 45:
+					deleteCoolText();
+					
+				case 48:
+					addMoreText('Chapter 1 ', 15);
+
+				case 52:
+					addMoreText('The call from the deep sea', 15);
+				case 56:
+					deleteCoolText();
+				case 57:
 					skipIntro();
 			}
 		}

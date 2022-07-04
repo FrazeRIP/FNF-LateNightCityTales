@@ -31,8 +31,9 @@ class LoadingState extends MusicBeatState
 	var directory:String;
 	var callbacks:MultiCallback;
 	var targetShit:Float = 0;
+	var bg:FlxSprite;
 
-	function new(target:FlxState, stopMusic:Bool, directory:String)
+	public function new(target:FlxState, stopMusic:Bool, directory:String)
 	{
 		super();
 		this.target = target;
@@ -44,20 +45,26 @@ class LoadingState extends MusicBeatState
 	var loadBar:FlxSprite;
 	override function create()
 	{
-		var bg:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, 0xffcaff4d);
+		transIn = null;
+        transOut = null;
+		// var bg:FlxSprite = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, 0xffcaff4d);
+		// add(bg);
+		// funkay = new FlxSprite(0, 0).loadGraphic(Paths.getPath('images/funkay.png', IMAGE));
+		// funkay.setGraphicSize(0, FlxG.height);
+		// funkay.updateHitbox();
+		// funkay.antialiasing = ClientPrefs.globalAntialiasing;
+		// add(funkay);
+		// funkay.scrollFactor.set();
+		// funkay.screenCenter();
+		// loadBar = new FlxSprite(0, FlxG.height - 20).makeGraphic(FlxG.width, 10, 0xffff16d2);
+		// loadBar.screenCenter(X);
+		// loadBar.antialiasing = ClientPrefs.globalAntialiasing;
+		// add(loadBar);
+		bg=new FlxSprite();
+		bg.loadGraphic(Paths.image("Loading",'nightmare'));
 		add(bg);
-		funkay = new FlxSprite(0, 0).loadGraphic(Paths.getPath('images/funkay.png', IMAGE));
-		funkay.setGraphicSize(0, FlxG.height);
-		funkay.updateHitbox();
-		funkay.antialiasing = ClientPrefs.globalAntialiasing;
-		add(funkay);
-		funkay.scrollFactor.set();
-		funkay.screenCenter();
 
-		loadBar = new FlxSprite(0, FlxG.height - 20).makeGraphic(FlxG.width, 10, 0xffff16d2);
-		loadBar.screenCenter(X);
-		loadBar.antialiasing = ClientPrefs.globalAntialiasing;
-		add(loadBar);
+
 		
 		initSongsManifest().onComplete
 		(
@@ -113,18 +120,22 @@ class LoadingState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		funkay.setGraphicSize(Std.int(0.88 * FlxG.width + 0.9 * (funkay.width - 0.88 * FlxG.width)));
-		funkay.updateHitbox();
-		if(controls.ACCEPT)
-		{
-			funkay.setGraphicSize(Std.int(funkay.width + 60));
-			funkay.updateHitbox();
-		}
+		// funkay.setGraphicSize(Std.int(0.88 * FlxG.width + 0.9 * (funkay.width - 0.88 * FlxG.width)));
+		// funkay.updateHitbox();
+		// if(controls.ACCEPT)
+		// {
+		// 	funkay.setGraphicSize(Std.int(funkay.width + 60));
+		// 	funkay.updateHitbox();
+		// }
 
-		if(callbacks != null) {
-			targetShit = FlxMath.remapToRange(callbacks.numRemaining / callbacks.length, 1, 0, 0, 1);
-			loadBar.scale.x += 0.5 * (targetShit - loadBar.scale.x);
-		}
+		// if(callbacks != null) {
+		// 	targetShit = FlxMath.remapToRange(callbacks.numRemaining / callbacks.length, 1, 0, 0, 1);
+		// 	loadBar.scale.x += 0.5 * (targetShit - loadBar.scale.x);
+		// }
+		new FlxTimer().start(2, function(tmr:FlxTimer)
+			{
+				loadAndSwitchState(target,stopMusic);
+			});
 	}
 	
 	function onLoad()
@@ -191,7 +202,6 @@ class LoadingState extends MusicBeatState
 	override function destroy()
 	{
 		super.destroy();
-		
 		callbacks = null;
 	}
 	

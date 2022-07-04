@@ -112,6 +112,12 @@ class OptionsState extends MusicBeatState
 		if (controls.ACCEPT) {
 			openSelectedSubstate(options[curSelected]);
 		}
+		
+		if(FlxG.keys.justPressed.CONTROL)
+			{
+				persistentUpdate = false;
+				openSubState(new GameplayChangersSubstate());
+			}
 	}
 	
 	function changeSelection(change:Int = 0) {

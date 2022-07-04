@@ -11,8 +11,13 @@ import flixel.FlxSprite;
 import flixel.FlxCamera;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import openfl.Lib;
+import openfl.display.BlendMode;
+import openfl.display.StageQuality;
 import openfl.filters.BitmapFilter;
 import openfl.filters.BlurFilter;
+import openfl.filters.GlowFilter;
+import openfl.utils.Assets as OpenFlAssets;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
@@ -37,17 +42,7 @@ using StringTools;
 
 class CreditsState extends MusicBeatState
 {
-	var creditsName:Array<String> = [
-		"fraze",
-		"bonk",
-		"danke",
-		"lunar",
-		"nag",
-		"red",
-		"rt",
-		"var",
-		"other"
-	];
+	var creditsName:Array<String> = ["fraze","other","var","rt","red","nag","lunar","danke","bonk"];
 	var creditCharacters:Array<FlxSprite>=[];
 	var creditBGs:Array<FlxSprite>=[];
 	var creditCharacterA:FlxSprite;
@@ -60,6 +55,9 @@ class CreditsState extends MusicBeatState
 	var creditTextNormal:FlxSprite;
 	var creditTextSpecial:FlxSprite;
 	var creditFX:FlxSprite;
+
+	var movieDots:FlxSprite;
+	var blackEdge:FlxSprite;
 
 	var creditOperand:Int=0;
 	var characterOperandCenter=0;
@@ -80,15 +78,21 @@ class CreditsState extends MusicBeatState
 
 	public var BlurX:Float = 0;
 	public var BlurY:Float = 0;
-	//---------------------------------------
+	//-------------GlowFilter----------------
+	var textFiltersDark:Array<BitmapFilter> = [];
+	var glowDark:GlowFilter;
 
 	var camBG:FlxCamera;
 	var camTX:FlxCamera;
 	var camCH:FlxCamera;
+	var camFX:FlxCamera;
 
 	public function init():Void
         {  	
 			filters.push(new BlurFilter());
+
+			
+			FlxG.sound.playMusic(Paths.music("credit","nightmare"),0.8);
 
 			creditCharacterA = new FlxSprite();
 			creditCharacterB = new FlxSprite(-1280,0);
@@ -101,21 +105,42 @@ class CreditsState extends MusicBeatState
             creditTextSpecial = new FlxSprite();
 			creditFX = new FlxSprite();
 
+			movieDots = new FlxSprite();
+			blackEdge = new FlxSprite();
+
+			movieDots.frames=Paths.getSparrowAtlas("credits/MovieDots","nightmare");
+			movieDots.animation.addByPrefix("play","MovieDots",24,true);
+			movieDots.alpha=0.5;
+			movieDots.blend=OVERLAY;
+			movieDots.animation.play("play");
+
+			blackEdge.loadGraphic(Paths.image("credits/BlackEdge",'nightmare'));
+			blackEdge.alpha=0.5;
+			blackEdge.blend=OVERLAY;
+
 			creditCharacters=[creditCharacterA,creditCharacterB,creditCharacterC];
 			creditBGs=[creditBGA,creditBGB,creditBGC];
 
 			camBG=new FlxCamera();
 			camTX=new FlxCamera();
 			camCH=new FlxCamera();
+			camFX=new FlxCamera();
+
+			glowDark= new GlowFilter(0xFF000000,1,20,20,2,3,false,false);
+			textFiltersDark.push(glowDark);
+
+			camTX.setFilters(textFiltersDark);
 
 			FlxG.cameras.reset(camBG);
 			FlxG.cameras.add(camCH);
 			FlxG.cameras.add(camTX);
+			FlxG.cameras.add(camFX);
 
 			creditFX.visible = false;
 			
 			camTX.bgColor.alpha = 0;
 			camCH.bgColor.alpha = 0;
+			camFX.bgColor.alpha = 0;
 
 			FlxG.cameras.setDefaultDrawTarget(camBG,true);
 
@@ -132,6 +157,9 @@ class CreditsState extends MusicBeatState
 			creditCharacterC.cameras=[camCH];
 			creditFX.cameras = [camCH];
 
+			movieDots.cameras = [camFX];
+			blackEdge.cameras = [camFX];
+
 			creditCharacterB.alpha=0;
 			creditCharacterC.alpha=0;
 
@@ -140,6 +168,8 @@ class CreditsState extends MusicBeatState
 
 			creditBGB.alpha=0;
 			creditBGC.alpha=0;
+
+			
 
             _effectShake=new FlxShakeEffect(5,0.5,function()_effectShake.start());
             _effectCreditTextSpecial = new FlxEffectSprite(creditTextSpecial,[_effectShake]);
@@ -150,8 +180,7 @@ class CreditsState extends MusicBeatState
 			creditOperand=0;
 
 			animPlaying=true;
-			
-			camTX.setFilters(filters);
+
 
 			BGLoad();
             CharacterLoad();
@@ -170,11 +199,12 @@ class CreditsState extends MusicBeatState
             add(creditTextNormal);
             add(_effectCreditTextSpecial);
             // _effectShake.start();
-
+			add(movieDots);
+			add(blackEdge);
 			FlxTween.tween(creditTextNormal,{alpha:1},0.5,{onComplete:function(twn:FlxTween)
 				{
 				creditFX.visible=true;
-				camTX.flash(FlxColor.WHITE, 0.5);
+				camFX.flash(FlxColor.BLACK, 0.5);
 				creditTextSpecial.alpha=1;
 				animPlaying=false;
 				_effectShake.start();}});
@@ -191,10 +221,10 @@ class CreditsState extends MusicBeatState
 		
 		if(controls.UI_RIGHT_P&&!animPlaying)
 		{
-			if(creditOperand<creditsName.length-1)
-			creditOperand++;
+			if(creditOperand>0)
+			creditOperand--;
 			else
-			creditOperand = 0;
+			creditOperand = creditsName.length-1;
 
 			CharacterChangeRight();
 			ChangeBackgroundAndText();
@@ -203,10 +233,10 @@ class CreditsState extends MusicBeatState
 
 		if(controls.UI_LEFT_P&&!animPlaying)
 		{
-			if(creditOperand>0)
-			creditOperand--;
+			if(creditOperand<creditsName.length-1)
+			creditOperand++;
 			else
-			creditOperand = creditsName.length-1;
+			creditOperand = 0;
 
 			CharacterChangeLeft();
 			ChangeBackgroundAndText();
@@ -262,7 +292,7 @@ class CreditsState extends MusicBeatState
 		creditFX.loadGraphic(Paths.image("credits/"+creditsName[creditOperand]+'/credit_'+creditsName[creditOperand]+'_fx','nightmare'));
 	}
 
-	public function CharacterChangeRight()
+	public function CharacterChangeLeft()
 	{
 		creditFX.visible=false;
 		FlxTween.tween(creditBGs[characterOperandCenter],{alpha:0},1);
@@ -274,7 +304,7 @@ class CreditsState extends MusicBeatState
 				FlxTween.tween(creditTextNormal,{alpha:1},1,{onComplete:function(twn:FlxTween)
 					{
 					creditFX.visible=true;
-					camTX.flash(FlxColor.WHITE, 0.5);
+					camFX.flash(FlxColor.BLACK, 0.5);
 					creditTextSpecial.alpha=1;
 					animPlaying=false;}});
 
@@ -314,7 +344,7 @@ class CreditsState extends MusicBeatState
 
 	}
 
-	public function CharacterChangeLeft()
+	public function CharacterChangeRight()
 		{
 			creditFX.visible=false;
 			FlxTween.tween(creditBGs[characterOperandCenter],{alpha:0},1);
@@ -326,7 +356,7 @@ class CreditsState extends MusicBeatState
 					FlxTween.tween(creditTextNormal,{alpha:1},0.5,{onComplete:function(twn:FlxTween)
 					{
 					creditFX.visible=true;
-					camTX.flash(FlxColor.WHITE, 0.5);
+					camFX.flash(FlxColor.WHITE, 0.5);
 					creditTextSpecial.alpha=1;
 					animPlaying=false;}});
 				}});

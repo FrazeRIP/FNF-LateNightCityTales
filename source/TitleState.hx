@@ -107,6 +107,15 @@ class TitleState extends MusicBeatState
 
 	var debugKeys:Array<FlxKey>;
 
+	var ZC:FlxSprite;
+	var thunder:FlxSprite;
+
+	var thunderSwitch:Bool = false;
+	var thunderBeat:Int=0;
+	var fristThunder=false;
+
+	var loadedWeek:WeekData;
+
 
 	override public function create():Void
 	{
@@ -118,7 +127,6 @@ class TitleState extends MusicBeatState
 		WeekData.loadTheFirstEnabledMod();
 		
 		//trace(path, FileSystem.exists(path));
-
 
 		
 		FlxG.game.focusLostFramerate = 60;
@@ -241,6 +249,9 @@ class TitleState extends MusicBeatState
 		FlxG.watch.addQuick('numberOfMenuItems', numberOfMenuItems);
 		FlxG.watch.addQuick('isTransing', isTransing);
 		FlxG.watch.addQuick('numberOfDifficulty',numberOfDifficulty);
+		FlxG.watch.addQuick('ThunderNum',thunderBeat);
+		FlxG.watch.addQuick("ThunderSwitch",thunderSwitch);
+		FlxG.watch.addQuick("weeks",WeekData.weeksList);
 
 		if(isTitle)
 			titleUpdate();
@@ -251,6 +262,11 @@ class TitleState extends MusicBeatState
 		if(isStoryMain)
 			storyMainUpdate();
 
+		// if (FlxG.keys.justPressed.ONE)
+		// 	{
+		// 		MusicBeatState.switchState(new StoryMenuState());
+		// 	}
+		
 		if (FlxG.keys.anyJustPressed(debugKeys))
 		{
 			MusicBeatState.switchState(new MasterEditorMenu());
@@ -366,21 +382,34 @@ class TitleState extends MusicBeatState
 		rain.setGraphicSize(Std.int(rain.width *1),Std.int(rain.height*1));
 		rain.animation.play("rainning");
 		rain.updateHitbox();
-		
+
+		ZC = new FlxSprite();
+		ZC.frames=Paths.getSparrowAtlas("titlestate/ZC","nightmare");
+		ZC.animation.addByPrefix("ZCplay","ZC",24,false);
+		ZC.setGraphicSize(Std.int(ZC.width *1.3),Std.int(ZC.height*1.3));
+		ZC.visible= false;
+		ZC.updateHitbox();
+
+		thunder= new FlxSprite();
+		thunder.loadGraphic(Paths.image('titlestate/Thunder','nightmare'));
+		thunder.setGraphicSize(Std.int(thunder.width * 1.3),Std.int(thunder.height*1.3));
+		thunder.alpha=0;
+		thunder.updateHitbox();
+
+		thunder.cameras=[camUI];
 		rain.cameras=[camUI];
 		downText.cameras=[camUI];
 		upText.cameras=[camUI];
+		ZC.cameras=[camUI];
 	}
 
 	function startIntro()
 	{
 		if (!initialized)
 		{
-			if(FlxG.sound.music == null) {
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				FlxG.sound.playMusic(Paths.music('FunkyMenu',"nightmare"), 0);
 
-				FlxG.sound.music.fadeIn(4, 0, 0);
-			}
+				FlxG.sound.music.fadeIn(4, 0, 0.7);
 		}
 
 		Conductor.changeBPM(102);
@@ -398,7 +427,9 @@ class TitleState extends MusicBeatState
 		// add(grass);
 		add(upText);
 		add(downText);
+		add(thunder);
 		add(rain);
+		add(ZC);
 
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
@@ -534,14 +565,14 @@ class TitleState extends MusicBeatState
 
 			}
 
-			if(controls.UI_LEFT_P||controls.UI_DOWN_P)
+			if((controls.UI_LEFT_P&&!isTransing)||(controls.UI_DOWN_P&&!isTransing))
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				numberOfMenuItems--;
 				if(numberOfMenuItems<0)				
 					numberOfMenuItems = 3;								
 			}
-			if(controls.UI_RIGHT_P||controls.UI_UP_P)
+			if((controls.UI_RIGHT_P&&!isTransing)||(controls.UI_UP_P&&!isTransing))
 			{				
 				numberOfMenuItems++;
 				FlxG.sound.play(Paths.sound('scrollMenu'));				
@@ -590,7 +621,8 @@ class TitleState extends MusicBeatState
 				FlxTween.tween(downText,{alpha:0},1,{onComplete:function(twn:FlxTween)
 					{
 						downText.animation.play('Normal');
-						FlxTween.tween(fog,{alpha:1},1);
+						WeekData.reloadWeekFiles(true);
+						loadedWeek=WeekData.weeksLoaded.get(WeekData.weeksList[1]);
 						FlxTween.tween(downText,{alpha:1},1,{onComplete:function(twn:FlxTween){isTransing=false;}});
 					}});
 			}
@@ -632,6 +664,7 @@ class TitleState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				FlxTween.cancelTweensOf(downText);
 				FlxTween.tween(fog,{alpha:0},1);
+				PlayState.isStoryMode = false;
 				// castle.animation.play('castleBlur');
 				// mountains.animation.play('mountainsBlur');
 
@@ -655,14 +688,14 @@ class TitleState extends MusicBeatState
 						
 					}});
 		}
-		if(controls.UI_LEFT_P||controls.UI_DOWN_P)
+		if((controls.UI_LEFT_P&&!isTransing)||(controls.UI_DOWN_P&&!isTransing))
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 				numberOfDifficulty--;
 				if(numberOfDifficulty<0)				
 					numberOfDifficulty = 2;								
 			}
-		if(controls.UI_RIGHT_P||controls.UI_UP_P)
+		if((controls.UI_RIGHT_P&&!isTransing)||(controls.UI_UP_P&&!isTransing))
 			{				
 				numberOfDifficulty++;
 				FlxG.sound.play(Paths.sound('scrollMenu'));				
@@ -685,15 +718,29 @@ class TitleState extends MusicBeatState
 
 		if(pressedEnter&&!isTransing)
 			{
-				FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
+				FlxG.sound.play(Paths.sound('storyConfirm'), 0.7);
+				// new FlxTimer().start(0.3, function(tmr:FlxTimer)
+				// {
+					ZC.visible = true;
+					ZC.animation.play("ZCplay");
+				// });
+				new FlxTimer().start(0.7, function(tmr:FlxTimer)
+				{
 				goToPlaystate(numberOfDifficulty);
+				});
 			}
 
 	}
 
 	function goToPlaystate(diff:Int):Void
-		{
-			PlayState.storyPlaylist = ['Bopeebo','Fresh','Dad Battle'];
+		{	
+			var songArray:Array<String> = [];
+			var leWeek:Array<Dynamic> = loadedWeek.songs;
+			for (i in 0...leWeek.length) {
+				songArray.push(leWeek[i][0]);
+			}
+
+			PlayState.storyPlaylist = songArray;
 			PlayState.isStoryMode = true;
 
 			CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
@@ -708,7 +755,7 @@ class TitleState extends MusicBeatState
 			PlayState.campaignMisses = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				LoadingState.loadAndSwitchState(new PlayState(), true);
+				FlxG.switchState(new LoadingState(new PlayState(),false,'nightmare'));
 				FreeplayState.destroyFreeplayVocals();
 			});
 		}
@@ -741,7 +788,6 @@ class TitleState extends MusicBeatState
 					textGroup.add(money);
 				}
 			}
-			#end
 		}
 
 	function addMoreText(text:String, ?offset:Float = 0)
@@ -849,6 +895,21 @@ class TitleState extends MusicBeatState
 					skipIntro();
 			}
 		}
+
+		if(thunderSwitch)
+			{
+				thunderBeat++;
+				if(thunderBeat >= 16)
+				{
+					FlxG.sound.play(Paths.sound('Thunder'), 0.7);
+					thunder.alpha=1;
+					new FlxTimer().start(0.2,function(tmr:FlxTimer)
+					{
+						thunder.alpha=0;
+						thunderBeat=0;
+					});
+				}
+			}
 	}
 
 	var skippedIntro:Bool = false;
@@ -865,6 +926,13 @@ class TitleState extends MusicBeatState
 
 			remove(credGroup);
 			skippedIntro = true;
+
+			if(!fristThunder)
+			{
+			thunderSwitch=true;
+			thunderBeat=10;
+			fristThunder=true;
+			}
 		}
 	}
 

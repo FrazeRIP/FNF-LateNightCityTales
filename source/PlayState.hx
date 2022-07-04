@@ -1313,7 +1313,7 @@ class PlayState extends MusicBeatState
 		_starEmitter = new FlxEmitter(FlxG.width /2, FlxG.height/2);
 		FlxPexParser.parse("shared:assets/shared/images/star.pex","shared:assets/shared/images/star.png",_starEmitter,1);
 
-		add(_starEmitter);
+		// add(_starEmitter);
 		
 		_starEmitter.cameras = [camHUD];
 		_starEmitter.start(false,0.01);
@@ -3387,7 +3387,7 @@ class PlayState extends MusicBeatState
 					if(FlxTransitionableState.skipNextTransIn) {
 						CustomFadeTransition.nextCamera = null;
 					}
-					MusicBeatState.switchState(new StoryMenuState());
+					MusicBeatState.switchState(new TitleState());
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice', false) && !ClientPrefs.getGameplaySetting('botplay', false)) {

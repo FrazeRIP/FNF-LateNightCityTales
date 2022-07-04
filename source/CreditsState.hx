@@ -55,6 +55,7 @@ class CreditsState extends MusicBeatState
 	var creditTextNormal:FlxSprite;
 	var creditTextSpecial:FlxSprite;
 	var creditFX:FlxSprite;
+	var tips:FlxSprite;
 
 	var movieDots:FlxSprite;
 	var blackEdge:FlxSprite;
@@ -104,6 +105,7 @@ class CreditsState extends MusicBeatState
             creditTextNormal = new FlxSprite();
             creditTextSpecial = new FlxSprite();
 			creditFX = new FlxSprite();
+			tips= new FlxSprite();
 
 			movieDots = new FlxSprite();
 			blackEdge = new FlxSprite();
@@ -151,6 +153,7 @@ class CreditsState extends MusicBeatState
 
 			creditTextNormal.cameras=[camTX];
 			creditTextSpecial.cameras=[camTX];
+			tips.cameras=[camTX];
 
 			creditCharacterA.cameras=[camCH];
 			creditCharacterB.cameras=[camCH];
@@ -187,6 +190,7 @@ class CreditsState extends MusicBeatState
 			LoadTextImage();
 
 			creditFrame.loadGraphic(Paths.image("credits/credit_frame",'nightmare'));
+			tips.loadGraphic(Paths.image("credits/credit_tips","nightmare"));
 
             add(creditBGA);
 			add(creditBGB);
@@ -198,6 +202,7 @@ class CreditsState extends MusicBeatState
 			add(creditFX);
             add(creditTextNormal);
             add(_effectCreditTextSpecial);
+			add(tips);
             // _effectShake.start();
 			add(movieDots);
 			add(blackEdge);
@@ -356,7 +361,7 @@ class CreditsState extends MusicBeatState
 					FlxTween.tween(creditTextNormal,{alpha:1},0.5,{onComplete:function(twn:FlxTween)
 					{
 					creditFX.visible=true;
-					camFX.flash(FlxColor.WHITE, 0.5);
+					camFX.flash(FlxColor.BLACK, 0.5);
 					creditTextSpecial.alpha=1;
 					animPlaying=false;}});
 				}});

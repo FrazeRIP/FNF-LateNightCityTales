@@ -223,14 +223,16 @@ class TitleState extends MusicBeatState
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				startIntro();
+				FlxG.watch.addQuick("FlxG.sound.music",FlxG.sound.music);
 			});
 		}
 		#end
+
 	}
 
 	var pressedCancel:Bool;
 	var pressedEnter:Bool;
-	var isTransing:Bool=false;
+	var isTransing:Bool=true;
 
 
 	override function update(elapsed:Float)
@@ -391,10 +393,8 @@ class TitleState extends MusicBeatState
 		ZC.updateHitbox();
 
 		thunder= new FlxSprite();
-		thunder.loadGraphic(Paths.image('titlestate/Thunder','nightmare'));
-		thunder.setGraphicSize(Std.int(thunder.width * 1.3),Std.int(thunder.height*1.3));
+		thunder.loadGraphic(Paths.image('titlestate/1_thunder_frame','nightmare'));
 		thunder.alpha=0;
-		thunder.updateHitbox();
 
 		thunder.cameras=[camUI];
 		rain.cameras=[camUI];
@@ -405,12 +405,8 @@ class TitleState extends MusicBeatState
 
 	function startIntro()
 	{
-		if (!initialized)
-		{
-				FlxG.sound.playMusic(Paths.music('FunkyMenu',"nightmare"), 0);
-
-				FlxG.sound.music.fadeIn(4, 0, 0.7);
-		}
+		if(FlxG.sound.music==null||FlxG.sound.music.length!=109565)
+		FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.7);
 
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
@@ -724,7 +720,7 @@ class TitleState extends MusicBeatState
 					ZC.visible = true;
 					ZC.animation.play("ZCplay");
 				// });
-				new FlxTimer().start(0.7, function(tmr:FlxTimer)
+				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
 				goToPlaystate(numberOfDifficulty);
 				});
@@ -755,7 +751,7 @@ class TitleState extends MusicBeatState
 			PlayState.campaignMisses = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				FlxG.switchState(new LoadingState(new PlayState(),false,'nightmare'));
+				FlxG.switchState(new LoadingState(new PlayState(),true,'nightmare'));
 				FreeplayState.destroyFreeplayVocals();
 			});
 		}
@@ -899,15 +895,11 @@ class TitleState extends MusicBeatState
 		if(thunderSwitch)
 			{
 				thunderBeat++;
-				if(thunderBeat >= 16)
+				if(thunderBeat >= 19)
 				{
 					FlxG.sound.play(Paths.sound('Thunder'), 0.7);
 					thunder.alpha=1;
-					new FlxTimer().start(0.2,function(tmr:FlxTimer)
-					{
-						thunder.alpha=0;
-						thunderBeat=0;
-					});
+					FlxTween.tween(thunder,{alpha:0},3.0,{ease:FlxEase.quartOut,onStart:function(twn:FlxTween){thunderBeat=0;}});
 				}
 			}
 	}
@@ -926,11 +918,14 @@ class TitleState extends MusicBeatState
 
 			remove(credGroup);
 			skippedIntro = true;
-
+			new FlxTimer().start(0.5,function(tmr:FlxTimer)
+			{
+				isTransing=false;
+			});
 			if(!fristThunder)
 			{
 			thunderSwitch=true;
-			thunderBeat=10;
+			thunderBeat=14;
 			fristThunder=true;
 			}
 		}

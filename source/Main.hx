@@ -66,7 +66,6 @@ class Main extends Sprite
 			gameWidth = Math.ceil(stageWidth / zoom);
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
-
 	
 		ClientPrefs.loadDefaultKeys();
 		// fuck you, persistent caching stays ON during sex

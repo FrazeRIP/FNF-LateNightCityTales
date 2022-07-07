@@ -210,7 +210,6 @@ class CreditsState extends MusicBeatState
 			FlxTween.tween(creditTextNormal,{alpha:1},0.5,{onComplete:function(twn:FlxTween)
 				{
 				creditFX.visible=true;
-				camFX.flash(FlxColor.BLACK, 0.5);
 				creditTextSpecial.alpha=1;
 				animPlaying=false;
 				_effectShake.start();}});

@@ -138,7 +138,14 @@ class TitleState extends MusicBeatState
 		FlxG.sound.volumeUpKeys = volumeUpKeys;
 		FlxG.keys.preventDefaultKeys = [TAB];
 
+		FlxG.save.bind('LateNightCityTales', 'DaytimefishStudio');
+
+		PlayerSettings.init();
 		
+		ClientPrefs.loadPrefs();
+		
+		Highscore.load();
+
 		camBG=new FlxCamera();
 		camUI=new FlxCamera();
 
@@ -147,7 +154,6 @@ class TitleState extends MusicBeatState
 		FlxG.cameras.reset(camBG);
 		FlxG.cameras.add(camUI);
 		
-
 		FlxCamera.defaultCameras = [camBG];
 
 		PlayerSettings.init();
@@ -161,7 +167,6 @@ class TitleState extends MusicBeatState
 		swagShader = new ColorSwap();
 		super.create();
 
-		FlxG.save.bind('LateNightCityTales', 'DaytimefishStudio');
 
 		if(!initialized && FlxG.save.data != null && FlxG.save.data.fullscreen)
 		{

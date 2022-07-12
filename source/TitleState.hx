@@ -235,6 +235,11 @@ class TitleState extends MusicBeatState
 			});
 		}
 		#end
+		
+		new FlxTimer().start(1,function(tmr:FlxTimer)
+			{
+				isTransing=false;
+			});
 
 	}
 
@@ -258,6 +263,7 @@ class TitleState extends MusicBeatState
 		FlxG.watch.addQuick('pressedEnter', pressedEnter);
 		FlxG.watch.addQuick('numberOfMenuItems', numberOfMenuItems);
 		FlxG.watch.addQuick('isTransing', isTransing);
+		FlxG.watch.addQuick('skippedIntro',skippedIntro);
 		FlxG.watch.addQuick('numberOfDifficulty',numberOfDifficulty);
 		FlxG.watch.addQuick('ThunderNum',thunderBeat);
 		FlxG.watch.addQuick("ThunderSwitch",thunderSwitch);
@@ -518,8 +524,10 @@ class TitleState extends MusicBeatState
 						});
 					}
 				}
-			
-			if (pressedEnter && !skippedIntro)
+
+
+
+			if (pressedEnter && !skippedIntro&&!isTransing)
 			{
 				skipIntro();
 			}
@@ -917,6 +925,7 @@ class TitleState extends MusicBeatState
 
 	var skippedIntro:Bool = false;
 	var increaseVolume:Bool = false;
+	// var 
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
@@ -929,10 +938,7 @@ class TitleState extends MusicBeatState
 
 			remove(credGroup);
 			skippedIntro = true;
-			new FlxTimer().start(0.5,function(tmr:FlxTimer)
-			{
-				isTransing=false;
-			});
+
 			if(!fristThunder)
 			{
 			thunderSwitch=true;

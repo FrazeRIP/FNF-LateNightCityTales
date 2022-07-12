@@ -198,6 +198,7 @@ class TitleState extends MusicBeatState
 			}
 			titleText.alpha=0;
 			logoBl.alpha=0;
+			numberOfDifficulty=1;
 
 			new FlxTimer().start(0.5, function(tmr:FlxTimer)
 				{	
@@ -235,7 +236,7 @@ class TitleState extends MusicBeatState
 			});
 		}
 		#end
-		
+
 		new FlxTimer().start(1,function(tmr:FlxTimer)
 			{
 				isTransing=false;
@@ -925,7 +926,6 @@ class TitleState extends MusicBeatState
 
 	var skippedIntro:Bool = false;
 	var increaseVolume:Bool = false;
-	// var 
 	function skipIntro():Void
 	{
 		if (!skippedIntro)
@@ -938,7 +938,6 @@ class TitleState extends MusicBeatState
 
 			remove(credGroup);
 			skippedIntro = true;
-
 			if(!fristThunder)
 			{
 			thunderSwitch=true;

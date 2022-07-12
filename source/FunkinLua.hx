@@ -285,6 +285,7 @@ class FunkinLua {
 			PlayState.instance.setGlow(tag,prasedColor,alpha,blur,strength);
 		});
 
+
 		Lua_helper.add_callback(lua, "clearUnusedMemory", function() {
 			Paths.clearUnusedMemory();
 			return true;

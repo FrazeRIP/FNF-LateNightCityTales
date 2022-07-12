@@ -188,7 +188,7 @@ class PlayState extends MusicBeatState
 	public var iconP2:HealthIcon;
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
-
+	
 	public var camNoteWhite:FlxCamera;
 	public var camNoteDark:FlxCamera;
 	public var camNoteNormal:FlxCamera;
@@ -309,8 +309,20 @@ class PlayState extends MusicBeatState
 	public var specialNoteGlowStrength:Float = 2;
 
 	//----------------------------------------------
-	var _starEmitter:FlxEmitter;
+	public var _starEmitter:FlxEmitter;
+	public var _cursedEmitter:FlxEmitter;
+	public var _heartEmitter:FlxEmitter;
+	public var _risePurpleEmitter:FlxEmitter;
+	public var _riseBlueEmitter:FlxEmitter;
+	public var _bubbleEmitter:FlxEmitter;
 
+	public var isPlayRisePurpleFX:Bool=false;
+	public var isPlayRiseBlueFX:Bool=false;
+	public var isPlayBubbleFX:Bool=false;
+
+		//---------------Hurt Fx
+
+	public var hurtAlpha:Float = 0;
 
 //-----------------------------------------
 
@@ -336,11 +348,6 @@ class PlayState extends MusicBeatState
 		//---------------------------------------------------------------
 		//blur
 		filters.push(new BlurFilter());
-		//------------------------------------------------------------
-		//particle
-		// _starEmitter = new FlxEmitter(FlxG.width / 2, FlxG.height / 2);
-		// FlxPexParser.parse("assets/shared/images/star.pex", "assets/shared/images/star.png", _starEmitter, 1);
-		// _starEmitter.start(false, 0.01);
 		
 		//------------------------------------------------------------
 
@@ -385,7 +392,6 @@ class PlayState extends MusicBeatState
 		camNoteWhite = new FlxCamera();
 		camNoteRed = new FlxCamera();
 
-
 		camOther = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
@@ -394,7 +400,6 @@ class PlayState extends MusicBeatState
 		camNoteDark.bgColor.alpha = 0;
 		camNoteWhite.bgColor.alpha = 0;
 		camNoteRed.bgColor.alpha = 0;
-
 //----------------------------------------------------------------
 
 		camGame.setFilters(filters);
@@ -407,6 +412,7 @@ class PlayState extends MusicBeatState
 //----------------------------------------------------------------
 
 		FlxG.cameras.reset(camGame);
+
 		FlxG.cameras.add(camHUD);
 		FlxG.cameras.add(camNoteNormal);
 		FlxG.cameras.add(camNoteDark);
@@ -1299,9 +1305,57 @@ class PlayState extends MusicBeatState
 			FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 		}
 
-		Conductor.safeZoneOffset = (ClientPrefs.safeFrames / 60) * 1000;
+
+		callOnLuas('onCreatePostEarly', []);
+		
+		_risePurpleEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+50 );
+		FlxPexParser.parse("shared:assets/shared/images/particles/risePurple/particle.pex","shared:assets/shared/images/particles/risePurple/texture.png",_risePurpleEmitter,1);
+		add(_risePurpleEmitter);
+		_risePurpleEmitter.cameras = [camGame];
+		_risePurpleEmitter.start(false,.04);
+
+		
+		_bubbleEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+225);
+		FlxPexParser.parse("shared:assets/shared/images/particles/bubbles/particle.pex","shared:assets/shared/images/particles/bubbles/texture.png",_bubbleEmitter,1);
+		add(_bubbleEmitter);
+		_bubbleEmitter.cameras = [camGame];
+		_bubbleEmitter.start(false,.04);
+
+		callOnLuas('onCreatePostBehindChar', []);
+		
+		_starEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 100, boyfriend.getMidpoint().y - 100);
+		FlxPexParser.parse("shared:assets/shared/images/particles/star/star.pex","shared:assets/shared/images/particles/star/star.png",_starEmitter,1);
+		add(_starEmitter);
+		_starEmitter.cameras = [camGame];
+
+		_heartEmitter = new FlxEmitter(dad.getMidpoint().x + 150-430, dad.getMidpoint().y - 100-80);
+		FlxPexParser.parse("shared:assets/shared/images/particles/heart/particle.pex","shared:assets/shared/images/particles/heart/texture.png",_heartEmitter,1);
+		add(_heartEmitter);
+		_heartEmitter.cameras = [camGame];
+
+		
+		callOnLuas('onCreatePostFrontCharacter', []);
+
+		_cursedEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 100, boyfriend.getMidpoint().y - 100);
+		FlxPexParser.parse("shared:assets/shared/images/particles/cursed/particle.pex","shared:assets/shared/images/particles/cursed/texture.png",_cursedEmitter,1);
+		add(_cursedEmitter);
+		_cursedEmitter.cameras = [camGame];
+		
+		_cursedEmitter.start(false,.1);
+		_cursedEmitter.emitting = false;
+
+		
+		_riseBlueEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+225);
+		FlxPexParser.parse("shared:assets/shared/images/particles/riseBlue/particle.pex","shared:assets/shared/images/particles/riseBlue/texture.png",_riseBlueEmitter,1);
+		add(_riseBlueEmitter);
+		_riseBlueEmitter.cameras = [camGame];
+		_riseBlueEmitter.start(false,.04);
+
+
+
 		callOnLuas('onCreatePost', []);
 		
+		Conductor.safeZoneOffset = (ClientPrefs.safeFrames / 60) * 1000;
 
 		
 		// FlxTween.tween(glowNormal,normalNoteGlowAlpha/2,60/SONG.bpm*4,{type:FlxTweenType.PINGPONG});
@@ -1318,29 +1372,10 @@ class PlayState extends MusicBeatState
 		noteFiltersRed.push(glowRed);
 
 
-		_starEmitter = new FlxEmitter(FlxG.width /2, FlxG.height/2);
-		FlxPexParser.parse("shared:assets/shared/images/star.pex","shared:assets/shared/images/star.png",_starEmitter,1);
-
-		// add(_starEmitter);
-		
-		_starEmitter.cameras = [camHUD];
-		_starEmitter.start(false,0.01);
-
 		super.create();
 
 		Paths.clearUnusedMemory();
 		CustomFadeTransition.nextCamera = camOther;
-
-
-				//-----------------------------------------------------------------------------------------------
-				//particle
-				// add(_emitter);
-				 
-				// _emitter.start(false, 0.1);
-		
-				//------------------------------------------------------
-
-
 	}
 
 	function set_songSpeed(value:Float):Float
@@ -2321,6 +2356,16 @@ class PlayState extends MusicBeatState
 		noteFiltersDark[0] = new GlowFilter(FlxColor.BLACK,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,1,false,false);
 		noteFiltersRed[0] = new GlowFilter(FlxColor.RED,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,1,false,false);
 
+
+		if(hurtAlpha>0){
+			_cursedEmitter.emitting = true;
+		}else{
+			_cursedEmitter.emitting = false;
+		}
+
+		_risePurpleEmitter.emitting = isPlayRisePurpleFX;
+		_riseBlueEmitter.emitting = isPlayRiseBlueFX;
+		_bubbleEmitter.emitting = isPlayBubbleFX;
 
 
 		/*if (FlxG.keys.justPressed.NINE)
@@ -4137,6 +4182,14 @@ class PlayState extends MusicBeatState
 			var leData:Int = Math.round(Math.abs(note.noteData));
 			var leType:String = note.noteType;
 			callOnLuas('goodNoteHit', [notes.members.indexOf(note), leData, leType, isSus]);
+
+			switch(note.noteType) {
+				case 'white': 
+					_starEmitter.start(true,0,20);
+				case 'red':
+					_heartEmitter.start(true,0,25);
+			}
+
 
 			if (!note.isSustainNote)
 			{

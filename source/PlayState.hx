@@ -1333,8 +1333,24 @@ class PlayState extends MusicBeatState
 		add(_heartEmitter);
 		_heartEmitter.cameras = [camGame];
 
+		if (daSong != 'aquaphobia'){
+			_riseBlueEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+225);
+			FlxPexParser.parse("shared:assets/shared/images/particles/riseBlue/particle.pex","shared:assets/shared/images/particles/riseBlue/texture.png",_riseBlueEmitter,1);
+			add(_riseBlueEmitter);
+			_riseBlueEmitter.cameras = [camGame];
+			_riseBlueEmitter.start(false,.04);
+		}
+
 		
 		callOnLuas('onCreatePostFrontCharacter', []);
+
+		if (daSong == 'aquaphobia'){
+			_riseBlueEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+225);
+			FlxPexParser.parse("shared:assets/shared/images/particles/riseBlue/particle.pex","shared:assets/shared/images/particles/riseBlue/texture.png",_riseBlueEmitter,1);
+			add(_riseBlueEmitter);
+			_riseBlueEmitter.cameras = [camGame];
+			_riseBlueEmitter.start(false,.04);
+		}
 
 		_cursedEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 100, boyfriend.getMidpoint().y - 100);
 		FlxPexParser.parse("shared:assets/shared/images/particles/cursed/particle.pex","shared:assets/shared/images/particles/cursed/texture.png",_cursedEmitter,1);
@@ -1345,11 +1361,6 @@ class PlayState extends MusicBeatState
 		_cursedEmitter.emitting = false;
 
 		
-		_riseBlueEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+225);
-		FlxPexParser.parse("shared:assets/shared/images/particles/riseBlue/particle.pex","shared:assets/shared/images/particles/riseBlue/texture.png",_riseBlueEmitter,1);
-		add(_riseBlueEmitter);
-		_riseBlueEmitter.cameras = [camGame];
-		_riseBlueEmitter.start(false,.04);
 
 
 

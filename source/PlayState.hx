@@ -195,8 +195,8 @@ class PlayState extends MusicBeatState
 	public var camNoteRed:FlxCamera;
 
 
-	public static var camDialogBack:FlxCamera;
-	public static var camDialog:FlxCamera;
+	public var camDialogBack:FlxCamera;
+	public var camDialog:FlxCamera;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
 
@@ -1595,7 +1595,10 @@ class PlayState extends MusicBeatState
 			}
 			psychDialogue.nextDialogueThing = startNextDialogue;
 			psychDialogue.skipDialogueThing = skipDialogue;
-			//psychDialogue.cameras = [camHUD];
+			psychDialogue.cameras = [camDialog];
+			// if(psychDialogue.bgFade!=null){
+			// 	psychDialogue.bgFade.camera = camHUD;
+			// }
 			add(psychDialogue);
 		} else {
 			FlxG.log.warn('Your dialogue file is badly formatted!');

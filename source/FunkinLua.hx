@@ -1923,8 +1923,8 @@ class FunkinLua {
 			case 'camnotedark' | 'dark': return PlayState.instance.camNoteDark;
 			case 'camnotewhite' | 'white': return PlayState.instance.camNoteWhite;
 			case 'camnotenormal' | 'normal': return PlayState.instance.camNoteNormal;
-			case 'camDialogBack': return PlayState.camDialogBack;
-			case 'camDialog': return PlayState.camDialog;
+			case 'camDialogBack' | 'Dback': return PlayState.instance.camDialogBack;
+			case 'camDialog'| 'Dfront': return PlayState.instance.camDialog;
 		}
 		return PlayState.instance.camGame;
 	}

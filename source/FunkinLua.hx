@@ -285,6 +285,12 @@ class FunkinLua {
 			PlayState.instance.setGlow(tag,prasedColor,alpha,blur,strength);
 		});
 
+		Lua_helper.add_callback(lua, "startNextDialog", function() {
+			if(PlayState.instance.psychDialogue!=null){
+				PlayState.instance.psychDialogue.startNextDialog();
+			}
+		});
+
 
 		Lua_helper.add_callback(lua, "clearUnusedMemory", function() {
 			Paths.clearUnusedMemory();
@@ -1914,9 +1920,11 @@ class FunkinLua {
 		switch(cam.toLowerCase()) {
 			case 'camhud' | 'hud': return PlayState.instance.camHUD;
 			case 'camother' | 'other': return PlayState.instance.camOther;
-			case 'camnotedark' | 'other': return PlayState.instance.camNoteDark;
-			case 'camnotewhite' | 'other': return PlayState.instance.camNoteWhite;
-			case 'camnotenormal' | 'other': return PlayState.instance.camNoteNormal;
+			case 'camnotedark' | 'dark': return PlayState.instance.camNoteDark;
+			case 'camnotewhite' | 'white': return PlayState.instance.camNoteWhite;
+			case 'camnotenormal' | 'normal': return PlayState.instance.camNoteNormal;
+			case 'camDialogBack': return PlayState.camDialogBack;
+			case 'camDialog': return PlayState.camDialog;
 		}
 		return PlayState.instance.camGame;
 	}

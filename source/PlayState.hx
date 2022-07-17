@@ -195,6 +195,8 @@ class PlayState extends MusicBeatState
 	public var camNoteRed:FlxCamera;
 
 
+	public static var camDialogBack:FlxCamera;
+	public static var camDialog:FlxCamera;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
 
@@ -324,6 +326,8 @@ class PlayState extends MusicBeatState
 
 	public var hurtAlpha:Float = 0;
 
+	public var isLockDialogue:Bool = false;
+
 //-----------------------------------------
 
 	public function setGlow(tag:String,color:FlxColor,alpha:Float,blur:Float,strength:Float){
@@ -391,11 +395,14 @@ class PlayState extends MusicBeatState
 		camNoteDark = new FlxCamera();
 		camNoteWhite = new FlxCamera();
 		camNoteRed = new FlxCamera();
-
+		camDialog = new FlxCamera();
 		camOther = new FlxCamera();
-		camHUD.bgColor.alpha = 0;
-		camOther.bgColor.alpha = 0;
+		camDialogBack = new FlxCamera();
 
+		camHUD.bgColor.alpha = 0;
+		camDialog.bgColor.alpha = 0;
+		camDialogBack.bgColor.alpha = 0;
+		camOther.bgColor.alpha = 0;
 		camNoteNormal.bgColor.alpha = 0;
 		camNoteDark.bgColor.alpha = 0;
 		camNoteWhite.bgColor.alpha = 0;
@@ -418,7 +425,8 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.add(camNoteDark);
 		FlxG.cameras.add(camNoteWhite);
 		FlxG.cameras.add(camNoteRed);
-
+		FlxG.cameras.add(camDialogBack);
+		FlxG.cameras.add(camDialog);
 		FlxG.cameras.add(camOther);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 
@@ -1339,9 +1347,10 @@ class PlayState extends MusicBeatState
 			add(_riseBlueEmitter);
 			_riseBlueEmitter.cameras = [camGame];
 			_riseBlueEmitter.start(false,.04);
+
 		}
 
-		
+
 		callOnLuas('onCreatePostFrontCharacter', []);
 
 		if (daSong == 'aquaphobia'){
@@ -1356,7 +1365,6 @@ class PlayState extends MusicBeatState
 		FlxPexParser.parse("shared:assets/shared/images/particles/cursed/particle.pex","shared:assets/shared/images/particles/cursed/texture.png",_cursedEmitter,1);
 		add(_cursedEmitter);
 		_cursedEmitter.cameras = [camGame];
-		
 		_cursedEmitter.start(false,.1);
 		_cursedEmitter.emitting = false;
 
@@ -1587,7 +1595,7 @@ class PlayState extends MusicBeatState
 			}
 			psychDialogue.nextDialogueThing = startNextDialogue;
 			psychDialogue.skipDialogueThing = skipDialogue;
-			psychDialogue.cameras = [camHUD];
+			//psychDialogue.cameras = [camHUD];
 			add(psychDialogue);
 		} else {
 			FlxG.log.warn('Your dialogue file is badly formatted!');
@@ -2839,8 +2847,6 @@ class PlayState extends MusicBeatState
 		setOnLuas('cameraY', camFollowPos.y);
 		setOnLuas('botPlay', cpuControlled);
 		callOnLuas('onUpdatePost', [elapsed]);
-
-
 
 
 
@@ -4200,10 +4206,11 @@ class PlayState extends MusicBeatState
 				case 'red':
 					_heartEmitter.start(true,0,25);
 			}
-
+			
 
 			if (!note.isSustainNote)
 			{
+
 				note.kill();
 				notes.remove(note, true);
 				note.destroy();
@@ -4498,6 +4505,22 @@ class PlayState extends MusicBeatState
 			FlxG.camera.zoom += 0.015;
 			camHUD.zoom += 0.03;
 		}
+		
+
+		var daSong:String = Paths.formatToSongPath(curSong);
+		if(daSong=="aquaphobia"){
+			if(curBeat == 280){
+				iconP1.changeIcon('bf-drain');
+				iconP2.changeIcon('eyes');
+			}
+
+			if(curBeat ==376){
+				iconP1.changeIcon('bf');
+				iconP2.changeIcon('LimuladyAngry');
+			}
+		}
+
+
 
 		iconP1.scale.set(1.2, 1.2);
 		iconP2.scale.set(1.2, 1.2);

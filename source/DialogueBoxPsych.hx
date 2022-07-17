@@ -9,6 +9,8 @@ import flixel.input.FlxKeyManager;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import flixel.FlxSubState;
 import haxe.Json;
 import haxe.format.JsonParser;
@@ -19,6 +21,7 @@ import sys.io.File;
 import openfl.utils.Assets;
 
 using StringTools;
+
 
 typedef DialogueCharacterFile = {
 	var image:String;
@@ -188,15 +191,17 @@ class DialogueBoxPsych extends FlxSpriteGroup
 	{
 		super();
 
+
 		if(song != null && song != '') {
 			FlxG.sound.playMusic(Paths.music(song), 0);
 			FlxG.sound.music.fadeIn(2, 0, 1);
 		}
 		
-		bgFade = new FlxSprite(-500, -500).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.WHITE);
+		bgFade = new FlxSprite(-500, -500).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 		bgFade.scrollFactor.set();
 		bgFade.visible = true;
 		bgFade.alpha = 0;
+		bgFade.camera = PlayState.camDialogBack;
 		add(bgFade);
 
 		this.dialogueList = dialogueList;
@@ -218,8 +223,8 @@ class DialogueBoxPsych extends FlxSpriteGroup
 		box.visible = false;
 		box.setGraphicSize(Std.int(box.width * 0.9));
 		box.updateHitbox();
+		box.camera = PlayState.camDialog;
 		add(box);
-
 		startNextDialog();
 	}
 
@@ -253,6 +258,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 			char.updateHitbox();
 			char.scrollFactor.set();
 			char.alpha = 0.00001;
+			char.camera = PlayState.camDialog;
 			add(char);
 
 			var saveY:Bool = false;
@@ -289,6 +295,10 @@ class DialogueBoxPsych extends FlxSpriteGroup
 			return;
 		}
 
+		if(PlayState.instance.isLockDialogue){
+			return;
+		}
+
 		if(!dialogueEnded) {
 			bgFade.alpha += 0.5 * elapsed;
 			if(bgFade.alpha > 0.5) bgFade.alpha = 0.5;
@@ -302,6 +312,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 						daText.destroy();
 					}
 					daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, 0.0, 0.7);
+					daText.camera == PlayState.camDialog;
 					add(daText);
 					
 					if(skipDialogueThing != null) {
@@ -327,6 +338,8 @@ class DialogueBoxPsych extends FlxSpriteGroup
 					daText = null;
 					updateBoxOffsets(box);
 					FlxG.sound.music.fadeOut(1, 0);
+					FlxTween.tween(PlayState.camDialog,{alpha:0},0.5,{ease: FlxEase.cubeOut});
+					FlxTween.tween(PlayState.camDialogBack,{alpha:0},0.5,{ease: FlxEase.cubeOut});
 				} else {
 					startNextDialog();
 				}
@@ -424,6 +437,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 					leChar.alpha -= elapsed * 10;
 				}
 			}
+			
 
 			if(box == null && bgFade == null) {
 				for (i in 0...arrayCharacters.length) {
@@ -444,7 +458,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 
 	var lastCharacter:Int = -1;
 	var lastBoxType:String = '';
-	function startNextDialog():Void
+	public function startNextDialog():Void
 	{
 		var curDialogue:DialogueLine = null;
 		do {
@@ -496,6 +510,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 		textToType = curDialogue.text;
 		Alphabet.setDialogueSound(curDialogue.sound);
 		daText = new Alphabet(DEFAULT_TEXT_X, DEFAULT_TEXT_Y, textToType, false, true, curDialogue.speed, 0.7);
+		daText.camera = PlayState.camDialog;
 		add(daText);
 
 		var char:DialogueCharacter = arrayCharacters[character];

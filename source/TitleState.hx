@@ -731,6 +731,7 @@ class TitleState extends MusicBeatState
 
 		if(pressedEnter&&!isTransing)
 			{
+				isTransing=true;
 				FlxG.sound.play(Paths.sound('storyConfirm'), 0.7);
 				// new FlxTimer().start(0.3, function(tmr:FlxTimer)
 				// {
@@ -768,9 +769,11 @@ class TitleState extends MusicBeatState
 			PlayState.campaignMisses = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
+				isTransing=false;
 				FlxG.switchState(new LoadingState(new PlayState(),true,'nightmare'));
 				FreeplayState.destroyFreeplayVocals();
 			});
+			
 		}
 
 

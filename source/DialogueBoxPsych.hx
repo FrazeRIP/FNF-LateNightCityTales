@@ -74,6 +74,7 @@ class DialogueCharacter extends FlxSprite
 	public var curCharacter:String = 'bf';
 	public var skiptimer = 0;
 	public var skipping = 0;
+
 	public function new(x:Float = 0, y:Float = 0, character:String = null)
 	{
 		super(x, y);
@@ -170,6 +171,7 @@ class DialogueBoxPsych extends FlxSpriteGroup
 	var dialogue:Alphabet;
 	var dialogueList:DialogueFile = null;
 
+	public var isFinished:Bool = false;
 	public var finishThing:Void->Void;
 	public var nextDialogueThing:Void->Void = null;
 	public var skipDialogueThing:Void->Void = null;
@@ -319,6 +321,10 @@ class DialogueBoxPsych extends FlxSpriteGroup
 						skipDialogueThing();
 					}
 				} else if(currentText >= dialogueList.dialogue.length) {
+					if(!isFinished){
+						isFinished = true;
+						PlayState.instance.callOnLuas('onDialogueFinished', []);
+					}
 					dialogueEnded = true;
 					for (i in 0...textBoxTypes.length) {
 						var checkArray:Array<String> = ['', 'center-'];

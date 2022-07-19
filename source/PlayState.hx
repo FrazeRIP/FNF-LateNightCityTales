@@ -328,6 +328,9 @@ class PlayState extends MusicBeatState
 
 	public var isLockDialogue:Bool = false;
 
+	public var isFirstDialogue:Bool = false;
+	
+
 //-----------------------------------------
 
 	public function setGlow(tag:String,color:FlxColor,alpha:Float,blur:Float,strength:Float){
@@ -410,7 +413,6 @@ class PlayState extends MusicBeatState
 //----------------------------------------------------------------
 
 		camGame.setFilters(filters);
-
 		camNoteNormal.setFilters(noteFiltersNormal);
 		camNoteDark.setFilters(noteFiltersDark);
 		camNoteWhite.setFilters(noteFiltersWhite);
@@ -1568,7 +1570,7 @@ class PlayState extends MusicBeatState
 			startCountdown();
 	}
 
-	var dialogueCount:Int = 0;
+	public var dialogueCount:Int = 0;
 	public var psychDialogue:DialogueBoxPsych;
 	//You don't have to add a song, just saying. You can just do "startDialogue(dialogueJson);" and it should work
 	public function startDialogue(dialogueFile:DialogueFile, ?song:String = null):Void
@@ -1913,11 +1915,19 @@ class PlayState extends MusicBeatState
 
 	function startNextDialogue() {
 		dialogueCount++;
-		callOnLuas('onNextDialogue', [dialogueCount]);
+		if(isFirstDialogue){
+			callOnLuas('onNextDialogue', [dialogueCount]);
+		}else{
+			callOnLuas('onNextDialogueAfter', [dialogueCount]);
+		}
 	}
 
 	function skipDialogue() {
-		callOnLuas('onSkipDialogue', [dialogueCount]);
+		if(isFirstDialogue){
+		callOnLuas('onSkipDialogue', [dialogueCount]);}
+		else{
+			callOnLuas('onSkipDialogueAfter', [dialogueCount]);
+		}
 	}
 
 	var previousFrameTime:Int = 0;

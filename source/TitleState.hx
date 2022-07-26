@@ -279,10 +279,10 @@ class TitleState extends MusicBeatState
 		if(isStoryMain)
 			storyMainUpdate();
 
-		// if (FlxG.keys.justPressed.ONE)
-		// 	{
-		// 		MusicBeatState.switchState(new StoryMenuState());
-		// 	}
+		if (FlxG.keys.justPressed.ONE)
+			{
+				MusicBeatState.switchState(new FinState());
+			}
 		
 		if (FlxG.keys.anyJustPressed(debugKeys))
 		{
@@ -420,7 +420,7 @@ class TitleState extends MusicBeatState
 
 	function startIntro()
 	{
-		if(FlxG.sound.music==null||FlxG.sound.music.length!=109565)
+		if(FlxG.sound.music==null||FlxG.sound.music.length!=109565||FlxG.sound.music.volume==0)
 		FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.7);
 
 		Conductor.changeBPM(138);

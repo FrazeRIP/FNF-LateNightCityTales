@@ -279,10 +279,10 @@ class TitleState extends MusicBeatState
 		if(isStoryMain)
 			storyMainUpdate();
 
-		if (FlxG.keys.justPressed.ONE)
-			{
-				MusicBeatState.switchState(new FinState());
-			}
+		//if (FlxG.keys.justPressed.ONE)
+		//	{
+		//		MusicBeatState.switchState(new FinState());
+		//	}
 		
 		if (FlxG.keys.anyJustPressed(debugKeys))
 		{

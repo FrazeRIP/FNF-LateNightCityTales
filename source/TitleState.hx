@@ -66,7 +66,7 @@ class TitleState extends MusicBeatState
 
 	var curWacky:Array<String> = [];
 
-	var wackyImage:FlxSprite;
+	// var wackyImage:FlxSprite;
 
 	#if TITLE_SCREEN_EASTER_EGG
 	var easterEggKeys:Array<String> = [
@@ -279,10 +279,10 @@ class TitleState extends MusicBeatState
 		if(isStoryMain)
 			storyMainUpdate();
 
-		if (FlxG.keys.justPressed.ONE)
-			{
-				MusicBeatState.switchState(new FinState());
-			}
+		// if (FlxG.keys.justPressed.ONE)
+		// 	{
+		// 		MusicBeatState.switchState(new FinState());
+		// 	}
 		
 		if (FlxG.keys.anyJustPressed(debugKeys))
 		{

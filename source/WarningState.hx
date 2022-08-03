@@ -10,6 +10,7 @@ import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
@@ -33,6 +34,24 @@ class WarningState extends MusicBeatState
     var youCanPreesed:Bool=false;
     override function create()
     {
+        FlxG.save.bind('LateNightCityTales', 'DaytimefishStudio');
+
+        PlayerSettings.init();
+		
+		ClientPrefs.loadPrefs();
+		
+		Highscore.load();
+        
+        FlxG.mouse.visible = false;
+
+        if(FlxG.save.data.flashing == null && !FlashingState.leftState) 
+        {
+            FlxTransitionableState.skipNextTransIn = true;
+			FlxTransitionableState.skipNextTransOut = true;
+            FlxG.save.data.flashing =true;
+            FlashingState.leftState=true;
+        }
+
         warningInfo=new FlxSprite();
         warningInfo.loadGraphic(Paths.image("Disclaimer","nightmare"));
         warningInfo.alpha = 0;

@@ -111,6 +111,18 @@ class Note extends FlxSprite
 						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
+				case "black":
+					noteSplashTexture="BLACKnoteSplashes";
+					colorSwap.hue = 1;
+					colorSwap.saturation = 1;
+					colorSwap.brightness = 1;
+					hitCausesMiss = true;
+				case "white":
+					noteSplashTexture="white_flash";
+					colorSwap.hue = 0;
+					colorSwap.saturation = 0;
+					colorSwap.brightness = 0;
+					hitCausesMiss = true;
 				case 'No Animation':
 					noAnimation = true;
 				case 'GF Sing':

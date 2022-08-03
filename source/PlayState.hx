@@ -2881,38 +2881,38 @@ class PlayState extends MusicBeatState
 
 	public var isDead:Bool = false; //Don't mess with this on Lua!!!
 	function doDeathCheck(?skipHealthCheck:Bool = false) {
-		if (((skipHealthCheck && instakillOnMiss) || health <= 0) && !practiceMode && !isDead)
-		{
-			var ret:Dynamic = callOnLuas('onGameOver', []);
-			if(ret != FunkinLua.Function_Stop) {
-				boyfriend.stunned = true;
-				deathCounter++;
+		// if (((skipHealthCheck && instakillOnMiss) || health <= 0) && !practiceMode && !isDead)
+		// {
+		// 	var ret:Dynamic = callOnLuas('onGameOver', []);
+		// 	if(ret != FunkinLua.Function_Stop) {
+		// 		boyfriend.stunned = true;
+		// 		deathCounter++;
 
-				paused = true;
+		// 		paused = true;
 
-				vocals.stop();
-				FlxG.sound.music.stop();
+		// 		vocals.stop();
+		// 		FlxG.sound.music.stop();
 
-				persistentUpdate = false;
-				persistentDraw = false;
-				for (tween in modchartTweens) {
-					tween.active = true;
-				}
-				for (timer in modchartTimers) {
-					timer.active = true;
-				}
-				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
+		// 		persistentUpdate = false;
+		// 		persistentDraw = false;
+		// 		for (tween in modchartTweens) {
+		// 			tween.active = true;
+		// 		}
+		// 		for (timer in modchartTimers) {
+		// 			timer.active = true;
+		// 		}
+		// 		openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
 
-				// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+		// 		// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 				
-				#if desktop
-				// Game Over doesn't get his own variable because it's only used here
-				DiscordClient.changePresence("Game Over - " + detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
-				#end
-				isDead = true;
-				return true;
-			}
-		}
+		// 		#if desktop
+		// 		// Game Over doesn't get his own variable because it's only used here
+		// 		DiscordClient.changePresence("Game Over - " + detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
+		// 		#end
+		// 		isDead = true;
+		// 		return true;
+		// 	}
+		// }
 		return false;
 	}
 
@@ -3471,7 +3471,7 @@ class PlayState extends MusicBeatState
 					if(FlxTransitionableState.skipNextTransIn) {
 						CustomFadeTransition.nextCamera = null;
 					}
-					MusicBeatState.switchState(new TitleState());
+					MusicBeatState.switchState(new FinState());
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice', false) && !ClientPrefs.getGameplaySetting('botplay', false)) {
@@ -4215,7 +4215,10 @@ class PlayState extends MusicBeatState
 
 			switch(note.noteType) {
 				case 'white': 
+					{
 					_starEmitter.start(true,0,20);
+					spawnNoteSplashOnNote(note);
+					}
 				case 'red':
 					_heartEmitter.start(true,0,25);
 			}
@@ -4235,7 +4238,13 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.noteSplashes && note != null) {
 			var strum:StrumNote = playerStrums.members[note.noteData];
 			if(strum != null) {
+				// switch(note.noteType)
+				// {
+				// case 'white': 
+				// spawnNoteSplash(strum.x+60, strum.y+35, note.noteData, note);
+				// default:
 				spawnNoteSplash(strum.x, strum.y, note.noteData, note);
+				// }
 			}
 		}
 	}

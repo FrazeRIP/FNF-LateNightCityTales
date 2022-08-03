@@ -42,7 +42,7 @@ using StringTools;
 
 class CreditsState extends MusicBeatState
 {
-	var creditsName:Array<String> = ["fraze","other","var","rt","red","nag","lunar","danke","bonk"];
+	var creditsName:Array<String> = ["fraze","other","var","rt","red","nag","lunar","kurono","danke","bonk"];
 	var creditCharacters:Array<FlxSprite>=[];
 	var creditBGs:Array<FlxSprite>=[];
 	var creditCharacterA:FlxSprite;

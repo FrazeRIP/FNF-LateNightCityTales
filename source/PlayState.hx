@@ -1511,18 +1511,18 @@ class PlayState extends MusicBeatState
 
 
 		super.create();
-		
-			trace("Shader activated baby");
-			//addShaderToCamera('camHUD', new VCRDistortionEffect(0.3,false,true,true));
-			addShaderToCamera('camgame',new ChromaticAberrationEffect(0.0));
-			var abShader = new ChromaticAberrationShader();
-			abShader.rOffset.value = [caAmount];
-			abShader.gOffset.value = [0.0];
-			abShader.bOffset.value = [-caAmount];
-			newCamEffectsGame[0] = new ShaderFilter(abShader);
-			addShaderToCamera('camgame', new VCRDistortionEffect(0.05,true,true,true));
-			addShaderToCamera('camgame', new GlitchHardcoreEffect(glitchAmount));
-			camGame.setFilters(newCamEffectsGame);
+			if(daSong == "lonely-sapphire"){
+				trace("Shader activated baby");
+				//addShaderToCamera('camHUD', new VCRDistortionEffect(0.3,false,true,true));
+				addShaderToCamera('camgame',new ChromaticAberrationEffect(0.0));
+				var abShader = new ChromaticAberrationShader();
+				abShader.rOffset.value = [caAmount];
+				abShader.gOffset.value = [0.0];
+				abShader.bOffset.value = [-caAmount];
+				newCamEffectsGame[0] = new ShaderFilter(abShader);
+				addShaderToCamera('camgame', new VCRDistortionEffect(0.05,true,true,true));
+				camGame.setFilters(newCamEffectsGame);
+			}
 
 
 		Paths.clearUnusedMemory();

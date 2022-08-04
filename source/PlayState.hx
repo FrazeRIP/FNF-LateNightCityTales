@@ -15,6 +15,8 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.FlxSubState;
+import Shaders;
+import openfl.filters.ShaderFilter;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
@@ -43,6 +45,7 @@ import haxe.Json;
 import lime.utils.Assets;
 import openfl.Lib;
 import openfl.display.BlendMode;
+import openfl.display.Shader;
 import openfl.display.StageQuality;
 import openfl.filters.BitmapFilter;
 import openfl.filters.BlurFilter;
@@ -329,7 +332,112 @@ class PlayState extends MusicBeatState
 	public var isLockDialogue:Bool = false;
 
 	public var isFirstDialogue:Bool = false;
+
 	
+	//Shaders----
+	public var shaderUpdates:Array<Float->Void> = [];
+	public var shaderGlitchUpdates:Array<Float->Void> = [];
+	public var camGameShaders:Array<ShaderEffect> = [];
+	public var camHUDShaders:Array<ShaderEffect> = [];
+	public var camOtherShaders:Array<ShaderEffect> = [];
+
+
+	public var newCamEffectsHUD:Array<BitmapFilter>=[];
+	public var newCamEffectsGame:Array<BitmapFilter>=[];
+	public var newCamEffectsOther:Array<BitmapFilter>=[];
+
+	public var caAmountFactor:Float = 1.0;
+	public var caAmountMax:Float = 1.0;
+	public var caAmount:Float = 0.01;
+
+	public var glitchAmount:Float = 4;
+
+	//
+	public function addShaderToCamera(cam:String,effect:ShaderEffect){//STOLE FROM ANDROMEDA AND PSYCH ENGINE 0.5.1 WITH SHADERS
+      
+        switch(cam.toLowerCase()) {
+            case 'camhud' | 'hud':
+                    camHUDShaders.push(effect);
+					newCamEffectsHUD.push(new ShaderFilter(effect.shader));
+                    
+                    camHUD.setFilters(newCamEffectsHUD);
+            case 'camother' | 'other':
+                    camOtherShaders.push(effect);
+                    newCamEffectsOther.push(new ShaderFilter(effect.shader));
+                    
+                    camOther.setFilters(newCamEffectsOther);
+            case 'camgame' | 'game':
+                    camGameShaders.push(effect);
+					newCamEffectsGame.push(new ShaderFilter(effect.shader));
+                    
+                    camGame.setFilters(newCamEffectsGame);
+            default:
+                if(modchartSprites.exists(cam)) {
+                    Reflect.setProperty(modchartSprites.get(cam),"shader",effect.shader);
+                } else if(modchartTexts.exists(cam)) {
+                    Reflect.setProperty(modchartTexts.get(cam),"shader",effect.shader);
+                } else {
+                    var OBJ = Reflect.getProperty(PlayState.instance,cam);
+                    Reflect.setProperty(OBJ,"shader", effect.shader);
+                }
+                
+        }
+		
+      
+      
+      
+  	}
+
+  	public function removeShaderFromCamera(cam:String,effect:ShaderEffect){
+        switch(cam.toLowerCase()) {
+            case 'camhud' | 'hud': 
+    	camHUDShaders.remove(effect);
+    	var newCamEffects:Array<BitmapFilter>=[];
+    	for(i in camHUDShaders){
+      	newCamEffects.push(new ShaderFilter(i.shader));
+    		}
+   			 camHUD.setFilters(newCamEffects);
+            case 'camother' | 'other': 
+                    camOtherShaders.remove(effect);
+                    var newCamEffects:Array<BitmapFilter>=[];
+                    for(i in camOtherShaders){
+                      newCamEffects.push(new ShaderFilter(i.shader));
+                    }
+                    camOther.setFilters(newCamEffects);
+            default: 
+                camGameShaders.remove(effect);
+                var newCamEffects:Array<BitmapFilter>=[];
+                for(i in camGameShaders){
+                  newCamEffects.push(new ShaderFilter(i.shader));
+                }
+                camGame.setFilters(newCamEffects);
+        }
+        
+      
+  }
+    
+    
+    
+  public function clearShaderFromCamera(cam:String){
+      
+      
+        switch(cam.toLowerCase()) {
+            case 'camhud' | 'hud': 
+                camHUDShaders = [];
+                var newCamEffects:Array<BitmapFilter>=[];
+                camHUD.setFilters(newCamEffects);
+            case 'camother' | 'other': 
+                camOtherShaders = [];
+                var newCamEffects:Array<BitmapFilter>=[];
+                camOther.setFilters(newCamEffects);
+            default: 
+                camGameShaders = [];
+                var newCamEffects:Array<BitmapFilter>=[];
+                camGame.setFilters(newCamEffects);
+        }
+        
+      
+  }
 
 //-----------------------------------------
 
@@ -1317,12 +1425,14 @@ class PlayState extends MusicBeatState
 
 
 		callOnLuas('onCreatePostEarly', []);
-		
-		_risePurpleEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+50 );
-		FlxPexParser.parse("shared:assets/shared/images/particles/risePurple/particle.pex","shared:assets/shared/images/particles/risePurple/texture.png",_risePurpleEmitter,1);
-		add(_risePurpleEmitter);
-		_risePurpleEmitter.cameras = [camGame];
-		_risePurpleEmitter.start(false,.04);
+		if(daSong != "lonely-sapphire"){
+
+			_risePurpleEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+50 );
+			FlxPexParser.parse("shared:assets/shared/images/particles/risePurple/particle.pex","shared:assets/shared/images/particles/risePurple/texture.png",_risePurpleEmitter,1);
+			add(_risePurpleEmitter);
+			_risePurpleEmitter.cameras = [camGame];
+			_risePurpleEmitter.start(false,.04);
+		}
 
 		
 		_bubbleEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 1300, boyfriend.getMidpoint().y+225);
@@ -1361,6 +1471,13 @@ class PlayState extends MusicBeatState
 			add(_riseBlueEmitter);
 			_riseBlueEmitter.cameras = [camGame];
 			_riseBlueEmitter.start(false,.04);
+		}else if(daSong == "lonely-sapphire"){
+
+			_risePurpleEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 450, boyfriend.getMidpoint().y+50 );
+			FlxPexParser.parse("shared:assets/shared/images/particles/risePurple/particle.pex","shared:assets/shared/images/particles/risePurple/texture.png",_risePurpleEmitter,1);
+			add(_risePurpleEmitter);
+			_risePurpleEmitter.cameras = [camGame];
+			_risePurpleEmitter.start(false,.04);
 		}
 
 		_cursedEmitter = new FlxEmitter(boyfriend.getMidpoint().x - 100, boyfriend.getMidpoint().y - 100);
@@ -1394,6 +1511,19 @@ class PlayState extends MusicBeatState
 
 
 		super.create();
+		
+			trace("Shader activated baby");
+			//addShaderToCamera('camHUD', new VCRDistortionEffect(0.3,false,true,true));
+			addShaderToCamera('camgame',new ChromaticAberrationEffect(0.0));
+			var abShader = new ChromaticAberrationShader();
+			abShader.rOffset.value = [caAmount];
+			abShader.gOffset.value = [0.0];
+			abShader.bOffset.value = [-caAmount];
+			newCamEffectsGame[0] = new ShaderFilter(abShader);
+			addShaderToCamera('camgame', new VCRDistortionEffect(0.05,true,true,true));
+			addShaderToCamera('camgame', new GlitchHardcoreEffect(glitchAmount));
+			camGame.setFilters(newCamEffectsGame);
+
 
 		Paths.clearUnusedMemory();
 		CustomFadeTransition.nextCamera = camOther;
@@ -2381,12 +2511,22 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		if(caAmount>0){
+			caAmount-= (elapsed*caAmountFactor);
+		}
 		filters[0] = new BlurFilter(BlurX,BlurY,openfl.filters.BitmapFilterQuality.LOW);
 
 		noteFiltersNormal[0] = new GlowFilter(normalNoteGlowColor,normalNoteGlowAlpha,normalNoteGlowBlur,normalNoteGlowBlur,normalNoteGlowStrength,1,false,false);
 		noteFiltersWhite[0] = new GlowFilter(FlxColor.WHITE,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,1,false,false);
 		noteFiltersDark[0] = new GlowFilter(FlxColor.BLACK,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,1,false,false);
 		noteFiltersRed[0] = new GlowFilter(FlxColor.RED,specialNoteGlowAlpha,specialNoteGlowBlur,specialNoteGlowBlur,specialNoteGlowStrength,1,false,false);
+
+		var abShader = new ChromaticAberrationShader();
+		abShader.rOffset.value = [caAmount/100];
+		abShader.gOffset.value = [0.0];
+		abShader.bOffset.value = [-caAmount/100];
+		newCamEffectsGame[0] = new ShaderFilter(abShader);
+		
 
 
 		if(hurtAlpha>0){
@@ -2399,11 +2539,6 @@ class PlayState extends MusicBeatState
 		_riseBlueEmitter.emitting = isPlayRiseBlueFX;
 		_bubbleEmitter.emitting = isPlayBubbleFX;
 
-
-		/*if (FlxG.keys.justPressed.NINE)
-		{
-			iconP1.swapOldIcon();
-		}*/
 
 		callOnLuas('onUpdate', [elapsed]);
 
@@ -2861,6 +2996,13 @@ class PlayState extends MusicBeatState
 		setOnLuas('botPlay', cpuControlled);
 		callOnLuas('onUpdatePost', [elapsed]);
 
+		for(i in shaderUpdates){
+			i(elapsed);
+		}
+
+		for(i in shaderGlitchUpdates){
+			i(glitchAmount);
+		}
 
 
 
@@ -4542,6 +4684,11 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if(daSong=="lonely-sapphire"){
+				caAmount=caAmountMax;
+		}
+
+		
 
 
 		iconP1.scale.set(1.2, 1.2);

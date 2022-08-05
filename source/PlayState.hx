@@ -4367,11 +4367,8 @@ class PlayState extends MusicBeatState
 			callOnLuas('goodNoteHit', [notes.members.indexOf(note), leData, leType, isSus]);
 
 			switch(note.noteType) {
-				case 'white': 
-					{
-					_starEmitter.start(true,0,20);
-					spawnNoteSplashOnNote(note);
-					}
+				case 'white':
+ 					_starEmitter.start(true,0,20);					
 				case 'red':
 					_heartEmitter.start(true,0,25);
 			}

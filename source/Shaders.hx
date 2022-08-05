@@ -1400,3 +1400,70 @@ class GlitchHardcoreShader extends FlxShader{
        super();
     }
 }
+
+class WaveEffect extends Effect{
+	
+    public var shader:WaveShader = new WaveShader();
+
+	public function new(speed:Float=1,frequency:Float=7,amplitude:Float =0.2){
+		shader.uSpeed.value = [speed];
+		shader.uFrequency.value = [frequency];
+		shader.uWaveAmplitude.value = [amplitude];
+		shader.uTime.value = [0];
+		PlayState.instance.shaderUpdates.push(update);
+		PlayState.instance.shaderWaveUpdates.push(updateWave);
+	}
+
+	public function update(elapsed:Float){
+	  shader.uTime.value[0] += elapsed;
+	}
+
+	public function updateWave(amplitude:Float){
+		shader.uWaveAmplitude.value = [amplitude];
+	}
+}
+
+class WaveShader extends FlxShader{
+	@:glFragmentSource('
+		#pragma header
+		//uniform float tx, ty; // x,y waves phase
+		uniform float uTime;
+		
+		/**
+		 * How fast the waves move over time
+		 */
+		uniform float uSpeed;
+		
+		/**
+		 * Number of waves over time
+		 */
+		uniform float uFrequency;
+		
+		/**
+		 * How much the pixels are going to stretch over the waves
+		 */
+		uniform float uWaveAmplitude;
+
+		vec2 sineWave(vec2 pt)
+		{
+			float x = 0.0;
+			float y = 0.0;
+			
+			float offsetY = sin(pt.x * uFrequency + uTime * uSpeed) * uWaveAmplitude;
+			pt.y += offsetY; // * (pt.y - 1.0); // <- Uncomment to stop bottom part of the screen from moving
+			
+			
+			return vec2(pt.x + x, pt.y + y);
+		}
+
+		void main()
+		{
+			vec2 uv = sineWave(openfl_TextureCoordv);
+			gl_FragColor = texture2D(bitmap, uv);
+		}')
+
+	public function new()
+	{
+		super();
+	}
+}

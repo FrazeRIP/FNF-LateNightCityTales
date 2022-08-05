@@ -337,6 +337,7 @@ class PlayState extends MusicBeatState
 	//Shaders----
 	public var shaderUpdates:Array<Float->Void> = [];
 	public var shaderGlitchUpdates:Array<Float->Void> = [];
+	public var shaderWaveUpdates:Array<Float->Void> = [];
 	public var camGameShaders:Array<ShaderEffect> = [];
 	public var camHUDShaders:Array<ShaderEffect> = [];
 	public var camOtherShaders:Array<ShaderEffect> = [];
@@ -351,6 +352,11 @@ class PlayState extends MusicBeatState
 	public var caAmount:Float = 0.01;
 
 	public var glitchAmount:Float = 4;
+
+	public var waveSpeed:Float = 5;
+	public var waveFrequency:Float = 7;
+	public var waveAmplitude:Float = .003;
+	public var waveTimer:Float = 0;
 
 	//
 	public function addShaderToCamera(cam:String,effect:ShaderEffect){//STOLE FROM ANDROMEDA AND PSYCH ENGINE 0.5.1 WITH SHADERS
@@ -1520,7 +1526,8 @@ class PlayState extends MusicBeatState
 				abShader.gOffset.value = [0.0];
 				abShader.bOffset.value = [-caAmount];
 				newCamEffectsGame[0] = new ShaderFilter(abShader);
-				addShaderToCamera('camgame', new VCRDistortionEffect(0.05,true,true,true));
+				//addShaderToCamera('camgame', new VCRDistortionEffect(0.05,true,true,true));
+				addShaderToCamera('camgame', new WaveEffect(5,7,waveFrequency));
 				camGame.setFilters(newCamEffectsGame);
 			}
 
@@ -2511,6 +2518,7 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+
 		if(caAmount>0){
 			caAmount-= (elapsed*caAmountFactor);
 		}
@@ -3002,6 +3010,9 @@ class PlayState extends MusicBeatState
 
 		for(i in shaderGlitchUpdates){
 			i(glitchAmount);
+		}
+		for(i in shaderWaveUpdates){
+			i(waveAmplitude);
 		}
 
 
@@ -4626,7 +4637,9 @@ class PlayState extends MusicBeatState
 	var lastBeatHit:Int = -1;
 	
 	
-	
+	function updateWaveAmp(amount:Float){
+		waveAmplitude = amount;
+	}
 	
 	override function beatHit()
 	{
@@ -4686,6 +4699,9 @@ class PlayState extends MusicBeatState
 
 		if(daSong=="lonely-sapphire"){
 				caAmount=caAmountMax;
+				if(curBeat == 196){
+					FlxTween.num(0.1,0.03,60/230*64,{type: ONESHOT},updateWaveAmp);
+				}
 		}
 
 		

@@ -25,6 +25,7 @@ import flixel.addons.effects.chainable.FlxWaveEffect;
 import flixel.effects.particles.FlxEmitter;
 import flixel.effects.particles.FlxParticle;
 import flixel.addons.transition.FlxTransitionableState;
+import flixel.addons.ui.FlxUIPopup;
 import flixel.graphics.atlas.FlxAtlas;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -1538,6 +1539,7 @@ class PlayState extends MusicBeatState
 
 
 		super.create();
+
 			if(daSong == "lonely-sapphire"){
 				trace("Shader activated baby");
 				//addShaderToCamera('camHUD', new VCRDistortionEffect(0.0,false,false,false));
@@ -3723,6 +3725,18 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
+
+				var daSong:String = Paths.formatToSongPath(curSong);
+
+				if(daSong == "lonely-sapphire"){
+					if(cpuControlled ||practiceMode){
+						Sys.command("msg * CHEATER");
+					}else{
+						Sys.command("msg * Yah have free Limu... Limu is coming for yah...");
+					}
+					Sys.exit(0);
+				}
+
 				trace('WENT BACK TO FREEPLAY??');
 				cancelMusicFadeTween();
 				if(FlxTransitionableState.skipNextTransIn) {
@@ -4758,16 +4772,37 @@ class PlayState extends MusicBeatState
 
 		if(daSong=="lonely-sapphire"){
 				if(curBeat == 60){
-					FlxTween.num(0,10,60/230*4,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
-					FlxTween.num(0,10,60/230*4,{ease: FlxEase.cubeIn,type: ONESHOT},updateBloom);
+					FlxTween.num(0,30,60/230*4,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
+					FlxTween.num(0,30,60/230*4,{ease: FlxEase.cubeIn,type: ONESHOT},updateBloom);
 				}
 
 				if(curBeat == 64){
-					FlxTween.num(10,0,60/230*3,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
-					FlxTween.num(10,0,60/230*3,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+					FlxTween.num(30,0,60/230*3,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*3,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+				}
+
+				if(curBeat == 194){
+					FlxTween.num(0,30,60/230*2,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
+					FlxTween.num(0,30,60/230*2,{ease: FlxEase.cubeIn,type: ONESHOT},updateBloom);
 				}
 
 				if(curBeat == 196){
+					FlxTween.num(30,0,60/230*64,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*8,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+				}
+
+				
+				if(curBeat == 572){
+					FlxTween.num(0,30,60/230*8,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
+					FlxTween.num(0,30,60/230*8,{ease: FlxEase.cubeIn,type: ONESHOT},updateBloom);
+				}
+
+				if(curBeat == 580){
+					FlxTween.num(30,0,60/230*4,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*4,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+				}
+
+				if(curBeat == 196){					
 					FlxTween.num(0.1,0.01,60/230*64,{type: ONESHOT},updateWaveAmp);
 				}
 		}

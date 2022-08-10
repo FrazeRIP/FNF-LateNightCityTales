@@ -1745,6 +1745,8 @@ class PlayState extends MusicBeatState
 		if(psychDialogue != null) return;
 
 		if(dialogueFile.dialogue.length > 0) {
+		
+
 			inCutscene = true;
 			CoolUtil.precacheSound('dialogue');
 			CoolUtil.precacheSound('dialogueClose');
@@ -3738,7 +3740,7 @@ class PlayState extends MusicBeatState
 
 				if(daSong == "lonely-sapphire"){
 					if(cpuControlled ||practiceMode){
-						lime.app.Application.current.window.alert('CHEATER CHEATER CHEATER CHEATER\nCHEATER CHEATER CHEATER CHEATER\nCHEATER @#((@ATER CH)*&TER CHE#@!R','CHEACTER');
+						lime.app.Application.current.window.alert('CHEATER CHEATER CHEATER CHEATER\nCHEATER CHEATER CHEATER CHEATER\nCHEATER @#((@ATER CH)*&TER CHE#@!R','CHEA(@T%#@ER');
 					}else{
 						//Sys.command("msg * Yah have free Limu... Limu is coming for yah...");
 						lime.app.Application.current.window.alert('Yah have free Limu...\nLimu is coming for yah...', 'Hehehehe...');
@@ -4711,7 +4713,7 @@ class PlayState extends MusicBeatState
 					/*X:*/500,
 					/*Y:*/300,
 					/*Angle:*/40,
-					/*String:*/"You came from another world…\nSo far far away…",
+					/*String:*/"You came from another world...\nSo far far away...",
 					/*Width:*/200,
 					/*Size:*/32,
 					/*Delay:*/.05,

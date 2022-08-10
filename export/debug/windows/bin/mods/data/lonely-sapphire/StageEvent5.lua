@@ -230,7 +230,7 @@ function onBeatHit()
 	end
 
 	if curBeat == 192 then
-	currentIdleAnimType = 'LimuangryIdle'
+	currentIdleAnimType = 'LimuAngryIdle'
 	objectPlayAnimation('LimuH','LimuAngrySpeak')
 	objectPlayAnimation('LimuH2','LimuAngrySpeak')
 
@@ -283,7 +283,7 @@ function onBeatHit()
 	end
 
 	if curBeat == 260 then
-	currentIdleAnimType = 'LimudefaultIdle'
+	currentIdleAnimType = 'LimuDefaultIdle'
 	objectPlayAnimation('LimuH', 'LimuDefaultIdle', true)
 	objectPlayAnimation('LimuH2', 'LimuDefaultIdle', true)
 
@@ -301,7 +301,7 @@ function onBeatHit()
 
 	if curBeat == 324 then
 	isSpeaking = true
-	currentIdleAnimType = 'LimusadIdle'
+	currentIdleAnimType = 'LimuSadIdle'
 	objectPlayAnimation('LimuH','LimuSadSpeak')
 	objectPlayAnimation('LimuH2','LimuSadSpeak')
 
@@ -333,7 +333,7 @@ function onBeatHit()
 
 	if curBeat == 452 then
 	isSpeaking = true
-	currentIdleAnimType = 'LimuangryIdle'
+	currentIdleAnimType = 'LimuAngryIdle'
 	objectPlayAnimation('LimuH','LimuAngrySpeak')
 	objectPlayAnimation('LimuH2','LimuAngrySpeak')
 	

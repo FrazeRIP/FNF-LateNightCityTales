@@ -64,6 +64,7 @@ import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
 import flixel.addons.editors.pex.FlxPexParser;
+import flixel.addons.text.FlxTypeText;
 #if sys
 import sys.FileSystem;
 #end
@@ -193,10 +194,14 @@ class PlayState extends MusicBeatState
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
 	
+	public var camFXText:FlxCamera;
+
+
 	public var camNoteWhite:FlxCamera;
 	public var camNoteDark:FlxCamera;
 	public var camNoteNormal:FlxCamera;
 	public var camNoteRed:FlxCamera;
+
 
 
 	public var camDialogBack:FlxCamera;
@@ -376,8 +381,10 @@ class PlayState extends MusicBeatState
 	public var newCamEffectsOther:Array<BitmapFilter>=[];
 	public var newCamEffectsNormalNote:Array<BitmapFilter>=[];
 
-	public var lockDadAnim = false;
+	public var lockDadAnim:Bool = false;
 //-------------------------------
+	public var skipDialogueEndCallback:Bool = false;
+//----------------------------------------------------------------
 
 	//
 	public function addShaderToCamera(cam:String,effect:ShaderEffect){//STOLE FROM ANDROMEDA AND PSYCH ENGINE 0.5.1 WITH SHADERS
@@ -1870,6 +1877,7 @@ class PlayState extends MusicBeatState
 	public function startCountdown():Void
 	{
 		if(startedCountdown) {
+			callOnLuas('onBeforeCountdown', []);
 			callOnLuas('onStartCountdown', []);
 			return;
 		}
@@ -3730,9 +3738,10 @@ class PlayState extends MusicBeatState
 
 				if(daSong == "lonely-sapphire"){
 					if(cpuControlled ||practiceMode){
-						Sys.command("msg * CHEATER");
+						lime.app.Application.current.window.alert('CHEATER CHEATER CHEATER CHEATER\nCHEATER CHEATER CHEATER CHEATER\nCHEATER @#((@ATER CH)*&TER CHE#@!R','CHEACTER');
 					}else{
-						Sys.command("msg * Yah have free Limu... Limu is coming for yah...");
+						//Sys.command("msg * Yah have free Limu... Limu is coming for yah...");
+						lime.app.Application.current.window.alert('Yah have free Limu...\nLimu is coming for yah...', 'Hehehehe...');
 					}
 					Sys.exit(0);
 				}
@@ -4694,6 +4703,21 @@ class PlayState extends MusicBeatState
 		lastStepHit = curStep;
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
+
+		var daSong:String = Paths.formatToSongPath(curSong);
+		if(daSong == "lonely-sapphire"){
+			if(curStep == 16){
+				createFXText(
+					/*X:*/500,
+					/*Y:*/300,
+					/*Angle:*/40,
+					/*String:*/"You came from another world…\nSo far far away…",
+					/*Width:*/200,
+					/*Size:*/32,
+					/*Delay:*/.05,
+					/*Color:*/FlxColor.WHITE);
+			}
+		}
 	}
 
 	var lightningStrikeBeat:Int = 0;
@@ -5068,4 +5092,84 @@ class PlayState extends MusicBeatState
 
 	var curLight:Int = 0;
 	var curLightEvent:Int = 0;
+
+
+	function createFXText(x:Float, y:Float,angle:Float,text:String,width:Int,textSize:Int,delay:Float,color:FlxColor){
+		var _typeText:FlxTypeText;
+		_typeText = new FlxTypeText(x, y, width,text, textSize,true);
+		_typeText.angle = angle;
+		_typeText.delay = delay;
+		_typeText.camera = camGame;
+		_typeText.showCursor = false;
+		_typeText.waitTime = 2.0;
+		_typeText.setTypingVariation(0.75, true);
+		_typeText.color = color;
+
+		//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
+
+		_typeText.setFormat(Paths.font("MouseMemoirs-Regular.ttf"),textSize);
+
+		_typeText.completeCallback = function() {
+			FlxTween.tween(_typeText,{alpha: 0},1.5);
+		}
+
+		add(_typeText);
+
+		_typeText.start(delay,true);
+	}
+
+
+
+	
+	// var fxText0:FlxTypeText;
+	// var fxText1:FlxTypeText;
+	// var fxText2:FlxTypeText;
+	// var fxText3:FlxTypeText;
+	// var fxText4:FlxTypeText;
+	// var fxText5:FlxTypeText;
+	// var _textArray:Array<FlxTypeText> = [];
+
+	// function initializeFXText(){
+	// 	_textArray.push(fxText0);
+	// 	_textArray.push(fxText1);
+	// 	_textArray.push(fxText2);
+	// 	_textArray.push(fxText3);
+	// 	_textArray.push(fxText4);
+	// 	_textArray.push(fxText5);
+	// }
+
+
+	// function createFXText(targetText:FlxTypeText,x:Float, y:Float,angle:Float,text:String,width:Int,textSize:Int,delay:Float,color:FlxColor){
+	// 	remove(targetText);
+
+	// 	targetText = new FlxTypeText(x, y, width,text, textSize,true);
+	// 	targetText.angle = angle;
+	// 	targetText.delay = delay;
+	// 	targetText.camera = camGame;
+	// 	targetText.showCursor = false;
+	// 	targetText.waitTime = 2.0;
+	// 	targetText.setTypingVariation(0.75, true);
+	// 	targetText.color = color;
+
+	// 	//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
+
+	// 	targetText.setFormat(Paths.font("MouseMemoirs-Regular.ttf"),textSize);
+
+	// 	var index:Int = 0;
+
+	// 	for(i in 0..._textArray.length){
+	// 		if(targetText == _textArray[i]){
+	// 			index = i;
+	// 			break;
+	// 		}
+	// 	}
+		
+	// 	targetText.completeCallback = function() {
+	// 		FlxTween.tween(_textArray[index],{alpha: 0},1.5);
+	// 	}
+
+	// 	add(targetText);
+
+	// 	targetText.start(delay,true);
+	// }
 }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Eyeballs.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Eyeballs ding0000" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs ding0001" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0000" x="962" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0001" x="724" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0002" x="486" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0003" x="248" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0004" x="10" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0005" x="1676" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0006" x="1438" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0007" x="1200" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0008" x="962" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0009" x="724" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0010" x="486" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0011" x="248" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0012" x="10" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0013" x="1676" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0014" x="1438" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0015" x="1200" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0016" x="962" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0017" x="724" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs off0018" x="486" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0000" x="486" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0001" x="724" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0002" x="962" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0003" x="1200" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0004" x="1438" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0005" x="1676" y="10" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0006" x="10" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0007" x="248" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0008" x="486" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0009" x="724" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0010" x="962" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0011" x="1200" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0012" x="1438" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0013" x="1676" y="350" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0014" x="10" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0015" x="248" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0016" x="486" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0017" x="724" y="690" width="238" height="340"/>
+	<SubTexture name="Eyeballs on0018" x="962" y="690" width="238" height="340"/>
+</TextureAtlas>

@@ -1,0 +1,44 @@
+{
+	"dialogue": [
+		{
+			"expression": "creepy",
+			"text": "......",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog"
+		},
+		{
+			"expression": "statue",
+			"text": "......",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "cry",
+			"text": "Beep......?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog"
+		},
+		{
+			"expression": "statue",
+			"text": "......",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "cry",
+			"text": "Beep...............................",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.065,
+			"portrait": "bf-dialog"
+		}
+	]
+}

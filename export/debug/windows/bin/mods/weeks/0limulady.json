@@ -1,0 +1,59 @@
+{
+	"storyName": "limulady",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"azure encounter",
+			"Limulady",
+			"azure encounter",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"secret marilee",
+			"Limulady",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"broken heart",
+			"gf-ghost",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"aquaphobia",
+			"LimuladyAngry",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "limulady"
+}

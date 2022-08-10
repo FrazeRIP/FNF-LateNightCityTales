@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="normal gf.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="normal gf idle0000" x="10" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0001" x="817" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0002" x="1624" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0003" x="2431" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0004" x="3238" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0005" x="4045" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0006" x="4852" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0007" x="5659" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0008" x="6466" y="10" width="807" height="825"/>
+	<SubTexture name="normal gf idle0009" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="normal gf idle0010" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="normal gf idle0011" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="normal gf idle0012" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="normal gf idle0013" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="normal gf idle0014" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0000" x="7273" y="10" width="807" height="825"/>
+	<SubTexture name="recover0001" x="7273" y="10" width="807" height="825"/>
+	<SubTexture name="recover0002" x="10" y="835" width="807" height="825"/>
+	<SubTexture name="recover0003" x="817" y="835" width="807" height="825"/>
+	<SubTexture name="recover0004" x="1624" y="835" width="807" height="825"/>
+	<SubTexture name="recover0005" x="2431" y="835" width="807" height="825"/>
+	<SubTexture name="recover0006" x="3238" y="835" width="807" height="825"/>
+	<SubTexture name="recover0007" x="4045" y="835" width="807" height="825"/>
+	<SubTexture name="recover0008" x="4852" y="835" width="807" height="825"/>
+	<SubTexture name="recover0009" x="5659" y="835" width="807" height="825"/>
+	<SubTexture name="recover0010" x="6466" y="835" width="807" height="825"/>
+	<SubTexture name="recover0011" x="7273" y="835" width="807" height="825"/>
+	<SubTexture name="recover0012" x="10" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0013" x="817" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0014" x="1624" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0015" x="2431" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0016" x="3238" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0017" x="4045" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0018" x="4852" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0019" x="5659" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0020" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0021" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0022" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0023" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="recover0024" x="6466" y="1660" width="807" height="825"/>
+	<SubTexture name="vanish0000" x="7273" y="1660" width="807" height="825"/>
+	<SubTexture name="vanish0001" x="10" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0002" x="817" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0003" x="1624" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0004" x="2431" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0005" x="3238" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0006" x="4045" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0007" x="4852" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0008" x="5659" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0009" x="6466" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0010" x="7273" y="2485" width="807" height="825"/>
+	<SubTexture name="vanish0011" x="10" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0012" x="817" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0013" x="1624" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0014" x="2431" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0015" x="3238" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0016" x="4045" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0017" x="4852" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0018" x="5659" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0019" x="6466" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0020" x="7273" y="3310" width="807" height="825"/>
+	<SubTexture name="vanish0021" x="10" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0022" x="817" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0023" x="1624" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0024" x="2431" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0025" x="3238" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0026" x="3238" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0027" x="3238" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0028" x="3238" y="4135" width="807" height="825"/>
+	<SubTexture name="vanish0029" x="3238" y="4135" width="807" height="825"/>
+</TextureAtlas>

@@ -1,0 +1,156 @@
+{
+	"dialogue": [
+		{
+			"expression": "cry",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "4-sleep",
+			"text": "Ahhh shit...\\nDid I past out again...?",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "cry",
+			"text": "Beep......?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "creepy",
+			"text": "Beep!!!!!",
+			"boxState": "angry",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "creepy",
+      "text": "Okay okay, bae chill!\\nI'm fine!'",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+		{
+			"expression": "smile-mad",
+			"text": "Let me guess,\\nThat little bitch just set me up, right?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "angry-cute",
+			"text": "I knew she was a snake!\\nSince the first time I met her!",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "scare-shut",
+			"text": "Beep......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "worry-shut",
+			"text": "So what we gonna do?\\nI don࡯t wanna see that little bitch'࡯s face again.",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "normal",
+			"text": "Beep bo...\\nSki be ba bo",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "creepy",
+			"text": "You crazy?\\nYou want to go back and face her?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "angry-talk",
+			"text": "Did you see what just happened to me?\\nIt࡯s fucking suicide!",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "up",
+			"text": "Ba ski be ba bo da,\\nBeep boo da...",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-cute",
+			"text": "When have you becomes an expert in witchcraft?\\nWhat happens if you lose?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "up",
+			"text": "Beep ba!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "worry-shut",
+			"text": "......",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "oneeye-normal",
+			"text": "*Sigh......",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "angry-cute",
+			"text": "*You better win,\\nOr you ain࡯t having *dinner* tonight.",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "taunt",
+			"text": "Beep!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		}
+	]
+}

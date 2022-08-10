@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "LimuCryIdle",
+			"loop": false,
+			"name": "LimuCryIdle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "LimuLaughIdle",
+			"loop": false,
+			"name": "LimuLaughIdle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "LimuLaughspeak",
+			"loop": false,
+			"name": "LimuLaughspeak"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "LimuangryIdle",
+			"loop": false,
+			"name": "LimuangryIdle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "Limuangryspeak",
+			"loop": false,
+			"name": "Limuangryspeak"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "LimudefaultIdle",
+			"loop": false,
+			"name": "LimudefaultIdle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "Limudefaultspeak",
+			"loop": false,
+			"name": "Limudefaultspeak"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "LimusadIdle",
+			"loop": false,
+			"name": "LimusadIdle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "Limusadspeak",
+			"loop": false,
+			"name": "Limusadspeak"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/LimuH",
+	"position": [
+		-230,
+		0
+	],
+	"healthicon": "LimuH",
+	"flip_x": false,
+	"healthbar_colors": [
+		88,
+		54,
+		73
+	],
+	"camera_position": [
+		-80,
+		50
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}

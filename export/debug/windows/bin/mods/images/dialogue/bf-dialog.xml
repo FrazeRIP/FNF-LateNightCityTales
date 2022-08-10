@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="bf-dialog.png">
+<SubTexture name="1-candle0000" x="780" y="444" width="407" height="400" frameX="-33" frameY="-53" frameWidth="462" frameHeight="482" />
+<SubTexture name="1-sleep0000" x="1198" y="0" width="423" height="400" frameX="-17" frameY="-53" frameWidth="462" frameHeight="482" />
+<SubTexture name="creepy0000" x="0" y="444" width="396" height="407" frameX="-23" frameY="-50" frameWidth="462" frameHeight="482" />
+<SubTexture name="cry0000" x="1198" y="400" width="423" height="400" frameX="-17" frameY="-53" frameWidth="462" frameHeight="482" />
+<SubTexture name="normal0000" x="423" y="851" width="423" height="400" frameX="-17" frameY="-53" frameWidth="462" frameHeight="482" />
+<SubTexture name="scare-normal0000" x="790" y="0" width="408" height="413" frameX="-33" frameY="-52" frameWidth="462" frameHeight="482" />
+<SubTexture name="scare-shut0000" x="846" y="851" width="424" height="400" frameX="-17" frameY="-53" frameWidth="462" frameHeight="482" />
+<SubTexture name="talk0000" x="388" y="0" width="402" height="415" frameX="-19" frameY="-42" frameWidth="462" frameHeight="482" />
+<SubTexture name="taunt0000" x="396" y="444" width="384" height="403" frameX="-62" frameY="-50" frameWidth="462" frameHeight="482" />
+<SubTexture name="up0000" x="0" y="0" width="388" height="444" frameX="-54" frameY="-15" frameWidth="462" frameHeight="482" />
+<SubTexture name="wow0000" x="1621" y="0" width="423" height="400" frameX="-17" frameY="-53" frameWidth="462" frameHeight="482" />
+<SubTexture name="happy0000" x="0" y="851" width="423" height="400" frameX="-17" frameY="-53" frameWidth="462" frameHeight="482" />
+</TextureAtlas>

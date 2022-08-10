@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Sparkle.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Sparkle0000" x="10" y="10" width="312" height="396"/>
+	<SubTexture name="Sparkle0001" x="322" y="10" width="312" height="396"/>
+	<SubTexture name="Sparkle0002" x="634" y="10" width="312" height="396"/>
+</TextureAtlas>

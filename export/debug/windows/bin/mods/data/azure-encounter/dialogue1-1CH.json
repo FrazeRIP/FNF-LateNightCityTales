@@ -1,0 +1,196 @@
+{
+  "dialogue": [
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "1-sleep",
+      "text": "......"
+    },
+    {
+      "expression": "1-sleep",
+      "text": "......",
+      "boxState": "normal",
+      "sound": "dialog1",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "4-sleep",
+      "text": "呃啊......\\n我的头......"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "4-sleep",
+      "text": "甜心...?\\n你在那里吗?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "up",
+      "text": "Beep!"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "1-oneeye",
+      "text": "可恶,这里好黑!\\n把那边的蜡烛给我."
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "candle",
+      "text": "*递出*蜡烛\\n"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "empty",
+      "boxState": "normal",
+      "expression": "empty",
+      "text": ""
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "oneeye-normal",
+      "text": "......\\n......?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "scare-shut",
+      "text": "......?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "creepy",
+      "text": "什么鬼....?\\n我们这是在哪?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "creepy",
+      "text": "Beep Bo?\\nBa......"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "smile-mad",
+      "text": "唉...\\n又来了.../."
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "worry-shut",
+      "text": "看来我们又遇到了什么麻烦./"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "up",
+      "text": "Beep!"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "worry-shut",
+      "text": "啧啧...\\n外面还下着倾盆大雨./"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "oneeye-normal",
+      "text": "看来我们有一大把时间能拿来打发了. "
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "oneeye-talk",
+      "text": "你带了'那个'东西了对吧?\\n想不想找点乐子?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "angry",
+      "expression": "taunt",
+      "text": "BEEP!!!!"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "scare-shut",
+      "text": "......\\n......?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "scare-normal",
+      "text": "Shhhhhh!"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "oneeye-normal",
+      "text": "......?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "limu-dialog",
+      "boxState": "normal",
+      "expression": "dark",
+      "text": "......"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "creepy",
+      "text": "哇!\\n有东西在靠近!"
+    }
+  ]
+}

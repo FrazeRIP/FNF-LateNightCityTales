@@ -6,8 +6,9 @@ art/build_x64-officialrelease.bat
 art/test_x64-debug-officialrelease.bat
 
 ### VS Code
+
 export/*
-!export/debug/windows/bin/mods/
+
 .vscode/*
 *.code-workspace
 # Local history which shouldn't be shared.

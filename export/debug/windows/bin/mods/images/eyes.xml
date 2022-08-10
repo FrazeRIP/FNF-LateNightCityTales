@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="eyes.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="eyes on0000" x="10" y="10" width="1280" height="720"/>
+	<SubTexture name="eyes on0001" x="1290" y="10" width="1280" height="720"/>
+	<SubTexture name="eyes off0000" x="2570" y="10" width="1280" height="720"/>
+	<SubTexture name="eyes off0001" x="10" y="730" width="1280" height="720"/>
+	<SubTexture name="eyes off0002" x="1290" y="730" width="1280" height="720"/>
+	<SubTexture name="eyes off0003" x="2570" y="730" width="1280" height="720"/>
+	<SubTexture name="eyes off0004" x="10" y="1450" width="1280" height="720"/>
+	<SubTexture name="eyes off0005" x="1290" y="1450" width="1280" height="720"/>
+	<SubTexture name="eyes off0006" x="2570" y="1450" width="1280" height="720"/>
+</TextureAtlas>

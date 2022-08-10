@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-7,
+				27
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "limu right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				5,
+				10
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "limu left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				11
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "limu up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				15
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "limu down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				27
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "limu idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				11
+			],
+			"anim": "attack",
+			"fps": 24,
+			"name": "limu attack",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Limulady_angry",
+	"position": [
+		-250,
+		20
+	],
+	"healthicon": "limuladyAngry",
+	"flip_x": false,
+	"healthbar_colors": [
+		75,
+		22,
+		47
+	],
+	"camera_position": [
+		-240,
+		80
+	],
+	"sing_duration": 6.1,
+	"scale": 0.9
+}

@@ -1,0 +1,271 @@
+{
+	"position": [
+		200,
+		50
+	],
+	"dialogue_pos": "center",
+	"scale": 1.25,
+	"image": "gf-dialog",
+	"animations": [
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "1-oneeye",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "1-oneeye",
+			"idle_name": "1-oneeye"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "1-creepy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "1-creepy",
+			"idle_name": "1-creepy"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "1-sleep",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "1-sleep",
+			"idle_name": "1-sleep"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "1-worry",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "1-worry",
+			"idle_name": "1-worry"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "4-sleep",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "4-sleep",
+			"idle_name": "4-sleep"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "angry-normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "angry-normal",
+			"idle_name": "angry-normal"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "angry-cute",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "angry-cute",
+			"idle_name": "angry-cute"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "angry-talk",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "angry-talk",
+			"idle_name": "angry-talk"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "lol-normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "lol-normal",
+			"idle_name": "lol-normal"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "lol-mad",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "lol-mad",
+			"idle_name": "lol-mad"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "oneeye-normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "oneeye-normal",
+			"idle_name": "oneeye-normal"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "oneeye-talk",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "oneeye-talk",
+			"idle_name": "oneeye-talk"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "oneeye-smile",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "oneeye-smile",
+			"idle_name": "oneeye-smile"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "creepy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "creepy",
+			"idle_name": "creepy"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "smile-normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "smile-normal",
+			"idle_name": "smile-normal"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "smile-mad",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "smile-mad",
+			"idle_name": "smile-mad"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "statue",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "statue",
+			"idle_name": "statue"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "worry-normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "worry-normal",
+			"idle_name": "worry-normal"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "worry-shut",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "worry-shut",
+			"idle_name": "worry-shut"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "wow",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "wow",
+			"idle_name": "wow"
+		}
+	]
+}

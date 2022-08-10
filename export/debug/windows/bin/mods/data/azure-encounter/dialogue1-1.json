@@ -1,0 +1,196 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "1-sleep",
+			"text": "......"
+		},
+		{
+			"expression": "1-sleep",
+			"text": "......",
+			"boxState": "normal",
+			"sound": "dialog1",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "4-sleep",
+			"text": "Ahh Crap......\\nMy head......"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "4-sleep",
+			"text": "Bae......?\\nYou there?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "up",
+			"text": "Beep!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "1-oneeye",
+			"text": "It's so dam dark!\\nHand me that candle over there."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "*Hand in the CaNdlE'\\n"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "empty",
+			"boxState": "normal",
+			"expression": "empty",
+			"text": ""
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "oneeye-normal",
+			"text": "......\\n......?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "scare-shut",
+			"text": "......?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "creepy",
+			"text": "Yo wtf....?\\nBae where are we?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "creepy",
+			"text": "Beep Bo?\\nBa......"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "smile-mad",
+			"text": "Ah shit,\\nHere we go again/."
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "worry-shut",
+			"text": "Guess we are in another trouble,\\nAren't we?/"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "up",
+			"text": "Beep!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "worry-shut",
+			"text": "Dang,\\nIt's freaking pouring outside./"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "oneeye-normal",
+			"text": "Looks like we really got some time to kill. "
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "oneeye-talk",
+			"text": "You got that thing on you?\\nWanna have some fun together?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "angry",
+			"expression": "taunt",
+			"text": "BEEP!!!!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "scare-shut",
+			"text": "......\\n......?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "scare-normal",
+			"text": "Shhhhhh!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "oneeye-normal",
+			"text": "......?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "limu-dialog",
+			"boxState": "normal",
+			"expression": "dark",
+			"text": "......"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "creepy",
+			"text": "NoNoNo!\\nSomething is coming!"
+		}
+	]
+}

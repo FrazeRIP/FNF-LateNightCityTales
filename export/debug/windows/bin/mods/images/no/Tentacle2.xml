@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Tentacle2.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="tentacle0000" x="0" y="0" width="1280" height="720"/>
+	<SubTexture name="tentacle0001" x="0" y="0" width="1280" height="720"/>
+	<SubTexture name="tentacle0002" x="1280" y="0" width="1280" height="720"/>
+	<SubTexture name="tentacle0003" x="1280" y="0" width="1280" height="720"/>
+	<SubTexture name="tentacle0004" x="2560" y="0" width="1280" height="720"/>
+	<SubTexture name="tentacle0005" x="2560" y="0" width="1280" height="720"/>
+	<SubTexture name="tentacle0006" x="0" y="720" width="1280" height="720"/>
+	<SubTexture name="tentacle0007" x="0" y="720" width="1280" height="720"/>
+	<SubTexture name="tentacle0008" x="1280" y="720" width="1280" height="720"/>
+	<SubTexture name="tentacle0009" x="1280" y="720" width="1280" height="720"/>
+	<SubTexture name="tentacle0010" x="2560" y="720" width="1280" height="720"/>
+	<SubTexture name="tentacle0011" x="2560" y="720" width="1280" height="720"/>
+	<SubTexture name="tentacle0012" x="0" y="1440" width="1280" height="720"/>
+	<SubTexture name="tentacle0013" x="0" y="1440" width="1280" height="720"/>
+	<SubTexture name="tentacle0014" x="1280" y="1440" width="1280" height="720"/>
+	<SubTexture name="tentacle0015" x="1280" y="1440" width="1280" height="720"/>
+</TextureAtlas>

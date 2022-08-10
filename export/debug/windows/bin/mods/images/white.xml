@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="white.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue hold end00000000" x="147" y="10" width="43" height="57"/>
+	<SubTexture name="blue hold piece00000000" x="326" y="10" width="50" height="44"/>
+	<SubTexture name="blue00000000" x="10" y="10" width="137" height="124"/>
+	<SubTexture name="green hold end00000000" x="147" y="10" width="43" height="57"/>
+	<SubTexture name="green hold piece00000000" x="326" y="10" width="50" height="44"/>
+	<SubTexture name="green00000000" x="190" y="10" width="136" height="124"/>
+	<SubTexture name="purple hold end00000000" x="147" y="10" width="43" height="57"/>
+	<SubTexture name="purple hold piece00000000" x="326" y="10" width="50" height="44"/>
+	<SubTexture name="purple00000000" x="376" y="10" width="125" height="137"/>
+	<SubTexture name="red hold end00000000" x="147" y="10" width="43" height="57"/>
+	<SubTexture name="red hold piece00000000" x="326" y="10" width="50" height="44"/>
+	<SubTexture name="red00000000" x="10" y="147" width="124" height="136"/>
+</TextureAtlas>

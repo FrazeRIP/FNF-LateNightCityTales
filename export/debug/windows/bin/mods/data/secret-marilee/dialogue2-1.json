@@ -1,0 +1,508 @@
+{
+	"dialogue": [
+		{
+			"expression": "up",
+			"text": "*Deep breath",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": "dialog2"
+		},
+		{
+			"expression": "creepy",
+			"text": "Oh my Sa'tan!\\nThere are acutal people live in here!",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "dark",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "Beep......?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "lol-mad",
+			"text": "Hello......?",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "dark",
+			"text": "*Breath...",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-talk",
+			"text": "Do you speak English you fre.....",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Holla!",
+			"boxState": "angry",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "?!?!!??!?!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "creepy",
+			"text": "Why you yelling all of a sudden?!!\\nWe can hear you!",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Greetings, visitors!\\nI am Limulady, chamberian of da castle.",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Please, call me Limu if yah like.\\",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "up",
+			"text": "Beep!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "oneeye-normal",
+			"text": "You sounds like you came from the last century.\\nBut at least you are being nice.",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "smile-normal",
+			"text": "Anyway, we are just......",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Nay needeth to explain...\\nMaster's castle is open to everybody!",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Please,\\n\\Feel as comfortable as at home!",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "up",
+			"text": "Beep bo ski be ba be!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "worry-shut",
+			"text": "Dude this place is so broken...\\nHow can it be comfortable...",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": ".......",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "It's been so longeth since da lasteth vistor!\\nLimu would like to give yah both a tour!",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "up",
+			"text": "Beep!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "oneeye-normal",
+			"text": "Hurry up then.\\nWe still got some *business* to do.",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Da castle is giant, easy to get lost.\\nPlease, follow Limu closely.",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": "dialog2"
+		},
+		{
+			"expression": "talk",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "empty",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "Oh, da blue hair one,\\nWhat is yah name?",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "talk",
+			"text": "Beep?\\nBeep boo.",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "......?",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "smile-normal",
+			"text": "His name is Boyfriend,\\nAnd I'm Girl...",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Ah! Boyfriend!\\nSuch a marvelous name!",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "You have such a nice...",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "smile-mad",
+			"text": "*Cough\\nI, AM, GIRLFRIEND.",
+			"boxState": "angry",
+			"portrait": "gf-dialog",
+			"speed": 0.15,
+			"sound": ""
+		},
+		{
+			"expression": "confuse",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.03,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "......?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.03,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Boyfriend!\\nYour voice is veru pleasenth!",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "Limu have never met a person \\nWho can sing as good as you.",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "LOL.",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "smile-normal",
+			"text": "Of course!\\nHe's the best rapper in town.",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "smile-normal",
+      "text": "Btw don't ever think about putting your little hand on him. We are coupl...",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "normal",
+			"text": "I have been alone in da castle...\\nFor so long...",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.025,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Today Limu sings with others,\\nJoyous I am indeed!",
+			"boxState": "normal",
+			"portrait": "limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Beep ba bo beep ba!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "smile-mad",
+			"text": "Hey you....!",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Yes!\\nWe have finally arrived!",
+			"boxState": "normal",
+			"sound": "dialog2",
+			"speed": 0.025,
+			"portrait": "limu-dialog"
+		},
+    {
+      "expression": "wish",
+      "text": "Behold,\\nLimu's Master's most remarkable collection!",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "limu-dialog"
+    },
+		{
+			"expression": "talk",
+			"text": "",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "empty"
+		},
+		{
+			"expression": "wow",
+			"text": "WOW",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog"
+		},
+		{
+			"expression": "wow",
+			"text": "WOW",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "creepy",
+			"text": "(Damn, those statue shit look so real\\nThat's actually creppy as fuck...)",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "lol-mad",
+			"text": "Your master really got some fancy fetish,\\nNot my taste tho.",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "taunt",
+			"text": "Ooof-",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog"
+		},
+		{
+			"expression": "angry-normal",
+			"text": "......",
+			"boxState": "normal",
+			"sound": "dialog2",
+			"speed": 0.05,
+			"portrait": "limu-dialog"
+		},
+		{
+			"expression": "talk",
+			"text": "Beep bop ba ski bee babe?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog"
+		},
+		{
+			"expression": "normal",
+			"text": "Hehehe, no worries...\\nThere are more collections inside da castle.",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "limu-dialog"
+		},
+		{
+			"expression": "worry-normal",
+			"text": "68......69......\\nDamn, those statues are everywhere!",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "worry-normal",
+			"text": "Where did your master even get those statues from?",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "limu-dialog",
+			"boxState": "normal",
+			"expression": "normal",
+			"text": "......"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "limu-dialog",
+			"boxState": "normal",
+			"expression": "question",
+			"text": "Well......\\nBoy...firend?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "normal",
+			"text": "?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "limu-dialog",
+			"boxState": "normal",
+			"expression": "normal",
+			"text": "Care to sing another song with Limu?"
+		},
+		{
+			"sound": "dialog2",
+			"speed": 0.05,
+			"portrait": "bf-dialog",
+			"boxState": "normal",
+			"expression": "up",
+			"text": "Beep!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "Limu-dialog",
+			"boxState": "normal",
+			"expression": "wish",
+			"text": "Marvelous!\\nPlease, this way!"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog",
+			"boxState": "normal",
+			"expression": "angry-talk",
+			"text": "Damn bitch wtf?\\nWho hurt yo-"
+		}
+	]
+}

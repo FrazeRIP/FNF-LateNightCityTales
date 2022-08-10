@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="gf-dialog.png">
+<SubTexture name="1-oneeye0000" x="289" y="0" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="1-creepy0000" x="574" y="0" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="1-sleep0000" x="859" y="0" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="1-worry0000" x="0" y="508" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="4-sleep0000" x="285" y="508" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="angry-normal0000" x="570" y="508" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="angry-cute0000" x="855" y="508" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="angry-talk0000" x="1144" y="0" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="lol-normal0000" x="1144" y="502" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="lol-mad0000" x="1429" y="0" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="oneeye-normal0000" x="1429" y="502" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="oneeye-talk0000" x="0" y="1010" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="oneeye-smile0000" x="285" y="1010" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="creepy0000" x="570" y="1010" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="smile-normal0000" x="855" y="1010" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="smile-mad0000" x="1140" y="1010" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="statue0000" x="0" y="0" width="289" height="508" frameX="-18" frameY="-9" frameWidth="319" frameHeight="526" />
+<SubTexture name="worry-normal0000" x="1425" y="1010" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="worry-shut0000" x="1714" y="0" width="285" height="502" frameX="-22" frameY="-12" frameWidth="319" frameHeight="526" />
+<SubTexture name="wow0000" x="1999" y="0" width="307" height="502" frameX="0" frameY="-12" frameWidth="319" frameHeight="526" />
+</TextureAtlas>

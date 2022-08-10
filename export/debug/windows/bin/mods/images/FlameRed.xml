@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="FlameRed.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="FlameNormal0000" x="10" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0001" x="10" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0002" x="566" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0003" x="566" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0004" x="1122" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0005" x="1122" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0006" x="1678" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0007" x="1678" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0008" x="2234" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0009" x="2234" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0010" x="2790" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0011" x="2790" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0012" x="3346" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0013" x="3346" y="10" width="556" height="400"/>
+	<SubTexture name="FlameNormal0014" x="10" y="410" width="556" height="400"/>
+	<SubTexture name="FlameNormal0015" x="10" y="410" width="556" height="400"/>
+	<SubTexture name="FlameNormal0016" x="10" y="410" width="556" height="400"/>
+	<SubTexture name="FlameNormal0017" x="10" y="410" width="556" height="400"/>
+	<SubTexture name="FlameOff0000" x="566" y="410" width="556" height="400"/>
+	<SubTexture name="FlameOff0001" x="1122" y="410" width="556" height="400"/>
+	<SubTexture name="FlameOff0002" x="1678" y="410" width="556" height="400"/>
+	<SubTexture name="FlameOff0003" x="2234" y="410" width="556" height="400"/>
+	<SubTexture name="FlameOff0004" x="2790" y="410" width="556" height="400"/>
+	<SubTexture name="FlameOff0005" x="3346" y="410" width="556" height="400"/>
+	<SubTexture name="FlameOff0006" x="10" y="810" width="556" height="400"/>
+	<SubTexture name="FlameOff0007" x="566" y="810" width="556" height="400"/>
+	<SubTexture name="FlameOff0008" x="1122" y="810" width="556" height="400"/>
+	<SubTexture name="FlameOff0009" x="1678" y="810" width="556" height="400"/>
+	<SubTexture name="FlameOff0010" x="2234" y="810" width="556" height="400"/>
+	<SubTexture name="FlameOff0011" x="2790" y="810" width="556" height="400"/>
+	<SubTexture name="FlameOff0012" x="3346" y="810" width="556" height="400"/>
+	<SubTexture name="FlameOff0013" x="10" y="1210" width="556" height="400"/>
+	<SubTexture name="FlameOff0014" x="566" y="1210" width="556" height="400"/>
+	<SubTexture name="FlameOff0015" x="1122" y="1210" width="556" height="400"/>
+	<SubTexture name="FlameOff0016" x="1678" y="1210" width="556" height="400"/>
+	<SubTexture name="FlameOff0017" x="2234" y="1210" width="556" height="400"/>
+	<SubTexture name="FlameOff0018" x="2790" y="1210" width="556" height="400"/>
+	<SubTexture name="FlameOff0019" x="3346" y="1210" width="556" height="400"/>
+	<SubTexture name="FlameOff0020" x="10" y="1610" width="556" height="400"/>
+	<SubTexture name="FlameOff0021" x="566" y="1610" width="556" height="400"/>
+	<SubTexture name="FlameOff0022" x="1122" y="1610" width="556" height="400"/>
+	<SubTexture name="FlameOff0023" x="1678" y="1610" width="556" height="400"/>
+	<SubTexture name="FlameOff0024" x="2234" y="1610" width="556" height="400"/>
+	<SubTexture name="FlameOff0025" x="2790" y="1610" width="556" height="400"/>
+	<SubTexture name="FlameOn0000" x="3346" y="1610" width="556" height="400"/>
+	<SubTexture name="FlameOn0001" x="10" y="2010" width="556" height="400"/>
+	<SubTexture name="FlameOn0002" x="566" y="2010" width="556" height="400"/>
+	<SubTexture name="FlameOn0003" x="1122" y="2010" width="556" height="400"/>
+	<SubTexture name="FlameOn0004" x="1678" y="2010" width="556" height="400"/>
+	<SubTexture name="FlameOn0005" x="2234" y="2010" width="556" height="400"/>
+</TextureAtlas>

@@ -1,0 +1,140 @@
+{
+	"dialogue": [
+		{
+			"expression": "dark",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "......?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Ahh!\\nNew guest!",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Welcom...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "It's yah...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Limu had never met yah before...\\nBut Limu know who yah are...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Yah the one who helped Boyfriend escape,\\nAren't you?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Yah came from anther world...\\nWay far from Limu...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Yah already got what yah want...\\nWhy are yah still here?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Limu knows everything...\\nYah are here just to insult Limu...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Must be fun beating up Limu...\\nNow yah want to destory Limu...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Guess yah cannot talk...\\n It's okay...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-black1",
+			"text": "If yah wanna play...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-black3",
+			"text": "Limu won't mind playing with you a little more!",
+			"boxState": "angry",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		}
+	]
+}

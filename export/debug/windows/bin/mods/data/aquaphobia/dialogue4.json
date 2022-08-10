@@ -1,0 +1,164 @@
+{
+	"dialogue": [
+		{
+			"expression": "dark",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": " Ah, welcometh back!\\nLimu was looking for yah!",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "Beep......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Have yah decided?\\nWant to stay with Limu forever...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-talk",
+			"text": "STFU bitch!\\nYou ain't taking my bae away!",
+			"boxState": "angry",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-sad",
+			"text": "It࡯s yah......!\\nBut why......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-forward",
+			"text": "How did yah break away from Limu's control?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "smile-mad",
+			"text": "Nice little cheap clown trick you got,\\nBut it࡯s useless now.",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-cute",
+			"text": "It࡯s not too late to send us out\\nIf you don࡯t want my bae to give you a\\nbeat-down.",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.03,
+			"sound": ""
+		},
+		{
+			"expression": "angry-talk",
+			"text": "Boyfriend?!",
+			"boxState": "angry",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "up",
+			"text": "Bee......\\nBeep!!!!",
+			"boxState": "angry",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-shock",
+			"text": "Why......\\nWhy......?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-sad",
+			"text": "Why is everyone treating Limu like this...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-black1",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "......?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "creepy",
+			"text": "Shit! She's powering up!\\nBae! Do something!",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-black2",
+			"text": "Hehehe...\\nIt's too late now...'",
+			"boxState": "angry",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-black3",
+			"text": "If yah don࡯t wanna stay...\\nLimu will turn all of you into Master࡯s collection!",
+			"boxState": "angry",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-black3",
+			"text": "And then...\\nWe could be here FOREVER!",
+			"boxState": "angry",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "empty",
+			"text": "PREPARE TO DIE!!!!!",
+			"boxState": "angry",
+			"portrait": "empty",
+			"speed": 0.1,
+			"sound": ""
+		}
+	]
+}

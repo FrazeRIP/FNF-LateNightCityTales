@@ -1,0 +1,167 @@
+{
+	"dialogue_pos": "right",
+	"position": [
+		0,
+		50
+	],
+	"scale": 1.25,
+	"animations": [
+		{
+			"loop_name": "1-candle",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "1-candle",
+			"anim": "1-candle",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "1-sleep",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "1-sleep",
+			"anim": "1-sleep",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "creepy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "creepy",
+			"anim": "creepy",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "cry",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "cry",
+			"anim": "cry",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "normal",
+			"anim": "normal",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "scare-shut",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "scare-shut",
+			"anim": "scare-shut",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "talk",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "talk",
+			"anim": "talk",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "taunt",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "taunt",
+			"anim": "taunt",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "up",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "up",
+			"anim": "up",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "wow",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "wow",
+			"anim": "wow",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "happy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "happy",
+			"anim": "happy",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "scare-normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "scare-normal",
+			"anim": "scare-normal",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "bf-dialog"
+}

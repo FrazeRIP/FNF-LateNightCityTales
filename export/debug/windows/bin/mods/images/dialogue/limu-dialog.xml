@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="limu-dialog.png">
+<SubTexture name="angry-black10000" x="0" y="1323" width="493" height="584" frameX="-96" frameY="-66" frameWidth="691" frameHeight="723" />
+<SubTexture name="angry-black20000" x="691" y="0" width="571" height="635" frameX="-56" frameY="-52" frameWidth="691" frameHeight="723" />
+<SubTexture name="angry-black30000" x="0" y="0" width="691" height="723" frameX="0" frameY="0" frameWidth="691" frameHeight="723" />
+<SubTexture name="angry-forward0000" x="0" y="723" width="516" height="600" frameX="-111" frameY="-64" frameWidth="691" frameHeight="723" />
+<SubTexture name="angry-mad0000" x="1113" y="723" width="605" height="590" frameX="-43" frameY="-63" frameWidth="691" frameHeight="723" />
+<SubTexture name="angry-normal0000" x="1839" y="0" width="523" height="588" frameX="-76" frameY="-67" frameWidth="691" frameHeight="723" />
+<SubTexture name="angry-sad0000" x="1262" y="0" width="577" height="615" frameX="-28" frameY="-54" frameWidth="691" frameHeight="723" />
+<SubTexture name="angry-shocked0000" x="516" y="723" width="597" height="592" frameX="-46" frameY="-55" frameWidth="691" frameHeight="723" />
+<SubTexture name="confuse0000" x="493" y="1323" width="559" height="579" frameX="-45" frameY="-74" frameWidth="691" frameHeight="723" />
+<SubTexture name="happy0000" x="1052" y="1323" width="573" height="570" frameX="-71" frameY="-66" frameWidth="691" frameHeight="723" />
+<SubTexture name="laugh0000" x="0" y="1907" width="597" height="517" frameX="-56" frameY="-107" frameWidth="691" frameHeight="723" />
+<SubTexture name="normal0000" x="2362" y="0" width="502" height="564" frameX="-93" frameY="-69" frameWidth="691" frameHeight="723" />
+<SubTexture name="dark0000" x="1625" y="1323" width="506" height="567" frameX="-93" frameY="-73" frameWidth="691" frameHeight="723" />
+<SubTexture name="question0000" x="2362" y="564" width="502" height="561" frameX="-93" frameY="-72" frameWidth="691" frameHeight="723" />
+<SubTexture name="wish0000" x="1839" y="588" width="499" height="587" frameX="-93" frameY="-58" frameWidth="691" frameHeight="723" />
+</TextureAtlas>

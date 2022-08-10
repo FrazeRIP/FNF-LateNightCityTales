@@ -1,0 +1,56 @@
+{
+  "animations": [
+    {
+      "loop": false,
+      "offsets": [
+        100,
+        245
+      ],
+      "anim": "idle",
+      "fps": 24,
+      "name": "normal gf idle",
+      "indices": []
+    },
+    {
+      "loop": false,
+      "offsets": [
+        100,
+        246
+      ],
+      "anim": "recover",
+      "fps": 24,
+      "name": "recover",
+      "indices": []
+    },
+    {
+      "loop": false,
+      "offsets": [
+        100,
+        246
+      ],
+      "anim": "vanish",
+      "fps": 24,
+      "name": "vanish",
+      "indices": []
+    }
+  ],
+  "no_antialiasing": true,
+  "image": "characters/normal gf",
+  "position": [
+    0,
+    0
+  ],
+  "healthicon": "gf",
+  "flip_x": false,
+  "healthbar_colors": [
+    165,
+    0,
+    77
+  ],
+  "camera_position": [
+    -100,
+    110
+  ],
+  "sing_duration": 6.1,
+  "scale": 1
+}

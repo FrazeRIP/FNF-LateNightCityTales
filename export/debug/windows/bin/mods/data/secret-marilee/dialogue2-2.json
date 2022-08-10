@@ -1,0 +1,484 @@
+{
+	"dialogue": [
+		{
+			"expression": "up",
+			"text": "*Deep Breath",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Fabulous...\\nLimu has fallen in love with your voice...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "talk",
+			"text": "Beep Bo.",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Thank yah...\\nYah the first one being so kind to Limu.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Beep?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Limu had met some travelers before,\\nThey were all mean to Limu...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "confuse",
+			"text": "How many years...\\nSince Limu met the last traveler...?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "talk",
+			"text": "Beep bo ski bi ba?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "Limu cannot leave da castle,\\nIt࡯s Limu master࡯s order.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "Master has not returned for a long timeth,\\nLimu is the only one who࡯s keeping da castle.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "This castle is very important to Master.\\nMaster is very important to Limu.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Limu cannot go against Master࡯s will...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Be bo ski be bo......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Thank you, Boyfriend.\\nThank you for listening to Limu's story.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "And Boyfriend...\\nWould yah mind listening to Limu'࡯s wisheth as well?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "Beep?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Would you like to stay here with Limu...\\nSo we can sing together...every day?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "Beep ba boo?\\nBeep!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Please?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "*Look at Girlfriend.",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "statue",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "Be bo...?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "statue",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "creepy",
+			"text": "Be bo!",
+			"boxState": "angry",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "Be bo......!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "Beep Boo ba...\\nDa beep bo ski bi ba?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "confuse",
+			"text": "Don࡯t worry,\\nShe will be fine.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Limu has turned her\\nInto one of Master's collections.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "She will become a work of art for eternity.\\nAt least this will keep her silent.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "It࡮s only two of us now.\\nLet'࡯s continue our conversation, shall we?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "......!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "Beep ski be bo da!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "Why do yah so care about her?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "confuse",
+			"text": "She's not as good as Limu,\\nNeither by appearance or personality.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "Beep ba bo ski bi ba!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "Couples? She࡯'s gone now.\\nLimu is your only choice...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "confuse",
+			"text": "Or if yah really care about her...\\nYou can make a deal with Limu...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "If yah stay...\\nLimu will let her go.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "empty",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "empty",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Limu...\\nDon't want to be alone anymore...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-sad",
+			"text": "Have you ever wondered...\\nHow does it feel to live on the same day every year?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "For hundreds of years...\\nNo one came to visit Limu...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-forward",
+			"text": "No one has ever spoken to Limu...\\nNobody cares about Lim's feeling...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-mad",
+			"text": "Limu...\\nHad suffered enough!",
+			"boxState": "angry",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-sad",
+			"text": "Huff...\\nHuff...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "So Boyfriend...\\nLet࡯s both wait for Master࡯s comeback,\\nShall we?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "We can play together, sing together,\\nAnd feel lonely or bored no more.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Limu can make yah be Limu࡯s assistance,\\nLimu will teach you everything about da castle.",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "Once da master is back,\\nLimu will ask for our freedom...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "After that,\\nWe can travel around the whole world!\\nGo whatever we want to!",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "wish",
+			"text": "Ahh...\\nHow joyful that will be...?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "question",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "angry-normal",
+			"text": "Did he...\\nRan away...?",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "Don࡯t worry...\\nNobody can leave without Limu'࡯s permission...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "As long as yah are in the castle...\\nLimu will find yah...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "laugh",
+			"text": "Come out, Boyfriend...\\nWherever you are...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "dark",
+			"text": "Hehehehehehehe...",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		}
+	]
+}

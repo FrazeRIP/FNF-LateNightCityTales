@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Eyesocket.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Eyesocket ding0000" x="10" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket ding0001" x="10" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0000" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0001" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0002" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0003" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0004" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0005" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0006" x="10" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0007" x="724" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0008" x="486" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0009" x="248" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0010" x="10" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0011" x="724" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0012" x="486" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0013" x="248" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0014" x="10" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0015" x="724" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0016" x="486" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0017" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket off0018" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0000" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0001" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0002" x="486" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0003" x="724" y="10" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0004" x="10" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0005" x="248" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0006" x="486" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0007" x="724" y="350" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0008" x="10" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0009" x="248" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0010" x="486" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0011" x="724" y="690" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0012" x="10" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0013" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0014" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0015" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0016" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0017" x="248" y="1030" width="238" height="340"/>
+	<SubTexture name="Eyesocket on0018" x="248" y="1030" width="238" height="340"/>
+</TextureAtlas>

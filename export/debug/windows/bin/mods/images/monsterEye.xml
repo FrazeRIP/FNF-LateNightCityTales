@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="monsterEye.png">
+	<!-- Created with Adobe Animate version 16.5.1.104 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ding0000" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="ding0001" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0000" x="486" y="10" width="238" height="340"/>
+	<SubTexture name="blink0001" x="724" y="10" width="238" height="340"/>
+	<SubTexture name="blink0002" x="962" y="10" width="238" height="340"/>
+	<SubTexture name="blink0003" x="1200" y="10" width="238" height="340"/>
+	<SubTexture name="blink0004" x="1438" y="10" width="238" height="340"/>
+	<SubTexture name="blink0005" x="1676" y="10" width="238" height="340"/>
+	<SubTexture name="blink0006" x="10" y="350" width="238" height="340"/>
+	<SubTexture name="blink0007" x="248" y="350" width="238" height="340"/>
+	<SubTexture name="blink0008" x="486" y="350" width="238" height="340"/>
+	<SubTexture name="blink0009" x="724" y="350" width="238" height="340"/>
+	<SubTexture name="blink0010" x="962" y="350" width="238" height="340"/>
+	<SubTexture name="blink0011" x="1200" y="350" width="238" height="340"/>
+	<SubTexture name="blink0012" x="1438" y="350" width="238" height="340"/>
+	<SubTexture name="blink0013" x="1676" y="350" width="238" height="340"/>
+	<SubTexture name="blink0014" x="10" y="690" width="238" height="340"/>
+	<SubTexture name="blink0015" x="248" y="690" width="238" height="340"/>
+	<SubTexture name="blink0016" x="486" y="690" width="238" height="340"/>
+	<SubTexture name="blink0017" x="724" y="690" width="238" height="340"/>
+	<SubTexture name="blink0018" x="962" y="690" width="238" height="340"/>
+	<SubTexture name="blink0019" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0020" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="blink0021" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0022" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="blink0023" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0024" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="blink0025" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0026" x="10" y="10" width="238" height="340"/>
+	<SubTexture name="blink0027" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0028" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0029" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0030" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0031" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0032" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0033" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0034" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0035" x="248" y="10" width="238" height="340"/>
+	<SubTexture name="blink0036" x="248" y="10" width="238" height="340"/>
+</TextureAtlas>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Flame.png">
+	<!-- Created with Adobe Animate version 19.1.0.349 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="FlameNormal0000" x="0" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0001" x="0" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0002" x="0" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0003" x="0" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0004" x="1054" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0005" x="1054" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0006" x="2108" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0007" x="2108" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0008" x="0" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0009" x="0" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0010" x="0" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0011" x="0" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0012" x="1054" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0013" x="1054" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0014" x="2108" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameNormal0015" x="2108" y="0" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0000" x="0" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0001" x="0" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0002" x="1054" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0003" x="1054" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0004" x="2108" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0005" x="2108" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0006" x="0" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0007" x="0" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0008" x="1054" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0009" x="1054" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0010" x="2108" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0011" x="2108" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0012" x="1054" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0013" x="1054" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0014" x="2108" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0015" x="2108" y="1054" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0016" x="0" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0017" x="0" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0018" x="1054" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0019" x="1054" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0020" x="2108" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0021" x="2108" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0022" x="0" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0023" x="0" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0024" x="1054" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0025" x="1054" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0026" x="2108" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0027" x="2108" y="2108" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0028" x="0" y="3162" width="1054" height="1054"/>
+	<SubTexture name="FlameWind0029" x="0" y="3162" width="1054" height="1054"/>
+</TextureAtlas>

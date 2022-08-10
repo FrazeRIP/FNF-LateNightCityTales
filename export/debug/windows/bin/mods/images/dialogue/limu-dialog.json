@@ -1,0 +1,206 @@
+{
+	"dialogue_pos": "left",
+	"position": [
+		-60,
+		-30
+	],
+	"scale": 1.25,
+	"animations": [
+		{
+			"loop_name": "angry-black1",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry-black1",
+			"anim": "angry-black1",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "angry-black2",
+			"idle_offsets": [
+				0,
+				20
+			],
+			"idle_name": "angry-black2",
+			"anim": "angry-black2",
+			"loop_offsets": [
+				0,
+				20
+			]
+		},
+		{
+			"loop_name": "angry-black3",
+			"idle_offsets": [
+				0,
+				20
+			],
+			"idle_name": "angry-black3",
+			"anim": "angry-black3",
+			"loop_offsets": [
+				0,
+				20
+			]
+		},
+		{
+			"loop_name": "angry-forward",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry-forward",
+			"anim": "angry-forward",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "angry-mad",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry-mad",
+			"anim": "angry-mad",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "angry-normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry-normal",
+			"anim": "angry-normal",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "angry-sad",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry-sad",
+			"anim": "angry-sad",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "angry-shock",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "angry-shock",
+			"anim": "angry-shock",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "confuse",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "confuse",
+			"anim": "confuse",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "happy",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "happy",
+			"anim": "happy",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "laugh",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "laugh",
+			"anim": "laugh",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "normal",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "normal",
+			"anim": "normal",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "dark",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "dark",
+			"anim": "dark",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "question",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "question",
+			"anim": "question",
+			"loop_offsets": [
+				0,
+				0
+			]
+		},
+		{
+			"loop_name": "wish",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"idle_name": "wish",
+			"anim": "wish",
+			"loop_offsets": [
+				0,
+				0
+			]
+		}
+	],
+	"image": "limu-dialog"
+}

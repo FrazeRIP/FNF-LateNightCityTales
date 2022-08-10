@@ -194,8 +194,6 @@ class PlayState extends MusicBeatState
 	public var camHUD:FlxCamera;
 	public var camGame:FlxCamera;
 	
-	public var camFXText:FlxCamera;
-
 
 	public var camNoteWhite:FlxCamera;
 	public var camNoteDark:FlxCamera;
@@ -373,6 +371,7 @@ class PlayState extends MusicBeatState
 	public var camHUDShaders:Array<ShaderEffect> = [];
 	public var camOtherShaders:Array<ShaderEffect> = [];
 	public var camNormalNoteShaders:Array<ShaderEffect> = [];
+	
 
 
 	public var newCamEffectsAll:Array<BitmapFilter>=[];
@@ -411,7 +410,8 @@ class PlayState extends MusicBeatState
 				camNormalNoteShaders.push(effect);
 				newCamEffectsNormalNote.push(new ShaderFilter(effect.shader));
 				camNoteNormal.setFilters(newCamEffectsNormalNote);
-
+				
+			
             default:
                 if(modchartSprites.exists(cam)) {
                     Reflect.setProperty(modchartSprites.get(cam),"shader",effect.shader);
@@ -539,6 +539,8 @@ class PlayState extends MusicBeatState
 
 		camNoteNormal = new FlxCamera();
 		camNoteDark = new FlxCamera();
+
+
 		camNoteWhite = new FlxCamera();
 		camNoteRed = new FlxCamera();
 		camDialog = new FlxCamera();
@@ -549,6 +551,7 @@ class PlayState extends MusicBeatState
 		camDialog.bgColor.alpha = 0;
 		camDialogBack.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
+
 		camNoteNormal.bgColor.alpha = 0;
 		camNoteDark.bgColor.alpha = 0;
 		camNoteWhite.bgColor.alpha = 0;
@@ -556,6 +559,8 @@ class PlayState extends MusicBeatState
 //----------------------------------------------------------------
 
 		camGame.setFilters(filters);
+		
+
 		camNoteNormal.setFilters(noteFiltersNormal);
 		camNoteDark.setFilters(noteFiltersDark);
 		camNoteWhite.setFilters(noteFiltersWhite);
@@ -1553,10 +1558,12 @@ class PlayState extends MusicBeatState
 				//addShaderToCamera('camNoteNormal', new VCRDistortionEffect(0.0,false,true,false));
 				//addShaderToCamera('all', new VCRDistortionEffect(0.0,false,true,false));
 
+
 				addShaderToCamera('camgame', new WaveEffect(5,7,waveFrequency));
 				addShaderToCamera('camgame', new VCRDistortionEffect(0.0,false,true,true));
 				addShaderToCamera('camgame', new BloomEffect(0,0));
 				addShaderToCamera('camgame',new DistortedTVEffect(0.3,0,0,0));
+
 				camGame.setFilters(newCamEffectsGame);
 			}
 
@@ -4740,27 +4747,6 @@ class PlayState extends MusicBeatState
 		bloomAmount = amount;
 	}
 
-	function createText(x:Float,y:Float,angle:Float,text:String,width:Int,textsize:Int,delay:Float,color:FlxColor)
-	{
-		var _typeText:FlxTypeText;
-		_typeText = new FlxTypeText(x,y,width,text,textsize,true);
-		_typeText.angle = angle;
-		_typeText.delay = delay;
-		_typeText.showCursor = false;
-		_typeText.waitTime = 2.0;
-		_typeText.setTypingVariation(0.75,true);
-		_typeText.color = color;
-		_typeText.cameras = [camHUD];
-	//	_typeText.sounds = [ FlxAssets.getSound("shared: assets/shared/dialogue")];
-		_typeText.setFormat(Paths.font("vcr.ttf"), textsize);
-		_typeText.completeCallback = function() {
-		FlxTween.tween(_typeText,{alpha: 0},1.5);}
-
-		trace('text warning!');
-		add(_typeText);
-		_typeText.start(delay,true);
-
-	}	
 	
 	override function beatHit()
 	{
@@ -4854,14 +4840,6 @@ class PlayState extends MusicBeatState
 					FlxTween.num(0.1,0.01,60/230*64,{type: ONESHOT},updateWaveAmp);
 				}
 		}
-
-		if (curBeat % 8 == 0)
-		{
-			createText(200,200,20,'test test test',60,32,0.6,0xFF3F2021);
-		}
-
-		
-
 
 		iconP1.scale.set(1.2, 1.2);
 		iconP2.scale.set(1.2, 1.2);
@@ -5138,13 +5116,11 @@ class PlayState extends MusicBeatState
 
 		_typeText.setFormat(Paths.font("MouseMemoirs-Regular.ttf"),textSize);
 
-		_typeText.completeCallback = function() {
-			FlxTween.tween(_typeText,{alpha: 0},1.5);
-		}
-
 		add(_typeText);
 
-		_typeText.start(delay,true);
+		_typeText.start(delay,true,false,null,function(){
+			FlxTween.tween(_typeText,{alpha: 0},1.5);
+		});
 	}
 
 

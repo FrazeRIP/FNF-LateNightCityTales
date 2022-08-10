@@ -1275,7 +1275,7 @@ class DistortBGShader extends FlxShader
     void main()
     {
         vec2 uv = sineWave(openfl_TextureCoordv);
-        gl_FragColor = makeBlack(texture2D(bitmap, uv)) + texture2D(bitmap,openfl_TextureCoordv);
+        gl_FragColor = makeBlack(flixel_texture2D(bitmap, uv)) + flixel_texture2D(bitmap,openfl_TextureCoordv);
     }')
 
     public function new()
@@ -1467,7 +1467,7 @@ class WaveShader extends FlxShader{
 		void main()
 		{
 			vec2 uv = sineWave(openfl_TextureCoordv);
-			gl_FragColor = texture2D(bitmap, uv);
+			gl_FragColor = flixel_texture2D(bitmap, uv);
 		}')
 
 	public function new()

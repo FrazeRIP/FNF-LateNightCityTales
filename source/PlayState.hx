@@ -4739,6 +4739,28 @@ class PlayState extends MusicBeatState
 	function updateBloom(amount:Float){
 		bloomAmount = amount;
 	}
+
+	function createText(x:Float,y:Float,angle:Float,text:String,width:Int,textsize:Int,delay:Float,color:FlxColor)
+	{
+		var _typeText:FlxTypeText;
+		_typeText = new FlxTypeText(x,y,width,text,textsize,true);
+		_typeText.angle = angle;
+		_typeText.delay = delay;
+		_typeText.showCursor = false;
+		_typeText.waitTime = 2.0;
+		_typeText.setTypingVariation(0.75,true);
+		_typeText.color = color;
+		_typeText.cameras = [camHUD];
+	//	_typeText.sounds = [ FlxAssets.getSound("shared: assets/shared/dialogue")];
+		_typeText.setFormat(Paths.font("vcr.ttf"), textsize);
+		_typeText.completeCallback = function() {
+		FlxTween.tween(_typeText,{alpha: 0},1.5);}
+
+		trace('text warning!');
+		add(_typeText);
+		_typeText.start(delay,true);
+
+	}	
 	
 	override function beatHit()
 	{
@@ -4831,6 +4853,11 @@ class PlayState extends MusicBeatState
 				if(curBeat == 196){					
 					FlxTween.num(0.1,0.01,60/230*64,{type: ONESHOT},updateWaveAmp);
 				}
+		}
+
+		if (curBeat % 8 == 0)
+		{
+			createText(200,200,20,'test test test',60,32,0.6,0xFF3F2021);
 		}
 
 		

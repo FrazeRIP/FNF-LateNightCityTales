@@ -5113,13 +5113,20 @@ class PlayState extends MusicBeatState
 		_typeText.color = color;
 
 		//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
+		_typeText.sounds = [FlxG.sound.load(Paths.sound('dialogue'))];
 
 		_typeText.setFormat(Paths.font("MouseMemoirs-Regular.ttf"),textSize);
 
 		add(_typeText);
 
 		_typeText.start(delay,true,false,null,function(){
-			FlxTween.tween(_typeText,{alpha: 0},1.5);
+			FlxTween.tween(_typeText,{alpha: 0},1.5,{
+				ease: FlxEase.cubeInOut,
+				onComplete: function(twn:FlxTween)
+				{
+					remove(_typeText);
+					_typeText.destroy();
+				}});
 		});
 	}
 

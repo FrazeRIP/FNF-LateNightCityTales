@@ -285,6 +285,8 @@ class FunkinLua {
 			PlayState.instance.setGlow(tag,prasedColor,alpha,blur,strength);
 		});
 
+		
+
 		Lua_helper.add_callback(lua, "startNextDialog", function() {
 			if(PlayState.instance.psychDialogue!=null){
 				PlayState.instance.psychDialogue.startNextDialog();

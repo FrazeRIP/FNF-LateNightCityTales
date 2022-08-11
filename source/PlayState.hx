@@ -4713,20 +4713,21 @@ class PlayState extends MusicBeatState
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
 
-		var daSong:String = Paths.formatToSongPath(curSong);
-		if(daSong == "lonely-sapphire"){
-			if(curStep == 16){
-				createFXText(
-					/*X:*/500,
-					/*Y:*/300,
-					/*Angle:*/40,
-					/*String:*/"You came from another world...\nSo far far away...",
-					/*Width:*/200,
-					/*Size:*/32,
-					/*Delay:*/.05,
-					/*Color:*/FlxColor.WHITE);
-			}
-		}
+		// var daSong:String = Paths.formatToSongPath(curSong);
+
+		// if(daSong == "lonely-sapphire"){
+		// 	if(curStep == 16){
+		// 		createFXText(
+		// 			/*X:*/500,
+		// 			/*Y:*/300,
+		// 			/*Angle:*/20,
+		// 			/*String:*/"You came from another world...\nSo far far away...",
+		// 			/*Width:*/200,
+		// 			/*Size:*/32,
+		// 			/*Delay:*/.05,
+		// 			/*Color:*/FlxColor.WHITE);
+		// 	}
+		
 	}
 
 	var lightningStrikeBeat:Int = 0;
@@ -5101,7 +5102,7 @@ class PlayState extends MusicBeatState
 	var curLightEvent:Int = 0;
 
 
-	function createFXText(x:Float, y:Float,angle:Float,text:String,width:Int,textSize:Int,delay:Float,color:FlxColor){
+	public function createFXText(x:Float, y:Float,angle:Float,text:String,width:Int,textSize:Int,delay:Float,color:FlxColor){
 		var _typeText:FlxTypeText;
 		_typeText = new FlxTypeText(x, y, width,text, textSize,true);
 		_typeText.angle = angle;
@@ -5115,7 +5116,7 @@ class PlayState extends MusicBeatState
 		//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
 		_typeText.sounds = [FlxG.sound.load(Paths.sound('dialogue'))];
 
-		_typeText.setFormat(Paths.font("MouseMemoirs-Regular.ttf"),textSize);
+		_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),textSize);
 
 		add(_typeText);
 

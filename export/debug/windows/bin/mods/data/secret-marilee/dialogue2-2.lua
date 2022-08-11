@@ -9,7 +9,7 @@ function onEndSong()
 		setProperty('skipDialogueEndCallback',true)
 
 		preloadAssets()
-		startDialogue('dialogue2-2', 'dialog4');
+		startDialogue('dialogue2-2CN', 'dialog4');
 		allowEnd = true
 
 		return Function_Stop;

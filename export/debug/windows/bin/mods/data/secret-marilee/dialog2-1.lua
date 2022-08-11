@@ -25,7 +25,7 @@ end
 
 function onTimerCompleted(tag, loops, loopsLeft)
 	if tag == 'startDialogue' then -- Timer completed, play dialogue
-		startDialogue('dialogue2-1', 'dialog1');
+		startDialogue('dialogue2-1CN', 'dialog1');
 		preloadAssets()
 	end
 end

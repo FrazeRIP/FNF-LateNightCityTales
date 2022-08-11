@@ -16,7 +16,7 @@ end
 
 function onTimerCompleted(tag, loops, loopsLeft)
 	if tag == 'startDialogue' then -- Timer completed, play dialogue
-		startDialogue('dialogue4', 'dialog4');
+		startDialogue('dialogue4CN', 'dialog4');
 	end
 
 	if tag == 'finish' then

@@ -7,7 +7,7 @@ function onEndSong()
 		setProperty('dialogueCount',0)
 		setProperty('skipDialogueEndCallback',true)
 		preloadAssets()
-		startDialogue('dialogue3-2', 'dialog1');
+		startDialogue('dialogue3-2CN', 'dialog1');
 		allowEnd = true
 
 		return Function_Stop;

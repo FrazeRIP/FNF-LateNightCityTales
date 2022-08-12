@@ -385,6 +385,8 @@ class PlayState extends MusicBeatState
 	public var skipDialogueEndCallback:Bool = false;
 //----------------------------------------------------------------
 
+//--------------------------------	
+
 	//
 	public function addShaderToCamera(cam:String,effect:ShaderEffect){//STOLE FROM ANDROMEDA AND PSYCH ENGINE 0.5.1 WITH SHADERS
       
@@ -5102,25 +5104,38 @@ class PlayState extends MusicBeatState
 	var curLightEvent:Int = 0;
 
 
-	public function createFXText(x:Float, y:Float,angle:Float,text:String,width:Int,textSize:Int,delay:Float,color:FlxColor){
+	public var _width:Int = 300;
+	public var _textSize:Int = 32;
+	public var _delay:Float = 0.05;
+	public var _color:FlxColor = FlxColor.WHITE;
+
+	public function setTextData(width:Int,textSize:Int,delay:Float,color:FlxColor){
+		_width = width;
+		_textSize = textSize;
+		_delay = delay;
+		_color =color;
+	}
+
+	//public function createFXText(x:Float, y:Float,angle:Float,text:String,width:Int,textSize:Int,delay:Float,color:FlxColor){
+		public function createFXText(x:Float, y:Float,angle:Float,text:String){
 		var _typeText:FlxTypeText;
-		_typeText = new FlxTypeText(x, y, width,text, textSize,true);
+		_typeText = new FlxTypeText(x, y, _width,text, _textSize,true);
 		_typeText.angle = angle;
-		_typeText.delay = delay;
+		_typeText.delay = _delay;
 		_typeText.camera = camGame;
 		_typeText.showCursor = false;
 		_typeText.waitTime = 2.0;
 		_typeText.setTypingVariation(0.75, true);
-		_typeText.color = color;
+		_typeText.color = _color;
 
 		//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
 		_typeText.sounds = [FlxG.sound.load(Paths.sound('dialogue'))];
 
-		_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),textSize);
+		_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),_textSize);
 
 		add(_typeText);
 
-		_typeText.start(delay,true,false,null,function(){
+		_typeText.start(_delay,true,false,null,function(){
 			FlxTween.tween(_typeText,{alpha: 0},1.5,{
 				ease: FlxEase.cubeInOut,
 				onComplete: function(twn:FlxTween)
@@ -5132,6 +5147,12 @@ class PlayState extends MusicBeatState
 	}
 
 
+	function convertStringToColor(color:String){
+		
+		if(!color.startsWith('0x')) color = '0xff' + color;
+		var prasedColor = Std.parseInt(color);
+		return prasedColor;
+	}
 
 	
 	// var fxText0:FlxTypeText;

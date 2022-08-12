@@ -28,16 +28,16 @@ function onCreate()
 	addAnimationByPrefix('LimuH2', 'LimuCryIdle', 'LimuCryIdle', 24, true)
 
 	addAnimationByPrefix('LimuH2', 'LimuLaughIdle', 'LimuLaughIdle', 24, false)
-	addAnimationByPrefix('LimuH2', 'LimuLaughSpeak', 'LimuLaughSpeak', 90, true)
+	addAnimationByPrefix('LimuH2', 'LimuLaughSpeak', 'LimuLaughSpeak', 24, true)
 
 	addAnimationByPrefix('LimuH2', 'LimuAngryIdle', 'LimuAngryIdle', 24, false)
-	addAnimationByPrefix('LimuH2', 'LimuAngrySpeak', 'LimuAngrySpeak', 90, true)
+	addAnimationByPrefix('LimuH2', 'LimuAngrySpeak', 'LimuAngrySpeak', 24, true)
 
 	addAnimationByPrefix('LimuH2', 'LimuDefaultIdle', 'LimuDefaultIdle', 24, false)
-	addAnimationByPrefix('LimuH2', 'LimuDefaultSpeak', 'LimuDefaultSpeak', 90, true)
+	addAnimationByPrefix('LimuH2', 'LimuDefaultSpeak', 'LimuDefaultSpeak', 24, true)
 
 	addAnimationByPrefix('LimuH2', 'LimuSadIdle', 'LimuSadIdle', 24, false)
-	addAnimationByPrefix('LimuH2', 'LimuSadSpeak', 'LimuSadSpeak', 90, true)
+	addAnimationByPrefix('LimuH2', 'LimuSadSpeak', 'LimuSadSpeak', 24, true)
 
 	objectPlayAnimation('LimuH2', 'LimuDefaultIdle', false)
 	
@@ -50,17 +50,17 @@ function onCreate()
 	addAnimationByPrefix('LimuH', 'LimuCryIdle', 'LimuCryIdle', 24, true)
 
 	addAnimationByPrefix('LimuH', 'LimuLaughIdle', 'LimuLaughIdle', 24, false)
-	addAnimationByPrefix('LimuH', 'LimuLaughSpeak', 'LimuLaughSpeak', 90, true)
+	addAnimationByPrefix('LimuH', 'LimuLaughSpeak', 'LimuLaughSpeak', 24, true)
 
 	addAnimationByPrefix('LimuH', 'LimuAngryIdle', 'LimuAngryIdle', 24, false)
-	addAnimationByPrefix('LimuH', 'LimuAngrySpeak', 'LimuAngrySpeak', 90, true)
+	addAnimationByPrefix('LimuH', 'LimuAngrySpeak', 'LimuAngrySpeak', 24, true)
 
 	addAnimationByPrefix('LimuH', 'LimuDefaultIdle', 'LimuDefaultIdle', 24, false)
-	addAnimationByPrefix('LimuH', 'LimuDefaultSpeak', 'LimuDefaultSpeak', 90, true)
+	addAnimationByPrefix('LimuH', 'LimuDefaultSpeak', 'LimuDefaultSpeak', 24, true)
 
 
 	addAnimationByPrefix('LimuH', 'LimuSadIdle', 'LimuSadIdle', 24, false)
-	addAnimationByPrefix('LimuH', 'LimuSadSpeak', 'LimuSadSpeak', 90, true)
+	addAnimationByPrefix('LimuH', 'LimuSadSpeak', 'LimuSadSpeak', 24, true)
 
 	objectPlayAnimation('LimuH', 'LimuDefaultIdle', false)
 	
@@ -86,7 +86,7 @@ function onCreate()
 	setBlendMode('WaterRay','multiply')
 	--water filter
 	makeAnimatedLuaSprite('WaterFilter', 'WaterFilter', offsetX, offsetY);
-	addAnimationByPrefix('WaterFilter', 'WaterFilter', 'WaterFilter', 48, true)
+	addAnimationByPrefix('WaterFilter', 'WaterFilter', 'WaterFilter', 36, true)
 	setScrollFactor('WaterFilter', 1, 1);
 	addLuaSprite('WaterFilter', true);
 	scaleObject('WaterFilter', 1.5	, 1.5);

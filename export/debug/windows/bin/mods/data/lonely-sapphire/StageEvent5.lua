@@ -107,6 +107,15 @@ function onStepHit( ... )
 		doTweenAlpha("HUDAlpha3","camNoteWhite",1,.5)
 	end
 
+
+	if curStep == 16 then
+	setTextData(
+	--width,size,delay,color
+	300,32,0.05,'D119FF')
+	createFXText(
+	--x,y,angle,content
+	500,300,0,"testadsfasdfas dfasdfdsaf asdfasdfsa")
+	end
 	
 
 
@@ -137,9 +146,11 @@ end
 
 function onBeatHit()
 
+
 	if curBeat == 32 then
 	setCameraZoomAmount(0.015)
 	camShakeNotes(.003,secPerBeat*16)
+
 	end
 
 	if curBeat == 48 then

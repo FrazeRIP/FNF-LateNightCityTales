@@ -13,7 +13,6 @@ local zoomDuration
 
 
 --------------------
------------------------
 local caAmount = 1.25;
 local caFactor = 1;
 
@@ -28,8 +27,8 @@ local isAutoCA = true
 local isAutoGlitch = true
 local isAutoCamZoom = true
 
+local shadowAnimFactor = 4
 local isShadowOn = false
-local isSpeaking = false
 ----------------------
 local currentIdleAnimType = 'LimuDefaultIdle'
 
@@ -68,7 +67,7 @@ function onCreatePost( ... )
 	setProperty('dad.visible', false)
 
 	secPerBeat = 60/curBpm
-	zoomDuration = secPerBeat
+	zoomDuration = secPerBeat/2
 
 	setGlow('normal','D119FF',1,32,3)
 	setGlow('special','D119FF',1,36,4)
@@ -80,7 +79,7 @@ function onCreatePost( ... )
 	
 	setWave(0.03,1)
 	
-	setCameraZoomAmount(0.01)
+	setCameraZoomAmount(0.015)
 	
 	setProperty('bloomFactor', 0)
 	setProperty('blurFactor', 0)
@@ -96,9 +95,6 @@ function onStepHit( ... )
 
 	if curStep == 1 then
 		camShakeNotes(.001,secPerBeat*32)
-		isSpeaking = true
-		objectPlayAnimation('LimuH', 'LimuDefaultSpeak', true)
-		objectPlayAnimation('LimuH2', 'LimuDefaultSpeak', true)
 
 		
 		doTweenAlpha("HUDAlpha","camHUD",1,secPerBeat*2)
@@ -107,15 +103,6 @@ function onStepHit( ... )
 		doTweenAlpha("HUDAlpha3","camNoteWhite",1,.5)
 	end
 
-
-	if curStep == 16 then
-	setTextData(
-	--width,size,delay,color
-	300,32,0.05,'D119FF')
-	createFXText(
-	--x,y,angle,content
-	500,300,0,"testadsfasdfas dfasdfdsaf asdfasdfsa")
-	end
 	
 
 
@@ -140,26 +127,46 @@ function onStepHit( ... )
 				noteTweenAlpha(i.."NoteAlphaTween", i, 1, secPerBeat*currentFactor/4, "smootherStepInOut")
 			end
 		end
+
+
+		if curStep == 246 then
+		
+		setProperty('isInvertActive',true)
+		end
+
+		if curStep == 248 then
+		
+		setProperty('isInvertActive',false)
+		end
+
+		if curStep == 250 then
+
+		setProperty('isInvertActive',true)
+
+		end
+
+		if curStep == 64*4 then
+		
+		setProperty('isInvertActive',false)
+		end
+
 end
 
 
 
 function onBeatHit()
 
-
 	if curBeat == 32 then
-	setCameraZoomAmount(0.015)
+	setCameraZoomAmount(0.02)
 	camShakeNotes(.003,secPerBeat*16)
-
 	end
 
 	if curBeat == 48 then
-	setCameraZoomAmount(0.02)
+	setCameraZoomAmount(0.025)
 	camShakeNotes(.005,secPerBeat*8)
 	end
 
 	if curBeat == 52 then
-	
 	isAutoCamZoom = false
 	doTweenZoom('camgameZ2','camGame', 1.25,secPerBeat*7, 'cubeIn')
 	end
@@ -167,9 +174,12 @@ function onBeatHit()
 	if curBeat == 56 then
 	setCameraZoomAmount(0.025)
 	camShakeNotes(.008,secPerBeat*4)
-
 	end
 	
+	if curBeat == 59 then
+	switchExpressionEvent()
+	end
+
 	if curBeat == 60 then
 	cameraShake('hud', .01, secPerBeat*4)
 	cameraShake('game', .01, secPerBeat*4)
@@ -178,22 +188,29 @@ function onBeatHit()
 	setCameraZoomAmount(0)
 	isShadowOn = true
 
+	
+	doTweenX('GoAwayX','GoAway.scale',.8,.15,'cubeOut')
+	doTweenY('GoAwayY','GoAway.scale',.8,.15,'cubeOut')
+	doTweenAlpha("GoAwayA","GoAway",0.5,.01)
 	end
 
 
 	if curBeat == 64 then
 	
-	isAutoCamZoom = true
+	doTweenAlpha("GoAwayA","GoAway",0.0,.0001)
 
+	isAutoCamZoom = true
+	
 	isAutoGlitch = true
+	glitchAmount = 5;
+	glitchFactor = 15;
+
 	isAutoCA = true
 
 	autoPeriodCA = 1
-	caAmount = 1.4
-	caFactor = 5
+	caAmount = 1.5
+	caFactor = 6
 
-
-	isSpeaking = false
 	doTweenColor('LimuHC', 'LimuH', 'B8B8B8', 0.01, 'linear')
 
 	noteBlinKFactor = 4
@@ -222,10 +239,6 @@ function onBeatHit()
 	end
 
 	if curBeat == 128 then
-	isSpeaking = true
-	currentIdleAnimType = 'LimuLaughIdle'
-	objectPlayAnimation('LimuH','LimuLaughSpeak')
-	objectPlayAnimation('LimuH2','LimuLaughSpeak')
 
 	camShakeNotes(.007,secPerBeat*64)
 	isAutoCA = false
@@ -233,7 +246,7 @@ function onBeatHit()
 	isAutoGlitch = true
 	autoPeriodGlitch = 3
 	glitchAmount = 3;
-	glitchFactor = 20;
+	glitchFactor = 15;
 	end
 
 	if curBeat == 191 then
@@ -241,26 +254,17 @@ function onBeatHit()
 	end
 
 	if curBeat == 192 then
-	currentIdleAnimType = 'LimuAngryIdle'
-	objectPlayAnimation('LimuH','LimuAngrySpeak')
-	objectPlayAnimation('LimuH2','LimuAngrySpeak')
 
 	cameraShake('game', .015, secPerBeat*4)
 	end
 
 
 	if curBeat == 196 then
-	
-	currentIdleAnimType = 'LimuLaughIdle'
-	objectPlayAnimation('LimuH','LimuLaughIdle')
-	objectPlayAnimation('LimuH2','LimuLaughIdle')
-
-	isSpeaking = false
 
 	isAutoCamZoom = true
 	camShakeNotes(.005,secPerBeat*64*2)
 	
-	setCameraZoomAmount(0.015)
+	setCameraZoomAmount(0.025)
 
 	zoomDuration = secPerBeat
 	
@@ -294,13 +298,10 @@ function onBeatHit()
 	end
 
 	if curBeat == 260 then
-	currentIdleAnimType = 'LimuDefaultIdle'
-	objectPlayAnimation('LimuH', 'LimuDefaultIdle', true)
-	objectPlayAnimation('LimuH2', 'LimuDefaultIdle', true)
 
 	isAutoGlitch = true
 	glitchAmount = 5;
-	glitchFactor = 15;
+	glitchFactor = 20;
 
 	autoPeriodCA = 1
 	setCameraZoomAmount(0.035)
@@ -311,10 +312,6 @@ function onBeatHit()
 	end
 
 	if curBeat == 324 then
-	isSpeaking = true
-	currentIdleAnimType = 'LimuSadIdle'
-	objectPlayAnimation('LimuH','LimuSadSpeak')
-	objectPlayAnimation('LimuH2','LimuSadSpeak')
 
 	isAutoGlitch = true
 	glitchAmount = 5;
@@ -323,7 +320,7 @@ function onBeatHit()
 
 
 	if curBeat == 388 then
-	setCameraZoomAmount(0.015)
+	setCameraZoomAmount(0.025)
 
 	isAutoGlitch = true
 	glitchAmount = 5;
@@ -343,10 +340,6 @@ function onBeatHit()
 	end
 
 	if curBeat == 452 then
-	isSpeaking = true
-	currentIdleAnimType = 'LimuAngryIdle'
-	objectPlayAnimation('LimuH','LimuAngrySpeak')
-	objectPlayAnimation('LimuH2','LimuAngrySpeak')
 	
 	isAutoGlitch = true
 	glitchAmount = 5;
@@ -357,27 +350,34 @@ function onBeatHit()
 	camShakeNotes(.005,secPerBeat*64)
 	
 	autoPeriodCA = 1
-	caAmount = 1.4
-	caFactor = 5
+	caAmount = 1.5
+	caFactor = 6
 
 	setCameraZoomAmount(0.035)
 	end
 
-	if curBeat == 516 then
-	isSpeaking = false
+	if curBeat == 515 then
+	switchExpressionEvent()
+	end
 
+	if curBeat == 516 then
 	zoomAmountGame = 1.035
 	zoomAmountHUD = 1.01
 	camShakeNotes(.007,secPerBeat*64)
 	setCameraZoomAmount(0.045)
 	
-	glitchAmount = 5;
+	isAutoGlitch = true
+	glitchAmount = 7;
 	glitchFactor = 40;
 	autoPeriodGlitch = 1;
 	
 	autoPeriodCA = 1
-	caAmount = 1.6
-	caFactor = 7
+	caAmount = 1.8
+	caFactor = 8
+	end
+
+	if curBeat == 576 then
+	setProperty('isPlayRisePurpleFX', false)
 	end
 
 	if curBeat == 579 then
@@ -385,28 +385,25 @@ function onBeatHit()
 	end
 
 	if curBeat == 580 then
-	isSpeaking = true
-	objectPlayAnimation('LimuH','LimuCryIdle')
-	objectPlayAnimation('LimuH2','LimuCryIdle')
-
 
 	isAutoCamZoom = false
 	isAutoCA = false
 	isAutoGlitch = false
+	isShadowOn = false
+
+	doTweenAlpha("WaterFilterA","WaterFilter",0,.01)
+	doTweenAlpha("WaterRayA","WaterRay",0,.01)
+	doTweenAlpha("Tentacle2A","Tentacle2",0,.01)
 
 	end
 
 	 
-	if curBeat %4 == 0 then
+	if curBeat % shadowAnimFactor == 0 then
 
 		if isShadowOn then
 		LimuShaodwAnim()
 		end
 
-		if isSpeaking == false then
-		objectPlayAnimation('LimuH', currentIdleAnimType, true)
-		objectPlayAnimation('LimuH2', currentIdleAnimType, true)
-		end
 	end
 
 	if isAutoCamZoom then
@@ -458,8 +455,8 @@ function goodNoteHit(id, direction, noteType, isSustainNote)
 
 	if curBeat>=324 and curBeat <=387 then
 	
-		glitchAmount = 5;
-		glitchFactor = 45;
+		glitchAmount = 4;
+		glitchFactor = 60;
 		
 		isAutoCamZoom = false
 		isAutoCA = false
@@ -506,7 +503,7 @@ function onTweenCompleted ( tag )
 	end
 
 	if tag == 'LimuH2X' then
-		LimuShaodwAnimFinish(secPerBeat*4)
+		LimuShaodwAnimFinish(secPerBeat*shadowAnimFactor)
 	end
 end
 
@@ -545,7 +542,7 @@ function switchExpressionEvent()
 	glitchAmount = 25;
 	glitchFactor = 60;
 	setGlitch()
-	playSound('glitch',.5)
+	playSound('glitch',.4)
 	
 	cameraShake('game', .015, secPerBeat*2)
 end

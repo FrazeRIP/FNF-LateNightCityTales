@@ -1149,8 +1149,17 @@ class PulseEffect extends Effect
 class InvertColorsEffect extends Effect
 {
     public var shader:InvertShader = new InvertShader();
-	public function new(lockAlpha){
-	//	shader.lockAlpha.value = [lockAlpha];
+	public function new(isActive:Bool = true){
+		shader.isActive.value = [isActive];
+
+		PlayState.instance.shaderInvertUpdates.push(setActive);
+
+
+
+	}
+	
+	public function setActive(isActive:Bool){
+	   shader.isActive.value = [isActive];
 	}
 
 }
@@ -1209,6 +1218,8 @@ class InvertShader extends FlxShader
     @:glFragmentSource('
     #pragma header
     
+	uniform bool isActive;
+
     vec4 sineWave(vec4 pt)
     {
 	
@@ -1218,8 +1229,14 @@ class InvertShader extends FlxShader
     void main()
     {
         vec2 uv = openfl_TextureCoordv;
-        gl_FragColor = sineWave(texture2D(bitmap, uv));
-		gl_FragColor.a = 1.0 - gl_FragColor.a;
+
+		if(isActive){
+			gl_FragColor = sineWave(texture2D(bitmap, uv));
+			//gl_FragColor.a = 1.0 - gl_FragColor.a;
+		}else{
+			gl_FragColor = texture2D(bitmap,uv);
+		}
+
     }')
 
     public function new()
@@ -1667,41 +1684,43 @@ void main( )
 class SimpleGlowShader extends FlxShader{
 	@:glFragmentSource('
 		#pragma header
+
+
 		void main() {
-			uniform sampler2D u_textureCol;
-			uniform vec2 u_textureSize;
-			uniform float u_sigma;
-			uniform int u_width;
 
-float CalcGauss( float x, float sigma ) 
-{
-  float coeff = 1.0 / (2.0 * 3.14157 * sigma);
-  float expon = -(x*x) / (2.0 * sigma);
-  return (coeff*exp(expon));
-}
 
-void main()
-{
-    vec2 texC = vertPos.st * 0.5 + 0.5;
-    vec4 texCol = texture( u_textureCol, texC );
-    vec4 gaussCol = vec4( texCol.rgb, 1.0 );
-    vec2 step = 1.0 / u_textureSize;
-    for ( int i = 1; i <= u_width; ++ i )
-    {
-        vec2 actStep = vec2( float(i) * step.x, 0.0 );   // this is for the X-axis
-        // vec2 actStep = vec2( 0.0, float(i) * step.y );   this would be for the Y-axis
+		float glow_size = 10.0;
+		vec3 glow_colour = vec3(1.0, 1.0, 1.0);
+		float glow_intensity = 10.0;
+	    float glow_threshold = .5;
 
-        float weight = CalcGauss( float(i) / float(u_width), u_sigma );
-        texCol = texture2D( u_textureCol, texC + actStep );    
-        gaussCol += vec4( texCol.rgb * weight, weight );
-        texCol = texture2D( u_textureCol, texC - actStep );
-        gaussCol += vec4( texCol.rgb * weight, weight );
+
+		gl_FragColor = flixel_texture2D(bitmap,openfl_TextureCoordv);
+
+    	if (gl_FragColor.a <= glow_threshold) {
+        ivec2 size = textureSize(bitmap, 0.0);
+	
+        float uv_x = openfl_TextureCoordv.x * size.x;
+        float uv_y = openfl_TextureCoordv.y * size.y;
+
+        float sum = 0.0;
+        for (int n = 0; n < 9; ++n) {
+            uv_y = (openfl_TextureCoordv.y * size.y) + (glow_size * float(n - 4.5));
+            float h_sum = 0.0;
+            h_sum += texelFetch(bitmap, ivec2(uv_x - (4.0 * glow_size), uv_y), 0).a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x - (3.0 * glow_size), uv_y), 0).a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x - (2.0 * glow_size), uv_y), 0).a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x - glow_size, uv_y), 0.a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x, uv_y), 0).a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x + glow_size, uv_y), 0).a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x + (2.0 * glow_size), uv_y), 0).a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x + (3.0 * glow_size), uv_y), 0).a;
+            h_sum += texelFetch(bitmap, ivec2(uv_x + (4.0 * glow_size), uv_y), 0).a;
+            sum += h_sum / 9.0;
+        }
+
+        gl_FragColor = vec4(glow_colour, (sum / 9.0) * glow_intensity);
     }
-    gaussCol.rgb /= gaussCol.w;
-    gl_FragColor = vec4( gaussCol.rgb, 1.0 );
-}
-
-
 		')
 
 	public function new()

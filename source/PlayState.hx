@@ -365,6 +365,8 @@ class PlayState extends MusicBeatState
 	public var waveAmplitude:Float = .003;
 	public var waveTimer:Float = 0;
 
+	public var shaderInvertUpdates:Array<Bool->Void> = [];
+	public var isInvertActive:Bool = false;
 
 	public var camAllShaders:Array<ShaderEffect> = [];
 	public var camGameShaders:Array<ShaderEffect> = [];
@@ -1565,8 +1567,8 @@ class PlayState extends MusicBeatState
 				addShaderToCamera('camgame', new VCRDistortionEffect(0.0,false,true,true));
 				addShaderToCamera('camgame', new BloomEffect(0,0));
 				addShaderToCamera('camgame',new DistortedTVEffect(0.3,0,0,0));
+				addShaderToCamera('camgame', new InvertColorsEffect(true));
 
-				camGame.setFilters(newCamEffectsGame);
 			}
 
 
@@ -2559,6 +2561,8 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		_textCount = _textArray.length;
+
 
 		if(caAmount>0){
 			caAmount-= (elapsed*caAmountFactor);
@@ -3076,6 +3080,10 @@ class PlayState extends MusicBeatState
 		}
 		for(i in shaderBloomUpdates){
 			i(bloomAmount);
+		}
+
+		for(i in shaderInvertUpdates){
+			i(isInvertActive);
 		}
 
 
@@ -4828,6 +4836,16 @@ class PlayState extends MusicBeatState
 					FlxTween.num(30,0,60/230*8,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
 				}
 
+				if(curBeat == 512){
+					FlxTween.num(0,30,60/230*4,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
+					FlxTween.num(0,30,60/230*4,{ease: FlxEase.cubeIn,type: ONESHOT},updateBloom);
+				}
+
+				if(curBeat == 516){
+
+					FlxTween.num(30,0,60/230*2,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*2,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+				}
 				
 				if(curBeat == 572){
 					FlxTween.num(0,30,60/230*8,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
@@ -4835,8 +4853,8 @@ class PlayState extends MusicBeatState
 				}
 
 				if(curBeat == 580){
-					FlxTween.num(30,0,60/230*4,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
-					FlxTween.num(30,0,60/230*4,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+					FlxTween.num(30,0,60/230*16,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*16,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
 				}
 
 				if(curBeat == 196){					
@@ -5109,6 +5127,9 @@ class PlayState extends MusicBeatState
 	public var _delay:Float = 0.05;
 	public var _color:FlxColor = FlxColor.WHITE;
 
+	public var _textArray:Array<FlxTypeText> = [];
+	public var _textCount:Int = 0;
+
 	public function setTextData(width:Int,textSize:Int,delay:Float,color:FlxColor){
 		_width = width;
 		_textSize = textSize;
@@ -5120,6 +5141,8 @@ class PlayState extends MusicBeatState
 		public function createFXText(x:Float, y:Float,angle:Float,text:String){
 		var _typeText:FlxTypeText;
 		_typeText = new FlxTypeText(x, y, _width,text, _textSize,true);
+		_textArray.push(_typeText);
+
 		_typeText.angle = angle;
 		_typeText.delay = _delay;
 		_typeText.camera = camGame;
@@ -5127,6 +5150,7 @@ class PlayState extends MusicBeatState
 		_typeText.waitTime = 2.0;
 		_typeText.setTypingVariation(0.75, true);
 		_typeText.color = _color;
+		_typeText.alpha = 0.5;
 
 		//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
 		_typeText.sounds = [FlxG.sound.load(Paths.sound('dialogue'))];
@@ -5136,6 +5160,7 @@ class PlayState extends MusicBeatState
 		add(_typeText);
 
 		_typeText.start(_delay,true,false,null,function(){
+			_textArray.remove(_typeText);
 			FlxTween.tween(_typeText,{alpha: 0},1.5,{
 				ease: FlxEase.cubeInOut,
 				onComplete: function(twn:FlxTween)
@@ -5145,6 +5170,39 @@ class PlayState extends MusicBeatState
 				}});
 		});
 	}
+
+	
+	//public function createFXText(x:Float, y:Float,angle:Float,text:String,width:Int,textSize:Int,delay:Float,color:FlxColor){
+		public function createSideFXText(x:Float, y:Float,angle:Float,text:String){
+			var _typeText:FlxTypeText;
+			_typeText = new FlxTypeText(x, y, _width,text, _textSize,true);
+
+			_typeText.angle = angle;
+			_typeText.delay = _delay;
+			_typeText.camera = camGame;
+			_typeText.showCursor = false;
+			_typeText.waitTime = 2.0;
+			_typeText.setTypingVariation(0.75, true);
+			_typeText.color = _color;
+			_typeText.alpha = 0.3;
+	
+			//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
+			_typeText.sounds = [FlxG.sound.load(Paths.sound('dialogue'))];
+	
+			_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),_textSize);
+	
+			add(_typeText);
+	
+			_typeText.start(_delay,true,false,null,function(){
+				FlxTween.tween(_typeText,{alpha: 0},1.5,{
+					ease: FlxEase.cubeInOut,
+					onComplete: function(twn:FlxTween)
+					{
+						remove(_typeText);
+						_typeText.destroy();
+					}});
+			});
+		}
 
 
 	function convertStringToColor(color:String){

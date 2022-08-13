@@ -157,6 +157,8 @@ class FunkinLua {
 		set('defaultGirlfriendX', PlayState.instance.GF_X);
 		set('defaultGirlfriendY', PlayState.instance.GF_Y);
 
+		set('textCount', PlayState.instance._textCount);
+
 		// Character shit
 		set('boyfriendName', PlayState.SONG.player1);
 		set('dadName', PlayState.SONG.player2);
@@ -296,12 +298,21 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "createFXText", function(x:Float, y:Float,angle:Float,text:String
 			//,width:Int,textSize:Int,delay:Float,color:String
 			) {
-			trace("generate text");
-			PlayState.instance.createFXText(x,y,angle,text
-				//,width,textSize,delay,prasedColor
-				);
+			trace("generate fx text");
+			PlayState.instance.createFXText(x,y,angle,text);
 		});
 
+		Lua_helper.add_callback(lua, "createSideFXText", function(x:Float, y:Float,angle:Float,text:String
+			//,width:Int,textSize:Int,delay:Float,color:String
+			) {
+			trace("generate side fx text");
+			PlayState.instance.createSideFXText(x,y,angle,text);
+		});
+
+
+		Lua_helper.add_callback(lua, "getTextCount", function() {
+			return PlayState.instance._textCount;
+		});
 		
 
 		Lua_helper.add_callback(lua, "startNextDialog", function() {

@@ -19,7 +19,7 @@ function onCreate()
 	
 	
 	--------------
-	makeAnimatedLuaSprite('LimuH2', 'characters/LimuH', -160, 55);
+	makeAnimatedLuaSprite('LimuH2', 'characters/LimuH', -190, 55);
 	addLuaSprite('LimuH2', true);
 	--setBlendMode("LimuH2",'add')
 	doTweenColor('LimuH2C', 'LimuH2', 'DB4CFF', 0.01, 'linear')
@@ -42,7 +42,7 @@ function onCreate()
 	objectPlayAnimation('LimuH2', 'LimuDefaultIdle', false)
 	
 	--------------
-	makeAnimatedLuaSprite('LimuH', 'characters/LimuH', -160, 55);
+	makeAnimatedLuaSprite('LimuH', 'characters/LimuH', -190, 55);
 	
 	doTweenColor('LimuHC', 'LimuH', '7A7A7A', 0.01, 'linear')
 	addLuaSprite('LimuH', true);
@@ -107,7 +107,24 @@ function onCreate()
 	doTweenAlpha("WaterFilterA","WaterFilter",0,.01)
 	doTweenAlpha("WaterRayA","WaterRay",0,.01)
 	doTweenAlpha("Tentacle2A","Tentacle2",0,.01)
+
+
 	
+	makeLuaSprite('GoAway', 'no/GoAway', offsetX, offsetY);
+	setScrollFactor('GoAway', 1, 1);
+	addLuaSprite('GoAway', true)
+	
+	doTweenX('GoAwayX','GoAway.scale',.3,0.0001,'cubeIn')
+	doTweenY('GoAwayY','GoAway.scale',.3,0.0001,'cubeIn')
+	doTweenAlpha("GoAwayA","GoAway",0,.01)
+	
+	makeLuaSprite('OFMS', 'no/OFMS', offsetX, offsetY);
+	setScrollFactor('OFMS', 1, 1);
+	addLuaSprite('OFMS', true)
+	
+	doTweenX('OFMSX','OFMS.scale',.3,0.0001,'cubeIn')
+	doTweenY('OFMSY','OFMS.scale',.3,0.0001,'cubeIn')
+	doTweenAlpha("OFMSA","OFMS",0,.01)
 	
 	
 	--------------

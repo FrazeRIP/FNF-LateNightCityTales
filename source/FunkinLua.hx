@@ -289,7 +289,6 @@ class FunkinLua {
 
 		
 		Lua_helper.add_callback(lua, "setTextData", function(width:Int,textSize:Int,delay:Float,color:String) {
-			trace("set text data");
 			if(!color.startsWith('0x')) color = '0xff' + color;
 			var prasedColor = Std.parseInt(color);
 			PlayState.instance.setTextData(width,textSize,delay,prasedColor);
@@ -298,7 +297,6 @@ class FunkinLua {
 		Lua_helper.add_callback(lua, "createFXText", function(x:Float, y:Float,angle:Float,text:String
 			//,width:Int,textSize:Int,delay:Float,color:String
 			) {
-			trace("generate fx text");
 			PlayState.instance.createFXText(x,y,angle,text);
 		});
 

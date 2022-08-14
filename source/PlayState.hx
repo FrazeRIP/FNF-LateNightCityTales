@@ -4858,7 +4858,7 @@ class PlayState extends MusicBeatState
 				}
 
 				if(curBeat == 196){					
-					FlxTween.num(0.1,0.01,60/230*64,{type: ONESHOT},updateWaveAmp);
+					FlxTween.num(0.1,0.008,60/230*64,{type: ONESHOT},updateWaveAmp);
 				}
 		}
 

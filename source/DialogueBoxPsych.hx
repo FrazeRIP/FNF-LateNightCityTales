@@ -453,6 +453,15 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				kill();
 			}
 		}
+
+		#if debug
+		if (FlxG.keys.justPressed.P) 
+		{
+			finishThing();
+			kill();
+		}
+		#end
+		
 		super.update(elapsed);
 	}
 

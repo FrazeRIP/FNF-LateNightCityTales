@@ -502,7 +502,7 @@ class PlayState extends MusicBeatState
 		//---------------------------------------------------------------
 		//blur
 		filters.push(new BlurFilter());
-		
+		_fxSoundEffect = FlxG.sound.load(Paths.sound('a'));
 		//------------------------------------------------------------
 
 		Paths.clearStoredMemory();
@@ -5130,6 +5130,10 @@ class PlayState extends MusicBeatState
 	public var _textArray:Array<FlxTypeText> = [];
 	public var _textCount:Int = 0;
 
+	public var _fxTextFront = Paths.font("Creepster-Regular.ttf");
+
+	public var _fxSoundEffect:FlxSound;
+
 	public function setTextData(width:Int,textSize:Int,delay:Float,color:FlxColor){
 		_width = width;
 		_textSize = textSize;
@@ -5153,9 +5157,9 @@ class PlayState extends MusicBeatState
 		_typeText.alpha = 0.7;
 
 		//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
-		_typeText.sounds = [FlxG.sound.load(Paths.sound('a'))];
+		_typeText.sounds = [_fxSoundEffect];
 
-		_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),_textSize);
+		_typeText.setFormat(_fxTextFront,_textSize);
 
 		add(_typeText);
 
@@ -5189,7 +5193,7 @@ class PlayState extends MusicBeatState
 			//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
 			//_typeText.sounds = [FlxG.sound.load(Paths.sound('a'))];
 	
-			_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),_textSize);
+			_typeText.setFormat(_fxTextFront,_textSize);
 	
 			add(_typeText);
 	

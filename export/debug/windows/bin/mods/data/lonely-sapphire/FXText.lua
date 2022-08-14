@@ -467,7 +467,7 @@ function onStepHit( ... )
 	
 	setTextData(
 	--width,size,delay,color
-	1000,72,0.065,'ABABAB')
+	1000,72,0.08,'ABABAB')
 
 	createFXText(
 	--x,y,angle,content

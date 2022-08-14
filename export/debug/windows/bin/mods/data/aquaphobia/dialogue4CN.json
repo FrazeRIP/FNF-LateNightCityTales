@@ -1,0 +1,164 @@
+{
+	"dialogue": [
+		{
+			"expression": "dark",
+			"text": "……",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "happy",
+      "text": "啊，欢迎回来！\\n利姆正为了找阁下忙的焦头烂额的呢！",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "scare-shut",
+			"text": "Beep......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "wish",
+      "text": "决定了吗？\\n和利姆永远呆在这里的约定……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-talk",
+      "text": "住口！无耻小人！\\n别想动我甜心一根毫毛！",
+      "boxState": "angry",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-sad",
+      "text": "怎么会……\\n是你……？",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-forward",
+      "text": "无稽之谈……！\\n从来没有人能够摆脱利姆的控制！",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "smile-mad",
+      "text": "不错的廉价魔术把戏，\\n不过已经对我们没用了。",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-cute",
+      "text": "不想被甜心痛扁一顿的话，\\n我劝你最好立刻送我们出去！",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.03,
+      "sound": ""
+    },
+		{
+			"expression": "angry-talk",
+			"text": "Boyfriend？上！",
+			"boxState": "angry",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "up",
+			"text": "Bee......\\nBeep!!!!",
+			"boxState": "angry",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "angry-shock",
+      "text": "为何……？\\n为何……！",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-sad",
+      "text": "为何你们所有人对利姆都是如此……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "angry-black1",
+			"text": "……",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "......?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "creepy",
+      "text": "哇……！\\n发生，什么事了？！",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "angry-black2",
+			"text": "呵呵呵……\\n一切都太晚了……",
+			"boxState": "angry",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "angry-black3",
+      "text": "如果你们不想要留下来的话……\\n利姆只好把你们都变成主人的收藏品了！",
+      "boxState": "angry",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-black3",
+      "text": "准备好永远呆在城堡里吧！",
+      "boxState": "angry",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "empty",
+			"text": "受死吧！",
+			"boxState": "angry",
+			"portrait": "empty",
+			"speed": 0.1,
+			"sound": ""
+		}
+	]
+}

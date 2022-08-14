@@ -1,0 +1,156 @@
+{
+	"dialogue": [
+		{
+			"expression": "cry",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "4-sleep",
+      "text": "啊……可恶……\\n我又昏倒了吗……？",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "cry",
+			"text": "Beep......?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "creepy",
+			"text": "Beep!!!!!",
+			"boxState": "angry",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "creepy",
+      "text": "好了，好了！甜心！\\n我没事！",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "expression": "smile-mad",
+      "text": "让我猜猜，\\n那个小**一定是趁着我不注意偷偷暗算了我，对吧？",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "expression": "angry-cute",
+      "text": "我从一见面开始就知道，\\n她是个恶毒的家伙！",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+		{
+			"expression": "scare-shut",
+			"text": "Beep......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "worry-shut",
+      "text": "那现在怎么办？\\n我可不想再看到她。",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+		{
+			"expression": "normal",
+			"text": "Beep bo...\\nSki be ba bo",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "creepy",
+      "text": "你疯了？\\n你要回去打败她？",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "expression": "angry-talk",
+      "text": "你没看到我变成什么样子了！\\n回去简直就是自杀行为！",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+		{
+			"expression": "up",
+			"text": "Ba ski be ba bo da,\\nBeep boo da...",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "angry-cute",
+      "text": "你什么时候变成巫术大师了？\\n要是你输了怎么办？",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+		{
+			"expression": "up",
+			"text": "Beep ba!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "worry-shut",
+			"text": "……",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "oneeye-normal",
+			"text": "唉……",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "angry-cute",
+			"text": "你最好给我打赢了，\\n不然别想回家吃*晚饭*！",
+			"boxState": "normal",
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "gf-dialog"
+		},
+		{
+			"expression": "taunt",
+			"text": "Beep!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		}
+	]
+}

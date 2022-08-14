@@ -1,0 +1,484 @@
+{
+	"dialogue": [
+		{
+			"expression": "up",
+			"text": "*深呼吸……",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "wish",
+      "text": "无与比伦……\\n阁下的歌声动人心弦，利姆为之倾倒……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "talk",
+			"text": "Beep Bo.",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "happy",
+      "text": "呵呵呵……谢谢……\\n对利姆如此之好的旅行者，您还是第一个。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "normal",
+			"text": "Beep?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "normal",
+      "text": "利姆曾经也遇到过其他旅行者，\\n他们都对利姆冷眉相向……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "confuse",
+      "text": "不过那也是……\\n过了多久了呢……？",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "normal",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "talk",
+			"text": "Beep bo ski bi ba?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "question",
+      "text": "利姆无法离开城堡，\\n这是利姆主人立下的命令。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "question",
+      "text": "主人一去无踪，杳无音讯……\\n利姆是唯一能够守护这座城堡的人。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "这座城堡储藏了主人的毕生心血，\\n而主人也是利姆的救命恩人。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "normal",
+      "text": "利姆……\\n无法做出违背主人意愿之事……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "normal",
+			"text": "Be bo ski be bo......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "wish",
+      "text": "谢谢你，Boyfriend阁下，\\n愿意聆听利姆讲述这些陈年往事。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "question",
+      "text": "那么……\\n您愿意……再听听利姆的请求吗？",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "normal",
+			"text": "Beep?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "wish",
+      "text": "您愿意…留下来…\\n这样…我们就能…每日都一同歌唱……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "scare-shut",
+			"text": "Beep ba boo?\\nBeep!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "happy",
+			"text": "不可以吗……？",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "*看向Girlfriend",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "statue",
+			"text": "……",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-shut",
+			"text": "Be bo...?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "statue",
+			"text": "……",
+			"boxState": "normal",
+			"portrait": "gf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "creepy",
+			"text": "Be bo!",
+			"boxState": "angry",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "Be bo......!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "Beep Boo ba...\\nDa beep bo ski bi ba?",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "confuse",
+      "text": "无需担心，\\n她并无大碍。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "利姆只是荣幸的，\\n让其加入了主人的收藏品而已。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "laugh",
+      "text": "她将会作为伟大的艺术品直至永恒……\\n至少这样能让她安分些许。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "现在，只剩下阁下和利姆二人了。\\n我们来继续刚才的话题吧？",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "scare-shut",
+			"text": "......!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "scare-normal",
+			"text": "Beep ski be bo da!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "question",
+      "text": "为何阁下……\\n要如此关心那名泼妇？",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "confuse",
+      "text": "不论是内在还是外在，\\n明明都是利姆更胜一筹……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "scare-normal",
+			"text": "Beep ba bo ski bi ba!",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "laugh",
+      "text": "情侣？那都是过去的事情了。\\n现在的阁下除了利姆别无选择……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "confuse",
+      "text": "如果阁下真的那么在意她，\\n或许我们可以做一个小交易……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "只要阁下愿意留下来，\\n利姆就会放她走。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "scare-normal",
+			"text": "......",
+			"boxState": "normal",
+			"portrait": "bf-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "empty",
+			"text": "",
+			"boxState": "normal",
+			"portrait": "empty",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "angry-normal",
+      "text": "利姆……\\n已经不想再只身一人了……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-sad",
+      "text": "不想再体验……\\n每年都生活在同一天的感觉了……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-normal",
+      "text": "几百年来，\\n没有任何人前来拜访利姆，",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-forward",
+      "text": "没有任何人对利姆说过话，\\n没有任何人在意利姆的感受……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-mad",
+      "text": "利姆……\\n受够了！",
+      "boxState": "angry",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "angry-sad",
+			"text": "呼……\\n呼……",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "normal",
+      "text": "呐……Boyfriend阁下……\\n你会愿意留下来……陪利姆一起等待主人的回归吗？",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "我们可以相依相伴，每天一起玩，一起唱歌，\\n无忧无虑，不再体会寂寞与孤独……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "利姆可以让你当城堡的男仆，\\n利姆会教给你城堡里的所有事情……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "只要主人回到城堡，\\n利姆就能向其请求我们的自由……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "laugh",
+      "text": "在那之后……\\n我们可以随心所欲地做我们想做的事情！",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "啊……\\n那将会是多么的动人心弦……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+		{
+			"expression": "question",
+			"text": "……",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"expression": "normal",
+			"text": "……",
+			"boxState": "normal",
+			"portrait": "Limu-dialog",
+			"speed": 0.05,
+			"sound": ""
+		},
+    {
+      "expression": "angry-normal",
+      "text": "逃走了吗……？",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "laugh",
+      "text": "无碍……\\n没有利姆的许可，他们就无法离开这里。",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "laugh",
+      "text": "没有人……\\n能够在城堡内逃离利姆的手掌心……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "laugh",
+      "text": "Boyfriend阁下……\\n利姆来找你了……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "dark",
+      "text": "呵呵呵呵呵……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    }
+	]
+}

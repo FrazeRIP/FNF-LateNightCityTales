@@ -1,0 +1,508 @@
+{
+  "dialogue": [
+    {
+      "expression": "up",
+      "text": "*深呼吸",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": "dialog2"
+    },
+    {
+      "expression": "creepy",
+      "text": "我的恶魔！\\n这破地方居然还有人住！",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "dark",
+      "text": "……",
+      "boxState": "normal",
+      "portrait": "Limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "scare-shut",
+      "text": "Beep......?",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "lol-mad",
+      "text": "你好……？",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "dark",
+      "text": "呼……",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "angry-talk",
+      "text": "喂，你会说话……",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "二位贵安！",
+      "boxState": "angry",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "scare-normal",
+      "text": "?!?!?!?!",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "creepy",
+      "text": "李吼那么大声干嘛？！\\n我们听得见！",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "午夜贵安，二位！ \\n我叫利姆内蒂，是这座城堡的管家。",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "不介意的话，叫我利姆就好啦！",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "up",
+      "text": "Beep!",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "oneeye-normal",
+      "text": "你这说话方式听起来就像是从上个世纪来的。\\n不过还算有礼貌。",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "smile-normal",
+      "text": "总之，我们只是……",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "无需多言，\\n主人的城堡向来是来者不拒！",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "请把这里当成自己的家一样！",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "up",
+      "text": "Beep bo ski be ba be!",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "worry-shut",
+      "text": "你这地方都破成什么样子了，\\n还好意思让我们当成家里……",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "normal",
+      "text": "……",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "城堡时隔许久好不容易迎来了贵宾，\\n利姆愿带二位参观整个城堡！",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "up",
+      "text": "Beep!",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "oneeye-normal",
+      "text": "搞快点，我们还有*事情*要做呢。",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "normal",
+      "text": "城堡很大，容易迷路。\\n二位还请紧跟利姆。",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": "dialog2"
+    },
+    {
+      "expression": "talk",
+      "text": "",
+      "boxState": "normal",
+      "portrait": "empty",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "question",
+      "text": "啊，那位蓝发阁下，\\n敢问您的尊姓…？",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "talk",
+      "text": "Beep?\\nBeep boo.",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "question",
+      "text": "……？",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "smile-normal",
+      "text": "他说他叫Boyfriend，\\n顺带一提我是Girl……",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "啊！Boyfriend！\\n多么曼妙有趣的名字！",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "laugh",
+      "text": "您的歌声实在是……",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "smile-mad",
+      "text": "咳，咳！\\n我！叫！GIRLFRIEND!",
+      "boxState": "angry",
+      "portrait": "gf-dialog",
+      "speed": 0.15,
+      "sound": ""
+    },
+    {
+      "expression": "confuse",
+      "text": "……",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.03,
+      "sound": ""
+    },
+    {
+      "expression": "scare-shut",
+      "text": "......?",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.03,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "啊，Boyfriend阁下！\\n您的歌声宛转悠扬，余音缭绕，让利姆印象深刻，赞不绝口。",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "laugh",
+      "text": "如此多年，利姆从未遇到过像您一样出色的歌手。",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "LOL.",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "smile-normal",
+      "text": "那可不，他可是世界第一的说唱歌手，\\n迄今为止打败过无数强敌。",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "smile-normal",
+      "text": "顺带一提，别想打他的主意！\\n我和他可是情……",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "normal",
+      "text": "如此多年，只有利姆一人孤身在城堡内游荡。",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.025,
+      "sound": ""
+    },
+    {
+      "expression": "wish",
+      "text": "今日能够与其他人同歌，\\n利姆满是欢心，荣幸至极！",
+      "boxState": "normal",
+      "portrait": "limu-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "happy",
+      "text": "Beep ba bo beep ba!",
+      "boxState": "normal",
+      "portrait": "bf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "smile-mad",
+      "text": "喂你……差不多得了……！",
+      "boxState": "normal",
+      "portrait": "gf-dialog",
+      "speed": 0.05,
+      "sound": ""
+    },
+    {
+      "expression": "normal",
+      "text": "啊！我们到了！",
+      "boxState": "normal",
+      "sound": "dialog2",
+      "speed": 0.025,
+      "portrait": "limu-dialog"
+    },
+    {
+      "expression": "wish",
+      "text": "二位，请在此过目，\\n利姆主人伟大的收藏品！",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "limu-dialog"
+    },
+    {
+      "expression": "talk",
+      "text": "",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "empty"
+    },
+    {
+      "expression": "wow",
+      "text": "WOW",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog"
+    },
+    {
+      "expression": "wow",
+      "text": "WOW",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "expression": "creepy",
+      "text": "(哇，这些雕像简直和真人一模一样，\\n逼真到让人觉得可怕……)",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "expression": "lol-mad",
+      "text": "不得不说，你的主人确实有些奇怪的爱好，\\n不过不是我的菜。",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "expression": "taunt",
+      "text": "Ooof-",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog"
+    },
+    {
+      "expression": "angry-normal",
+      "text": "……",
+      "boxState": "normal",
+      "sound": "dialog2",
+      "speed": 0.05,
+      "portrait": "limu-dialog"
+    },
+    {
+      "expression": "talk",
+      "text": "Beep bop ba ski bee babe?",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog"
+    },
+    {
+      "expression": "normal",
+      "text": "呵呵呵，无碍……\\n城堡内部还有更多的收藏品等待二位细细品尝。",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "limu-dialog"
+    },
+    {
+      "expression": "worry-normal",
+      "text": "68……69……\\n惊了，这到底是有多少雕像？",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "expression": "worry-normal",
+      "text": " 你的主人到底是从哪里搞来这些的？",
+      "boxState": "normal",
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "limu-dialog",
+      "boxState": "normal",
+      "expression": "normal",
+      "text": "……"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "limu-dialog",
+      "boxState": "normal",
+      "expression": "question",
+      "text": "那个……\\nBoy...firend阁下……？"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "normal",
+      "text": "?"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "limu-dialog",
+      "boxState": "normal",
+      "expression": "normal",
+      "text": "能容许利姆……\\n再同您高歌一曲吗？"
+    },
+    {
+      "sound": "dialog2",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "up",
+      "text": "Beep!"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "Limu-dialog",
+      "boxState": "normal",
+      "expression": "wish",
+      "text": "太好了！\\n这边请……！"
+    },
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "gf-dialog",
+      "boxState": "normal",
+      "expression": "angry-talk",
+      "text": "可恶，居然又无视我……"
+    }
+  ]
+}

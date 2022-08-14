@@ -22,7 +22,7 @@ function onCreate()
 	makeAnimatedLuaSprite('LimuH2', 'characters/LimuH', -190, 55);
 	addLuaSprite('LimuH2', true);
 	--setBlendMode("LimuH2",'add')
-	doTweenColor('LimuH2C', 'LimuH2', 'DB4CFF', 0.01, 'linear')
+	doTweenColor('LimuH2C', 'LimuH2', '7A7A7A', 0.01, 'linear')
 	doTweenAlpha("LimuH2A","LimuH2",0,.01)
 
 	addAnimationByPrefix('LimuH2', 'LimuCryIdle', 'LimuCryIdle', 24, true)

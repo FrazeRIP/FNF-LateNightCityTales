@@ -4843,8 +4843,8 @@ class PlayState extends MusicBeatState
 
 				if(curBeat == 516){
 
-					FlxTween.num(30,0,60/230*2,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
-					FlxTween.num(30,0,60/230*2,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+					FlxTween.num(30,0,60/230*8,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*8,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
 				}
 				
 				if(curBeat == 572){
@@ -4854,7 +4854,7 @@ class PlayState extends MusicBeatState
 
 				if(curBeat == 580){
 					FlxTween.num(30,0,60/230*16,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
-					FlxTween.num(30,0,60/230*16,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+					FlxTween.num(30,0,60/230*16,{type: ONESHOT},updateBloom);
 				}
 
 				if(curBeat == 196){					
@@ -5150,10 +5150,10 @@ class PlayState extends MusicBeatState
 		_typeText.waitTime = 2.0;
 		_typeText.setTypingVariation(0.75, true);
 		_typeText.color = _color;
-		_typeText.alpha = 0.5;
+		_typeText.alpha = 0.7;
 
 		//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
-		_typeText.sounds = [FlxG.sound.load(Paths.sound('dialogue'))];
+		_typeText.sounds = [FlxG.sound.load(Paths.sound('a'))];
 
 		_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),_textSize);
 
@@ -5184,10 +5184,10 @@ class PlayState extends MusicBeatState
 			_typeText.waitTime = 2.0;
 			_typeText.setTypingVariation(0.75, true);
 			_typeText.color = _color;
-			_typeText.alpha = 0.3;
+			_typeText.alpha = 0.5;
 	
 			//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
-			_typeText.sounds = [FlxG.sound.load(Paths.sound('dialogue'))];
+			//_typeText.sounds = [FlxG.sound.load(Paths.sound('a'))];
 	
 			_typeText.setFormat(Paths.font("Creepster-Regular.ttf"),_textSize);
 	

@@ -149,6 +149,48 @@ function onStepHit( ... )
 		
 		setProperty('isInvertActive',false)
 		end
+		------------------------
+		if curStep == 770 then
+		setProperty('isInvertActive',true)
+		end
+
+		if curStep == 771 then
+		setProperty('isInvertActive',false)
+		end
+
+		if curStep == 772 then
+		setProperty('isInvertActive',true)
+		end
+
+		if curStep == 773 then
+		setProperty('isInvertActive',false)
+		end
+
+		if curStep == 774 then
+		setProperty('isInvertActive',true)
+		end
+
+		if curStep == 783 then
+		setProperty('isInvertActive',false)
+		end
+
+		if curStep == 1800 then
+		setProperty('isInvertActive',true)
+		end
+
+		if curStep == 1808 then
+		setProperty('isInvertActive',false)
+		end
+
+		if curStep == 2056 then
+		setProperty('isInvertActive',true)
+		end
+
+		if curStep == 2068 then
+		setProperty('isInvertActive',false)
+		end
+
+		---------------------
 
 end
 
@@ -247,7 +289,15 @@ function onBeatHit()
 	autoPeriodGlitch = 3
 	glitchAmount = 3;
 	glitchFactor = 15;
+
+	
+	doTweenColor('Tentacle2C', 'Tentacle2', '242424', secPerBeat*4, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', 'FFFFFF', secPerBeat*4, 'cubeOut')
+	doTweenColor('LimuH2C', 'LimuH2', 'FFFFFF', secPerBeat*4, 'cubeOut')
+
+
 	end
+
 
 	if curBeat == 191 then
 	switchExpressionEvent()
@@ -256,10 +306,22 @@ function onBeatHit()
 	if curBeat == 192 then
 
 	cameraShake('game', .015, secPerBeat*4)
+	
+	doTweenX('OFMSX','OFMS.scale',.8,0.15,'cubeOut')
+	doTweenY('OFMSY','OFMS.scale',.8,.15,'cubeOut')
+	doTweenAlpha("OFMSA","OFMS",0.5,.01)
+
 	end
 
 
 	if curBeat == 196 then
+	
+	doTweenColor('Tentacle2C', 'Tentacle2', 'A1A1A1', 0.01, 'linear')
+
+	doTweenColor('LimuHC', 'LimuH', '7A7A7A', secPerBeat*4, 'cubeOut')
+	doTweenColor('LimuH2C', 'LimuH2', '7A7A7A', secPerBeat*4, 'cubeOut')
+	
+	doTweenAlpha("OFMSA","OFMS",0,.01)
 
 	isAutoCamZoom = true
 	camShakeNotes(.005,secPerBeat*64*2)
@@ -316,10 +378,20 @@ function onBeatHit()
 	isAutoGlitch = true
 	glitchAmount = 5;
 	glitchFactor = 15;
+
+	
+	doTweenColor('Tentacle2C', 'Tentacle2', '242424', secPerBeat*4, 'linear')
+	doTweenColor('LimuH', 'LimuH', 'FFFFFF', secPerBeat*4, 'cubeOut')
 	end
 
 
 	if curBeat == 388 then
+
+	
+	doTweenColor('Tentacle2C', 'Tentacle2', '0D0D0D', secPerBeat*4, 'cubeOut')
+	doTweenColor('LimuH2C', 'LimuH2', '383838', secPerBeat*4, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', '383838', secPerBeat*4, 'cubeOut')
+
 	setCameraZoomAmount(0.025)
 
 	isAutoGlitch = true
@@ -341,6 +413,11 @@ function onBeatHit()
 
 	if curBeat == 452 then
 	
+	doTweenColor('Tentacle2C', 'Tentacle2', 'A1A1A1', secPerBeat, 'cubeOut')
+	doTweenColor('LimuH2C', 'LimuH2', '7A7A7A', secPerBeat, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', '7A7A7A', secPerBeat, 'cubeOut')
+
+
 	isAutoGlitch = true
 	glitchAmount = 5;
 	glitchFactor = 15;
@@ -361,6 +438,13 @@ function onBeatHit()
 	end
 
 	if curBeat == 516 then
+	
+	
+	doTweenColor('Tentacle2C', 'Tentacle2', 'A1A1A1', secPerBeat, 'cubeOut')
+	doTweenColor('LimuH2C', 'LimuH2', 'FFFFFF', secPerBeat, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', 'FFFFFF', secPerBeat, 'cubeOut')
+
+
 	zoomAmountGame = 1.035
 	zoomAmountHUD = 1.01
 	camShakeNotes(.007,secPerBeat*64)
@@ -390,6 +474,9 @@ function onBeatHit()
 	isAutoCA = false
 	isAutoGlitch = false
 	isShadowOn = false
+
+	setProperty('caAmount',0)
+	setProperty('glitchAmount',0)
 
 	doTweenAlpha("WaterFilterA","WaterFilter",0,.01)
 	doTweenAlpha("WaterRayA","WaterRay",0,.01)

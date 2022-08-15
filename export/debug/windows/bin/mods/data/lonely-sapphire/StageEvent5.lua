@@ -21,7 +21,7 @@ local glitchFactor = 15;
 
 
 local autoPeriodCA = 4
-local autoPeriodGlitch = 16
+local autoPeriodGlitch = 8
 ----------------------
 local isAutoCA = true
 local isAutoGlitch = true
@@ -190,6 +190,13 @@ function onStepHit( ... )
 		setProperty('isInvertActive',false)
 		end
 
+		if curStep == 2570 then
+		setProperty('isInvertActive',true)
+		end
+
+		if curStep == 2576 then
+		setProperty('isInvertActive',false)
+		end
 		---------------------
 
 end
@@ -254,6 +261,7 @@ function onBeatHit()
 	caFactor = 6
 
 	doTweenColor('LimuHC', 'LimuH', 'B8B8B8', 0.01, 'linear')
+	doTweenColor('LimuH2C', 'LimuH2', '7A7A7A', 0.01, 'linear')
 
 	noteBlinKFactor = 4
 
@@ -293,11 +301,17 @@ function onBeatHit()
 	
 	doTweenColor('Tentacle2C', 'Tentacle2', '242424', secPerBeat*4, 'cubeOut')
 	doTweenColor('LimuH', 'LimuH', 'FFFFFF', secPerBeat*4, 'cubeOut')
-	doTweenColor('LimuH2C', 'LimuH2', 'FFFFFF', secPerBeat*4, 'cubeOut')
+	doTweenColor('LimuH2C', 'LimuH2', 'FFFFFF', 0.01, 'cubeOut')
 
 
 	end
 
+
+	if curBeat == 188 then
+	isAutoCamZoom = false
+	doTweenZoom('camgameZ2','camGame', 1.25,secPerBeat*7, 'cubeIn')
+
+	end
 
 	if curBeat == 191 then
 	switchExpressionEvent()
@@ -305,7 +319,8 @@ function onBeatHit()
 
 	if curBeat == 192 then
 
-	cameraShake('game', .015, secPerBeat*4)
+	cameraShake('game', .02, secPerBeat*4)
+	camShakeNotes(.02,secPerBeat*4)
 	
 	doTweenX('OFMSX','OFMS.scale',.8,0.15,'cubeOut')
 	doTweenY('OFMSY','OFMS.scale',.8,.15,'cubeOut')
@@ -315,7 +330,6 @@ function onBeatHit()
 
 
 	if curBeat == 196 then
-	
 	doTweenColor('Tentacle2C', 'Tentacle2', 'A1A1A1', 0.01, 'linear')
 
 	doTweenColor('LimuHC', 'LimuH', '7A7A7A', secPerBeat*4, 'cubeOut')
@@ -339,7 +353,7 @@ function onBeatHit()
 
 	isAutoCA = true
 	autoPeriodCA = 4
-	autoPeriodGlitch = 16
+	autoPeriodGlitch = 8
 
 	isAutoGlitch = true
 	glitchAmount = 5;
@@ -439,6 +453,12 @@ function onBeatHit()
 
 	if curBeat == 516 then
 	
+	cameraFlash('game', 'FFFFFF',secPerBeat*4,false)
+	
+	doTweenColor('LimuH', 'LimuH', '7A7A7A', 0.001, 'cubeOut')
+	doTweenColor('whiteSolidC', 'whiteSolid', 'FFFFFF', 0.01, 'linear')
+	doTweenAlpha("whiteSolidA2","whiteSolid",1,0.001)
+	doTweenAlpha("whiteSolidA","whiteSolid",0,secPerBeat*4)
 	
 	doTweenColor('Tentacle2C', 'Tentacle2', 'A1A1A1', secPerBeat, 'cubeOut')
 	doTweenColor('LimuH2C', 'LimuH2', 'FFFFFF', secPerBeat, 'cubeOut')
@@ -474,16 +494,100 @@ function onBeatHit()
 	isAutoCA = false
 	isAutoGlitch = false
 	isShadowOn = false
-
-	setProperty('caAmount',0)
-	setProperty('glitchAmount',0)
+	
+	setProperty('caAmountFactor',9999)
+	setProperty('glitchFactor',9999)
+	--setProperty('caAmount',0)
+	--setProperty('glitchAmount',0)
 
 	doTweenAlpha("WaterFilterA","WaterFilter",0,.01)
 	doTweenAlpha("WaterRayA","WaterRay",0,.01)
 	doTweenAlpha("Tentacle2A","Tentacle2",0,.01)
-
+	
+	doTweenColor('LimuH', 'LimuH', '616161', 0.001, 'cubeOut')
 	end
 
+	if curBeat == 596 then
+	cameraFlash('game', 'FFFFFF',secPerBeat,false)
+	
+	camShakeNotes(.01,secPerBeat/2)
+	cameraShake('game', .01, secPerBeat/2)
+	doTweenAlpha("break1A","break1",1,.001)
+	playSound('glassBreak1',1)
+	end
+
+	if curBeat == 612 then
+	doTweenColor('LimuH', 'LimuH', '525252', 0.001, 'cubeOut')
+	cameraFlash('game', 'FFFFFF',secPerBeat,false)
+	
+	camShakeNotes(.015,secPerBeat/2)
+	cameraShake('game', .015, secPerBeat/2)
+	doTweenAlpha("break1A","break1",0,.001)
+	doTweenAlpha("break2A","break2",1,.001)
+	playSound('glassBreak1',1)
+	end
+
+	if curBeat == 628 then
+	doTweenColor('LimuH', 'LimuH', '303030', 0.001, 'cubeOut')
+	cameraFlash('game', 'FFFFFF',secPerBeat,false)
+	camShakeNotes(.015,secPerBeat/2)
+	cameraShake('game', .015, secPerBeat/2)
+	doTweenAlpha("break2A","break2",0,.001)
+	doTweenAlpha("break3A","break3",1,.001)
+	playSound('glassBreak1',1)
+	end
+
+	if curBeat == 640 then
+	doTweenColor('LimuH', 'LimuH', '171717', 0.001, 'cubeOut')
+	cameraFlash('game', 'FFFFFF',secPerBeat,false)
+	camShakeNotes(.015,secPerBeat/2)
+	cameraShake('game', .015, secPerBeat/2)
+	doTweenAlpha("break3A","break3",0,.001)
+	doTweenAlpha("break4A","break4",1,.001)
+	playSound('glassBreak1',1)
+	end
+
+	if curBeat == 644 then
+	doTweenColor('LimuH', 'LimuH', '0D0D0D', 0.001, 'cubeOut')
+	
+	doTweenColor('whiteSolidC', 'whiteSolid', 'FFFFFF', 0.01, 'linear')
+	doTweenAlpha("whiteSolidA","whiteSolid",0,.001)
+	doTweenAlpha("whiteSolidA2","whiteSolid",1,secPerBeat*16)
+	
+	cameraFlash('game', 'FFFFFF',secPerBeat,false)
+	camShakeNotes(.02,secPerBeat)
+	cameraShake('game', .02, secPerBeat)
+	doTweenAlpha("break4A","break4",0,.001)
+	
+	doTweenAlpha("BreakFinalBackA","BreakFinalBack",1,.001)
+	doTweenAlpha("BreakFinalMidA","BreakFinalMid",1,.001)
+	doTweenAlpha("BreakFinalFrontA","BreakFinalFront",1,.001)
+	
+	doTweenX('BreakFinalBackX','BreakFinalBack.scale',1.2,secPerBeat,'cubeOut')
+	doTweenY('BreakFinalBackY','BreakFinalBack.scale',1.2,secPerBeat,'cubeOut')
+	
+	doTweenX('BreakFinalMidX','BreakFinalMid.scale',1.1,secPerBeat,'cubeOut')
+	doTweenY('BreakFinalMidY','BreakFinalMid.scale',1.1,secPerBeat,'cubeOut')
+	
+	doTweenX('BreakFinalFrontX','BreakFinalFront.scale',1,secPerBeat,'cubeOut')
+	doTweenY('BreakFinalFrontY','BreakFinalFront.scale',1,secPerBeat,'cubeOut')
+
+	
+
+	playSound('glassBreak2',1)
+	end
+
+	if curBeat == 645 then
+	
+	doTweenX('BreakFinalBackX','BreakFinalBack.scale',5.5/2,secPerBeat*10,'cubeIn')
+	doTweenY('BreakFinalBackY','BreakFinalBack.scale',4.5/2,secPerBeat*10,'cubeIn')
+	
+	doTweenX('BreakFinalMidX','BreakFinalMid.scale',4.5/2,secPerBeat*10,'cubeIn')
+	doTweenY('BreakFinalMidY','BreakFinalMid.scale',3.5/2,secPerBeat*10,'cubeIn')
+	
+	doTweenX('BreakFinalFrontX','BreakFinalFront.scale',3/2,secPerBeat*10,'cubeIn')
+	doTweenY('BreakFinalFrontY','BreakFinalFront.scale',2.5/2,secPerBeat*10,'cubeIn')
+	end
 	 
 	if curBeat % shadowAnimFactor == 0 then
 

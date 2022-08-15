@@ -80,7 +80,7 @@ function onStepHit( ... )
 	-50,400,3,"You are here just to make fun of me...")
 	end
 
-	if curStep == 48*4+1 then
+	if curStep == 48*4 then
 	
 	setTextData(
 	--width,size,delay,color
@@ -467,11 +467,22 @@ function onStepHit( ... )
 	
 	setTextData(
 	--width,size,delay,color
-	1000,72,0.08,'ABABAB')
+	1000,128,0.08,'ABABAB')
 
 	createFXText(
 	--x,y,angle,content
-	100,250,0,"It¡¯s not over yet...")
+	-100,250,0,"It¡¯s not over yet...")
+	end
+
+	if curStep == 513 *4 then
+	
+	setTextData(
+	--width,size,delay,color
+	1000,148,0.01,'ABABAB')
+
+	createFXText(
+	--x,y,angle,content
+	-150,300,0,"Prepare to die!!!")
 	end
 	
 	--if curStep == 508*4 then

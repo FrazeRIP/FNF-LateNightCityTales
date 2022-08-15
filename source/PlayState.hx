@@ -4843,8 +4843,8 @@ class PlayState extends MusicBeatState
 
 				if(curBeat == 516){
 
-					FlxTween.num(30,0,60/230*8,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
-					FlxTween.num(30,0,60/230*8,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
+					FlxTween.num(30,0,60/230*4,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*4,{ease: FlxEase.cubeOut,type: ONESHOT},updateBloom);
 				}
 				
 				if(curBeat == 572){
@@ -4853,8 +4853,13 @@ class PlayState extends MusicBeatState
 				}
 
 				if(curBeat == 580){
-					FlxTween.num(30,0,60/230*16,{ease: FlxEase.cubeOut,type: ONESHOT},updateBlur);
-					FlxTween.num(30,0,60/230*16,{type: ONESHOT},updateBloom);
+					FlxTween.num(30,0,60/230*10,{type: ONESHOT},updateBlur);
+					FlxTween.num(30,0,60/230*10,{type: ONESHOT},updateBloom);
+				}
+
+				if(curBeat == 644){
+					FlxTween.num(0,30,60/230*8,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
+					FlxTween.num(0,30,60/230*8,{ease: FlxEase.cubeIn,type: ONESHOT},updateBloom);
 				}
 
 				if(curBeat == 196){					

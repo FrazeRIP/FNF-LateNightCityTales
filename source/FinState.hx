@@ -48,6 +48,10 @@ class FinState extends MusicBeatState
         {
             FlxTween.tween(thanksforplaying,{alpha:1},1.5);
         }
+
+        TitleState.unlockHideStage=true;
+        FlxG.save.data.unlockHideStage=TitleState.unlockHideStage;
+        FlxG.save.flush();		
     }
     override function update(elapsed:Float)
     {

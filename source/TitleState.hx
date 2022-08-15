@@ -80,6 +80,8 @@ class TitleState extends MusicBeatState
 		
 	public static var updateVersion:String = '';
 
+	public static var unlockHideStage:Bool;
+
 	static var isTitle:Bool=true;
 	static var isMain:Bool;
 	static var isStoryMain:Bool;
@@ -145,6 +147,15 @@ class TitleState extends MusicBeatState
 		ClientPrefs.loadPrefs();
 		
 		Highscore.load();
+
+		if(FlxG.save.data.unlockHideStage!=null)
+		unlockHideStage=FlxG.save.data.unlockHideStage;
+		else
+		{
+		FlxG.save.data.unlockHideStage=false;
+		FlxG.save.flush();
+		unlockHideStage=false;
+		}
 
 		camBG=new FlxCamera();
 		camUI=new FlxCamera();

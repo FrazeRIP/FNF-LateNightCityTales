@@ -277,6 +277,9 @@ class FreeplayState extends MusicBeatState
 		var shiftMult:Int = 1;
 		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
 
+		FlxG.watch.addQuick("unlockHideStage",TitleState.unlockHideStage);
+		FlxG.watch.addQuick("FlxG.save.data.unlockHideStage",FlxG.save.data.unlockHideStage);
+
 		if(songs.length > 1)
 		{
 			if (upP)

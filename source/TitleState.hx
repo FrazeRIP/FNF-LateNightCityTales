@@ -290,15 +290,12 @@ class TitleState extends MusicBeatState
 		if(isStoryMain)
 			storyMainUpdate();
 
-		// if (FlxG.keys.justPressed.ONE)
-		// 	{
-		// 		MusicBeatState.switchState(new FinState());
-		// 	}
-		
-		if (FlxG.keys.anyJustPressed(debugKeys))
+		if (FlxG.keys.justPressed.ONE)
 		{
-			MusicBeatState.switchState(new MasterEditorMenu());
+			MusicBeatState.switchState(new FinState());
 		}
+		
+
 	
 		
 		super.update(elapsed);
@@ -585,6 +582,11 @@ class TitleState extends MusicBeatState
 						FlxTween.tween(downText,{alpha:0},1);
 						FlxTween.tween(upText,{alpha:0},1);
 					});
+
+				if (FlxG.keys.anyJustPressed(debugKeys))
+					{
+						MusicBeatState.switchState(new MasterEditorMenu());
+					}
 				
 
 			}

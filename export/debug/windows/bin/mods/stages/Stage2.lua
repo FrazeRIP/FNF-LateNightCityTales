@@ -188,8 +188,8 @@ function onCreatePostFrontCharacter()
 	setScrollFactor('WaterFilter', 1, 1);
 	addLuaSprite('WaterFilter', true);
 	scaleObject('WaterFilter', 1.5	, 1.5);
-	 doTweenColor('WaterFilterC', 'WaterFilter', '010A80', 0.01, 'linear')
-	setBlendMode('WaterFilter','multiply')
+	 doTweenColor('WaterFilterC', 'WaterFilter', '00006E', 0.01, 'linear')
+	setBlendMode('WaterFilter','add')
 	--setObjectCamera('WaterFilter','other')
 	doTweenAlpha("WaterFilterA","WaterFilter",.5,.01)
 	end
@@ -208,6 +208,12 @@ function onCreatePostFrontCharacter()
 	scaleObject('BlackEdge4', 2, 1.5);
 	addLuaSprite('BlackEdge4',false);
 	doTweenAlpha("BlackEdge4A","BlackEdge4",.0,.0001)
+
+	
+	makeLuaSprite('BlackEdge5','BlackEdge',posX1080P,posY1080P);
+	scaleObject('BlackEdge5', scale1080P, scale1080P);
+	addLuaSprite('BlackEdge5',true);
+	doTweenAlpha("BlackEdge5A","BlackEdge5",.3,.0001)
 	
 	end
 	

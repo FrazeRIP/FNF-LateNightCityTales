@@ -46,8 +46,8 @@ function onCreatePost()
 	doTweenAlpha("HUDAlpha2","camNoteDark",0,0.00001)
 	doTweenAlpha("HUDAlpha3","camNoteWhite",0,0.00001)
 	
-	setGlow('normal','45BED1',1,24,2)
-	setGlow('special','AD4ED9',1,32,4)
+	setGlow('normal','45BED1',1,32,3)
+	setGlow('special','AD4ED9',1,36,4)
 	
 	setProperty('gf.visible', false)
 	
@@ -59,7 +59,7 @@ function onBeatHit()
 		if curBeat%8 == 0 then
 			
 			for i = 0,3 do
-			noteTweenAlpha(i.."NoteAlphaTween", i, .7-0.5, secPerBeat*4, "smootherStepInOut")
+			noteTweenAlpha(i.."NoteAlphaTween", i,0, secPerBeat*4, "smootherStepInOut")
 			end
 
 			for i = 4,7 do
@@ -67,7 +67,7 @@ function onBeatHit()
 			end
 		elseif curBeat%8 == 4 then
 			for i = 0,3 do
-			noteTweenAlpha(i.."NoteAlphaTween", i, 1-0.5, secPerBeat*4, "smootherStepInOut")
+			noteTweenAlpha(i.."NoteAlphaTween", i,0, secPerBeat*4, "smootherStepInOut")
 			end
 
 			for i = 4,7 do
@@ -93,7 +93,7 @@ function onBeatHit()
 
 	if curBeat>40 and curBeat%4 == 0 then
 	objectPlayAnimation('heartbeat', 'heartbeat', true)
-	doTweenAlpha("heartbeatAlphaRise","heartbeat",.9,.0001,'cubeOut')
+	doTweenAlpha("heartbeatAlphaRise","heartbeat",1,.000001,'cubeOut')
 	doTweenAlpha("heartbeatAlphaDown","heartbeat",.3,secPerBeat*8,'cubeOut')
 	end
 	

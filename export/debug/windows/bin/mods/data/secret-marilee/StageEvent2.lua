@@ -65,7 +65,7 @@ function onCreatePost()
 	doTweenAlpha("HUDAlpha2","camNoteDark",0,0.00001)
 	doTweenAlpha("HUDAlpha3","camNoteWhite",0,0.00001)
 	
-	setGlow('normal','9F41CC',1,24,2)
+	setGlow('normal','9F41CC',1,32,3)
 	setGlow('special','9F41CC',1,36,4)
 	
 	makeLuaSprite('statueGF','statueGF',600,270);
@@ -286,8 +286,8 @@ function onBeatHit()
 		
 		setProperty('isPlayRiseBlueFX',true)
 		
-		setGlow('normal','45BED1',1,24,3)
-		setGlow('special','AD4ED9',1,32,4)
+		setGlow('normal','45BED1',1,32,3)
+		setGlow('special','AD4ED9',1,36,4)
 		
 		frameChange = true
 		minFrameTransparency = 0.8
@@ -376,7 +376,7 @@ function onBeatHit()
 		blurLoop2 = false
 		blurLoop1 = false
 		
-		setGlow('normal','9F41CC',1,24,2)
+		setGlow('normal','9F41CC',1,32,3)
 		setGlow('special','752E96',1,36,4)
 		
 		cameraFlash('game', 'ed49ff',.4 ,false)

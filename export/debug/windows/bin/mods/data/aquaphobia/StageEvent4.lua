@@ -79,8 +79,8 @@ function onCreatePost()
 	doTweenAlpha("HUDAlpha2","camNoteDark",0,0.00001)
 	doTweenAlpha("HUDAlpha3","camNoteWhite",0,0.00001)
 	
-	setGlow('normal','45BED1',1,24,3)
-	setGlow('special','AD4ED9',1,32,4)
+	setGlow('normal','45BED1',1,32,3)
+	setGlow('special','AD4ED9',1,36,4)
 
 	makeAnimatedLuaSprite('glitchLiquid', 'glitchLiquid', -80, -50)
 	setScrollFactor('glitchLiquid',0,0);
@@ -302,7 +302,7 @@ function onBeatHit()
 	if curBeat == 44 then
 	doTweenZoom('camZoom', 'camGame', origZoom+.1, secPerBeat*4)
 	doTweenAlpha("BlackEdgeAlpha","BlackEdge",1,secPerBeat*4,cubeIn)
-	cameraShake('camGame', .005, secPerBeat*4)
+	cameraShake('camGame', .006, secPerBeat*4)
 	end
 
 	if curBeat == 46 then
@@ -322,19 +322,19 @@ function onBeatHit()
 	isWhiteFadeOn = true
 	isMonsterMoving = true
 
-		doTweenAlpha("BlackEdgeAlpha","BlackEdge",.4,secPerBeat*16,'cubeOut')
+	doTweenAlpha("BlackEdgeAlpha","BlackEdge",.4,secPerBeat*16,'cubeOut')
 	
-		setProperty('isPlayBubbleFX',true)
+	setProperty('isPlayBubbleFX',true)
 	
-		doTweenAlpha("WhiteFrameA","WhiteFrame",1,.01)
-		doTweenAlpha("WhiteFrameA2","WhiteFrame",0,secPerBeat*4,'cubeIn')
-		cameraFlash('game', 'ed49ff',.3 ,false)
+	doTweenAlpha("WhiteFrameA","WhiteFrame",1,.01)
+	doTweenAlpha("WhiteFrameA2","WhiteFrame",0,secPerBeat*4,'cubeIn')
+	cameraFlash('game', 'ed49ff',.3 ,false)
 		
-		sparkleAnimStart(3,360,1,secPerBeat*2)
-		isSparkleOn = true
-	cameraShake('camNoteNormal', .0025, secPerBeat*64)
-	cameraShake('camNoteDark', .0025, secPerBeat*64)
-	cameraShake('camNoteWhite', .0025, secPerBeat*64)
+	sparkleAnimStart(3,360,1,secPerBeat*2)
+	isSparkleOn = true
+	cameraShake('camNoteNormal', .003, secPerBeat*64)
+	cameraShake('camNoteDark', .003, secPerBeat*64)
+	cameraShake('camNoteWhite', .003, secPerBeat*64)
 
 	
 	doTweenAlpha("WaterFilterA","WaterFilter",.5,0.01)
@@ -344,11 +344,14 @@ function onBeatHit()
 	doTweenAlpha("fish1A","fish1",1,0.01,"smootherStepInOut")
 	doTweenAlpha("fish2A","fish2",1,0.01,"smootherStepInOut")
 	doTweenAlpha("fish3A","fish3",1,0.01,"smootherStepInOut")
+
+	
+	doTweenAlpha("BlackEdge5A","BlackEdge5",.6,secPerBeat*4)
 	end
 
 
 	if curBeat == 104 then
-	doTweenAlpha("BlackEdgeAlpha","BlackEdge",.9,secPerBeat*16,'cubeOut')
+	doTweenAlpha("BlackEdgeAlpha","BlackEdge",1,secPerBeat*16,'cubeOut')
 	end
 
 	if curBeat == 112 then
@@ -374,36 +377,36 @@ function onBeatHit()
 	------------------
 
 	if curBeat == 96 then
-	doTweenZoom('camZoom', 'camGame', origZoom+.15, secPerBeat*8)
+	doTweenZoom('camZoom', 'camGame', origZoom+.2, secPerBeat*8)
 	end
 	
 	if curBeat == 140 then
-	doTweenZoom('camZoom', 'camGame', origZoom+.1, secPerBeat*4)
+	doTweenZoom('camZoom', 'camGame', origZoom+.15, secPerBeat*4)
 	end
 
 	if curBeat == 144 then
-	cameraShake('camNoteNormal', .0025, secPerBeat*64)
-	cameraShake('camNoteDark', .0025, secPerBeat*64)
-	cameraShake('camNoteWhite', .0025, secPerBeat*64)
+	cameraShake('camNoteNormal', .003, secPerBeat*64)
+	cameraShake('camNoteDark', .003, secPerBeat*64)
+	cameraShake('camNoteWhite', .003, secPerBeat*64)
 	end
 
 	if curBeat == 208 then 
-	doTweenZoom('camZoom', 'camGame', origZoom+.2, secPerBeat*32)
+	doTweenZoom('camZoom', 'camGame', origZoom+.25, secPerBeat*32)
 	doTweenAlpha("BlackEdgeAlpha","BlackEdge",.9,secPerBeat*32,'cubeOut')
-	cameraShake('camNoteNormal', .0035, secPerBeat*32)
-	cameraShake('camNoteDark', .0035, secPerBeat*32)
-	cameraShake('camNoteWhite', .0035, secPerBeat*32)
+	cameraShake('camNoteNormal', .004, secPerBeat*32)
+	cameraShake('camNoteDark', .004, secPerBeat*32)
+	cameraShake('camNoteWhite', .004, secPerBeat*32)
 	sparkleAnimStart(3,360,1,secPerBeat*2)
 	sparkleCD=4
 	end
 	
 	
 	if curBeat == 236 then 
-	doTweenZoom('camZoom', 'camGame', origZoom+.2, secPerBeat*16)
+	doTweenZoom('camZoom', 'camGame', origZoom+.25, secPerBeat*16)
 	end
 
 	if curBeat == 240 then 
-	doTweenZoom('camZoom', 'camGame', origZoom+.2, secPerBeat*32)
+	doTweenZoom('camZoom', 'camGame', origZoom+.25, secPerBeat*32)
 	cameraShake('camNoteNormal', .005, secPerBeat*32)
 	cameraShake('camNoteDark', .005, secPerBeat*32)
 	cameraShake('camNoteWhite', .005, secPerBeat*32)
@@ -484,11 +487,11 @@ function onBeatHit()
 	end
 
 	if curBeat == 440 then 
-	doTweenZoom('camZoom', 'camGame', origZoom+.2, secPerBeat*32)
+	doTweenZoom('camZoom', 'camGame', origZoom+.25, secPerBeat*32)
 	doTweenAlpha("BlackEdgeAlpha","BlackEdge",.9,secPerBeat*16,'cubeOut')
 	end
 	if curBeat == 472 then 
-	doTweenZoom('camZoom', 'camGame', origZoom+.2, secPerBeat*32)
+	doTweenZoom('camZoom', 'camGame', origZoom+.25, secPerBeat*32)
 	doTweenAlpha("BlackEdgeAlpha","BlackEdge",.6,secPerBeat*32,'cubeOut')
 	end
 
@@ -723,16 +726,16 @@ function onBeatHit()
 	if curBeat == 472 then
 	doTweenAlpha('glitchLiquidA', 'glitchLiquid', 0, 0.001, 'elasticOut')
 	
-	cameraShake('camNoteNormal', .005, secPerBeat*32)
-	cameraShake('camNoteDark', .005, secPerBeat*32)
-	cameraShake('camNoteWhite', .005, secPerBeat*32)
+	cameraShake('camNoteNormal', .0055, secPerBeat*32)
+	cameraShake('camNoteDark', .0055, secPerBeat*32)
+	cameraShake('camNoteWhite', .0055, secPerBeat*32)
 	end
 
 	if curBeat == 504 then
 	
-	cameraShake('camNoteNormal', .0035, secPerBeat*32)
-	cameraShake('camNoteDark', .0035, secPerBeat*32)
-	cameraShake('camNoteWhite', .0035, secPerBeat*32)
+	cameraShake('camNoteNormal', .004, secPerBeat*32)
+	cameraShake('camNoteDark', .004, secPerBeat*32)
+	cameraShake('camNoteWhite', .0034, secPerBeat*32)
 
 	isSparkleOn=false
 	sparkle2Anim();
@@ -764,8 +767,8 @@ function onBeatHit()
 		doTweenY('EyeballsPA', 'Eyeballs', monsterEyeOrigPosY+650,secPerBeat*32,"cubeIn")
 		doTweenY('EyeballsP2A', 'Eyeballs2', monsterEyeOrigPosY+650,secPerBeat*32,"cubeIn")
 		doTweenY('EyesocketDPA', 'Eyesocket', monsterEyeOrigPosY+650,secPerBeat*32,"cubeIn")
-		cameraShake('game', .005, secPerBeat*32)
-		cameraShake('hud', .005, secPerBeat*32)
+		cameraShake('game', .0055, secPerBeat*32)
+		cameraShake('hud', .0055, secPerBeat*32)
 		playSound('earthcrake',.4,'earthcrake')
 	end
 
@@ -783,9 +786,9 @@ function onBeatHit()
 	objectPlayAnimation('FlameR_Red', 'FlameNormal', true)
 	objectPlayAnimation('FlameL_Blue', 'FlameNormal', true)
 	objectPlayAnimation('FlameR_Blue', 'FlameNormal', true)
-	cameraShake('camNoteNormal', .002, secPerBeat*32)
-	cameraShake('camNoteDark', .002, secPerBeat*32)
-	cameraShake('camNoteWhite', .002, secPerBeat*32)
+	cameraShake('camNoteNormal', .003, secPerBeat*32)
+	cameraShake('camNoteDark', .003, secPerBeat*32)
+	cameraShake('camNoteWhite', .003, secPerBeat*32)
 	end
 
 	if curBeat == 568 then
@@ -794,7 +797,12 @@ function onBeatHit()
 	objectPlayAnimation('FlameL_Blue', 'FlameOff', true)
 	objectPlayAnimation('FlameR_Blue', 'FlameOff', true)
 	doTweenAlpha("BlackEdgeAlpha","BlackEdge",.9,secPerBeat*4,'cubeOut')
+	
+	end
 
+	if curBeat == 572 then
+	
+	setBlur(35,secPerBeat*4)
 	end
 
 
@@ -814,7 +822,7 @@ function onUpdate(elapsed)
 
 
 	if curBeat >= 272 and curBeat <= 372 then
-		doTweenZoom('camZoom', 'camGame', origZoom+.2, secPerBeat)
+		doTweenZoom('camZoom', 'camGame', origZoom+.25, secPerBeat)
 	end
 
 end

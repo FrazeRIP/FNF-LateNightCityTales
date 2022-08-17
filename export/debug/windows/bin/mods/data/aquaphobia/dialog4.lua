@@ -65,7 +65,7 @@ function onNextDialogue(count)
 	--doTweenAlpha("dialogueA","camDialog",0,.1,'cubeOut')
 	doTweenAlpha('cg4-1A7', 'cg4-1', .8, 1,'cubeOut')
 	runTimer('finish',3);
-	playSound('scream',1);
+	playSound('riseString',1);
 	cameraShake('camDialog', .0035, .5)	
 	cameraShake('camDialogBack', .0035, .5)	
 	end

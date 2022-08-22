@@ -290,10 +290,10 @@ class TitleState extends MusicBeatState
 		if(isStoryMain)
 			storyMainUpdate();
 
-		if (FlxG.keys.justPressed.ONE)
-		{
-			MusicBeatState.switchState(new FinState());
-		}
+		// if (FlxG.keys.justPressed.ONE)
+		// {
+		// 	MusicBeatState.switchState(new FinState());
+		// }
 		
 
 	
@@ -783,7 +783,7 @@ class TitleState extends MusicBeatState
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				isTransing=false;
-				FlxG.switchState(new LoadingState(new PlayState(),true,'nightmare'));
+				LoadingState.loadAndSwitchState(new OpeningState());
 				FreeplayState.destroyFreeplayVocals();
 			});
 			

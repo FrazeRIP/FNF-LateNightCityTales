@@ -72,13 +72,11 @@ class FinState extends MusicBeatState
         {
             FlxTween.tween(thanksforplaying,{alpha:1},1.5,{onComplete:function(twn:FlxTween)
 				{
-                    // if(TitleState.unlockHideStage!=true)
-                    // {
+                    if(TitleState.unlockHideStage!=true)
+                    {
                     TipTextStart();
                     TitleState.unlockHideStage=true;
-                    FlxG.save.data.unlockHideStage=TitleState.unlockHideStage;
-                    FlxG.save.flush();
-                    // }
+                    }
 
                     new FlxTimer().start(0.5,function(tmr:FlxTimer)
                         {	
@@ -87,6 +85,10 @@ class FinState extends MusicBeatState
 				}});
             
         }
+        FlxG.save.data.unlockHideStage=TitleState.unlockHideStage;
+        FlxG.save.flush();
+
+        super.create();
 
     }
     override function update(elapsed:Float)
@@ -95,6 +97,7 @@ class FinState extends MusicBeatState
             {
                 MusicBeatState.switchState(new TitleState());
             }
+            super.update(elapsed);
     }
 
     public function TipTextStart():Void
@@ -112,4 +115,5 @@ class FinState extends MusicBeatState
                 FlxTween.tween(jukeBoxSubText,{x:1300},1.2,{ease:FlxEase.circInOut});
             });
     }
+   
 }

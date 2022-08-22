@@ -489,6 +489,8 @@ function onBeatHit()
 	end
 
 	if curBeat == 580 then
+	
+	cameraFlash('game', 'FFFFFF',secPerBeat*8,false)
 
 	isAutoCamZoom = false
 	isAutoCA = false
@@ -554,7 +556,7 @@ function onBeatHit()
 	doTweenAlpha("whiteSolidA","whiteSolid",0,.001)
 	doTweenAlpha("whiteSolidA2","whiteSolid",1,secPerBeat*16)
 	
-	cameraFlash('game', 'FFFFFF',secPerBeat,false)
+	cameraFlash('game', 'FFFFFF',secPerBeat*2,false)
 	camShakeNotes(.02,secPerBeat)
 	cameraShake('game', .02, secPerBeat)
 	doTweenAlpha("break4A","break4",0,.001)

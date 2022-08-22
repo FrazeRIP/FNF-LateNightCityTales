@@ -4815,6 +4815,12 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if(daSong == 'tutorial'){
+			if(curBeat == 112){
+				addShaderToCamera('camgame', new VCRDistortionEffect(0.0,false,true,true));
+			}
+		}
+
 		if(daSong=="lonely-sapphire"){
 				if(curBeat == 60){
 					FlxTween.num(0,30,60/230*4,{ease: FlxEase.cubeIn,type: ONESHOT},updateBlur);
@@ -5193,7 +5199,7 @@ class PlayState extends MusicBeatState
 			_typeText.waitTime = 2.0;
 			_typeText.setTypingVariation(0.75, true);
 			_typeText.color = _color;
-			_typeText.alpha = 0.5;
+			_typeText.alpha = 0.3;
 	
 			//_typeText.sounds = [FlxAssets.getSound("shared:assets/shared/dialogue")];
 			//_typeText.sounds = [FlxG.sound.load(Paths.sound('a'))];

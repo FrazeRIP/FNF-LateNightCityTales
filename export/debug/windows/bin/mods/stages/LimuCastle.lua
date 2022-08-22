@@ -1,29 +1,5 @@
 function onCreate()
 	
-	--FX shit
-	
-	makeAnimatedLuaSprite('Glitch1', 'Glitch1', -100, -50)
-	addAnimationByPrefix('Glitch1', 'Glitch1', 'Glitch1', 24, true)
-	setScrollFactor('Glitch1', 1, 1);
-	setScrollFactor('Glitch1', 0, 0)
-	setObjectCamera('Glitch1','other')
-	
-	setBlendMode('Glitch1','multiply')
-
-	doTweenAlpha('Glitch1Start', 'Glitch1', 0, 0.00001, 'elasticOut')
-	--doTweenAlpha('Glitch1Start', 'Glitch1', .65, 0.00001, 'elasticOut')
-
-	makeAnimatedLuaSprite('OldMovie', 'OldMovie', 0, 0)
-	addAnimationByPrefix('OldMovie', 'OldMovie', 'OldMovie', 12, true)
-	setScrollFactor('OldMovie', 1, 1);
-	setScrollFactor('OldMovie', 0, 0)
-	setObjectCamera('OldMovie','other')
-
-	setBlendMode('OldMovie','overlay')
-
-
-	doTweenAlpha('OldMovie', 'Glitch1', 0, 0.00001, 'elasticOut')
-	doTweenAlpha('OldMovieStart', 'OldMovie', .2, 0.00001, 'elasticOut')
 
 	
 	
@@ -68,15 +44,21 @@ function onCreate()
 	addLuaSprite('Stage-WebR',true);
 	addLuaSprite('DarkFrame',true);
 
-	addLuaSprite('Glitch1', true);
-	--addLuaSprite('OldMovie', true);
 
 	addAnimationByPrefix('FlameL', 'FlameNormal', 'FlameNormal', 24, true)
 	addAnimationByPrefix('FlameL', 'FlameWind', 'FlameWind', 24, true)
 	addAnimationByPrefix('FlameR', 'FlameNormal', 'FlameNormal', 24, true)
 	addAnimationByPrefix('FlameR', 'FlameWind', 'FlameWind', 24, true)
+
+	doTweenColor('FlameLC','FlameL','5CEFFF',0.01)
+	doTweenColor('FlameRC','FlameR','5CEFFF',0.01)
 	objectPlayAnimation('FlameR', 'FlameNormal', false)
 	objectPlayAnimation('FlameL', 'FlameNormal', false)
 	
-	close(true); --For performance reasons, close this script once the stage is fully loaded, as this script won't be used anymore after loading the stage
+	
+	--FX shit
+	
+
+
+	--close(true); --For performance reasons, close this script once the stage is fully loaded, as this script won't be used anymore after loading the stage
 end

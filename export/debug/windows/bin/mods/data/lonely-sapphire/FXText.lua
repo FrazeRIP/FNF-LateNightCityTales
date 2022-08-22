@@ -11,10 +11,7 @@ function onCreate( ... )
 	setAnimName("Default")
 end
 
-
-
 function onStepHit( ... )
-	
 	if curStep == 3 then
 	setTextData(
 	--width,size,delay,color
@@ -496,6 +493,84 @@ function onStepHit( ... )
 	--330,400,5,"It's my time to revenge...!")
 	--end
 	-----------------------------------------------------------
+	-----------------------------------------------------------
+	-----------------------------------------------------------
+	
+	--Top Right------------------------------------
+	if curStep ==10 then
+	setTextData(
+	--width,size,delay,color
+	1000,26,0.1,'ABABAB')
+
+	createSideFXText(
+	--x,y,angle,content
+	450,150,3,"Who are you...?")
+	end
+	--Right------------------------------------------------
+	if curStep ==58 then
+	setTextData(
+	--width,size,delay,color
+	1000,28,0.1,'ABABAB')
+
+	createSideFXText(
+	--x,y,angle,content
+	600,300,3,"Why are you here...?")
+	end
+	
+	--Button Left------------------------------------------------
+	if curStep ==116 then
+	setTextData(
+	--width,size,delay,color
+	1000,24,0.1,'ABABAB')
+
+	createSideFXText(
+	--x,y,angle,content
+	-150,320,-6,"It's coming!!!")
+	end
+	
+	--Right------------------------------------
+	if curStep ==144 then
+	setTextData(
+	--width,size,delay,color
+	1000,32,0.12,'ABABAB')
+
+	createSideFXText(
+	--x,y,angle,content
+	660,280,3,"Help ME!!!")
+	end
+	
+	--Right------------------------------------
+	if curStep ==297 then
+	setTextData(
+	--width,size,delay,color
+	1000,32,0.12,'ABABAB')
+
+	createSideFXText(
+	--x,y,angle,content
+	660,250,3,"Is that......\nHuman?")
+	end
+	
+	--Button Left------------------------------------------------
+	if curStep ==377 then
+	setTextData(
+	--width,size,delay,color
+	1000,24,0.1,'ABABAB')
+
+	createSideFXText(
+	--x,y,angle,content
+	-150,320,-6,"Get us outta here!!")
+	end
+	--Top Right------------------------------------
+	if curStep ==10 then
+	setTextData(
+	--width,size,delay,color
+	1000,26,0.1,'ABABAB')
+
+	createSideFXText(
+	--x,y,angle,content
+	450,150,3,"This is fun...")
+	end
+
 
 end
 

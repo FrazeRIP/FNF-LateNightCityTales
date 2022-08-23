@@ -27,7 +27,7 @@ function onCreatePostEarly()
 	addAnimationByPrefix('Eyeballs', 'Eyeballs off', 'Eyeballs off', 24, false)
 	addAnimationByPrefix('Eyeballs', 'Eyeballs ding', 'Eyeballs ding', 24, true)
 	addAnimationByPrefix('Eyeballs', 'Eyeballs on', 'Eyeballs on', 24, false)
-	doTweenColor('EyeballsC', 'Eyeballs', '434343', 0.01, 'linear')
+	doTweenColor('EyeballsC', 'Eyeballs', '434343', 0.00001, 'linear')
 	objectPlayAnimation('Eyeballs', 'Eyeballs ding', false)
 	addLuaSprite('Eyeballs', false);
 
@@ -37,7 +37,7 @@ function onCreatePostEarly()
 	addAnimationByPrefix('Eyeballs2', 'Eyeballs off', 'Eyeballs off', 24, false)
 	addAnimationByPrefix('Eyeballs2', 'Eyeballs ding', 'Eyeballs ding', 24, true)
 	addAnimationByPrefix('Eyeballs2', 'Eyeballs on', 'Eyeballs on', 24, false)
-	doTweenColor('EyeballsC2', 'Eyeballs', '434343', 0.01, 'linear')
+	doTweenColor('EyeballsC2', 'Eyeballs', '434343', 0.0001, 'linear')
 	objectPlayAnimation('Eyeballs2', 'Eyeballs ding', false)
 	addLuaSprite('Eyeballs2', false);
 	setBlendMode('Eyeballs2','add')
@@ -49,7 +49,7 @@ function onCreatePostEarly()
 	addAnimationByPrefix('Eyesocket', 'Eyesocket off', 'Eyesocket off', 24, false)
 	addAnimationByPrefix('Eyesocket', 'Eyesocket ding', 'Eyesocket ding', 24, true)
 	addAnimationByPrefix('Eyesocket', 'Eyesocket on', 'Eyesocket on', 24, false)
-	doTweenColor('EyesocketC', 'Eyesocket', '434343', 0.01, 'linear')
+	doTweenColor('EyesocketC', 'Eyesocket', '434343', 0.00001, 'linear')
 	objectPlayAnimation('Eyesocket', 'Eyesocket ding', false)
 	addLuaSprite('Eyesocket', false);
 	
@@ -57,7 +57,7 @@ function onCreatePostEarly()
 	scaleObject('whiteFade', 1.5, 1);
 	setScrollFactor('whiteFade', .7, .7);
 	addLuaSprite('whiteFade', false);
-	doTweenColor('whiteFade', 'whiteFade', 'ed49ff', 0.01, 'linear')
+	doTweenColor('whiteFade', 'whiteFade', 'ed49ff', 0.00001, 'linear')
 	doTweenAlpha("whiteFadeA","whiteFade",.5,.01)
 
 	makeLuaSprite('DarkSolid', 'DarkSolid', -600, 700);
@@ -159,12 +159,12 @@ function onCreatePostFrontCharacter()
 	makeLuaSprite('1_net_left', '1_net_left', -125, 0);
 	setScrollFactor('1_net_left', .6, .6);
 	scaleObject('1_net_left', scale1080P, scale1080P);
-	doTweenColor('1_net_left1', '1_net_left', 'A19DC0', 0.01, 'linear')
+	doTweenColor('1_net_left1', '1_net_left', 'A19DC0', 0.0001, 'linear')
 
 	makeLuaSprite('1_net_right', '1_net_right', -425, -175);
 	setScrollFactor('1_net_right', .8, .8);
 	scaleObject('1_net_right', scale1080P, scale1080P);
-	doTweenColor('1_net_right1', '1_net_right', 'A19DC0', 0.01, 'linear')
+	doTweenColor('1_net_right1', '1_net_right', 'A19DC0', 0.0001, 'linear')
 	 
 	addLuaSprite('1_net_left', true);
 	addLuaSprite('1_net_right', true);
@@ -179,7 +179,7 @@ function onCreatePostFrontCharacter()
 	setScrollFactor('WaterRay', 1, 1);
 	addLuaSprite('WaterRay', true);
 	scaleObject('WaterRay', 1.5	, 1.5);
-	doTweenColor('WaterRayC', 'WaterRay', 'A3E9FF', 0.01, 'linear')
+	doTweenColor('WaterRayC', 'WaterRay', 'A3E9FF', 0.000001, 'linear')
 	setBlendMode('WaterRay','add')
 	
 	--water filter
@@ -188,11 +188,25 @@ function onCreatePostFrontCharacter()
 	setScrollFactor('WaterFilter', 1, 1);
 	addLuaSprite('WaterFilter', true);
 	scaleObject('WaterFilter', 1.5	, 1.5);
-	 doTweenColor('WaterFilterC', 'WaterFilter', '00006E', 0.01, 'linear')
+	 doTweenColor('WaterFilterC', 'WaterFilter', '00006E', 0.00001, 'linear')
 	setBlendMode('WaterFilter','add')
 	--setObjectCamera('WaterFilter','other')
 	doTweenAlpha("WaterFilterA","WaterFilter",.5,.01)
+
+	--water filter
+	makeAnimatedLuaSprite('WaterSurface', 'WaterSurface', -200, -100)
+	addAnimationByPrefix('WaterSurface', 'WaterSurface', 'WaterSurface', 18, true)
+	setScrollFactor('WaterSurface', 1, 1);
+	addLuaSprite('WaterSurface', true);
+	 doTweenColor('WaterSurfaceC', 'WaterSurface', '808080', 0.000001, 'linear')
+	scaleObject('WaterSurface', 1.5	, 1.5);
+	setBlendMode('WaterSurface','add')
+	--setObjectCamera('WaterFilter','other')
+	doTweenAlpha("WaterSurfaceA","WaterSurface",0,.01)
+
 	end
+
+	
 	
 	--dark environment filter
 	makeLuaSprite('BlackEdge','BlackEdge',posX1080P,posY1080P);
@@ -222,7 +236,7 @@ function onCreatePostFrontCharacter()
 	setScrollFactor('Sparkle', .7, .7);
 	addAnimationByPrefix('Sparkle', 'Sparkle', 'Sparkle',36, true)
 	addLuaSprite('Sparkle', true);
-	doTweenColor('SparkleC', 'Sparkle', 'C22EFF', 0.01, 'linear')
+	doTweenColor('SparkleC', 'Sparkle', 'C22EFF', 0.000001, 'linear')
 	doTweenAlpha("SparkleA","Sparkle",0,.01)
 	setBlendMode('Sparkle','add')
 	
@@ -231,7 +245,7 @@ function onCreatePostFrontCharacter()
 	setScrollFactor('WhiteFrame', 1, 1);
 	scaleObject('WhiteFrame', scale1080P, scale1080P);
 	addLuaSprite('WhiteFrame',true);
-	doTweenColor('WhiteFrameC', 'WhiteFrame', 'ed49ff', 0.01, 'linear')
+	doTweenColor('WhiteFrameC', 'WhiteFrame', 'ed49ff', 0.000001, 'linear')
 	setBlendMode('WhiteFrame','add')
 	doTweenAlpha("WhiteFrameA","WhiteFrame",0,.01)
 	setObjectCamera('WhiteFrame', 'HUD')

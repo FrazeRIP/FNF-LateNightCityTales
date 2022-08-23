@@ -56,9 +56,9 @@ function onCreatePost()
 	
 	triggerEvent("Change Character", 'bf', "bf")
 	triggerEvent("Change Character", 'bf', "bf-scare")
-	 doTweenColor('bfColorTween', 'boyfriend', 'A19DC0', 0.1, 'linear')
-	 doTweenColor('dadColorTween', 'dad', 'A19DC0', 0.1, 'linear')
-	 doTweenColor('gfColorTween', 'gf', 'A19DC0', 0.1, 'linear')
+	 doTweenColor('bfColorTween', 'boyfriend', 'A19DC0', 0.001, 'linear')
+	 doTweenColor('dadColorTween', 'dad', 'A19DC0', 0.001, 'linear')
+	 doTweenColor('gfColorTween', 'gf', 'A19DC0', 0.001, 'linear')
 	 doTweenX('gfPosX', 'gf', 1100, .001)
 	 doTweenY('gfPosY', 'gf', 300, .001)
 	 
@@ -111,6 +111,7 @@ function onCreatePost()
 	
 	doTweenAlpha("WaterFilterA","WaterFilter",0,.01)
 	doTweenAlpha("WaterRayA","WaterRay",0,.01)
+	doTweenAlpha("WaterSurfaceA","WaterSurface",0,.001)
 
 	doTweenAlpha("FlameL_RedA","FlameL_Red",0,.01)
 	doTweenAlpha("FlameR_RedA","FlameR_Red",.0,.01)
@@ -136,7 +137,7 @@ function onCreatePost()
 	setScrollFactor('Sparkle2', .7, .7);
 	addAnimationByPrefix('Sparkle2', 'Sparkle', 'Sparkle',36, true)
 	addLuaSprite('Sparkle2', true);
-	doTweenColor('SparkleCs2', 'Sparkle2', 'C22EFF', 0.01, 'linear')
+	doTweenColor('SparkleCs2', 'Sparkle2', 'C22EFF', 0.00001, 'linear')
 	setBlendMode('Sparkle2','add')
 	
 	doTweenAlpha('Sparkle2Alpha', 'Sparkle2', 0, 0.001)
@@ -175,12 +176,19 @@ function onCreatePost()
 	objectPlayAnimation('eyes','eyes on',false)
 	objectPlayAnimation('eyes2','eyes on',false)
 	doTweenAlpha("eyesAD","eyes",0,0.01,"smootherStepInOut")
-	doTweenColor('eyes2C', 'eyes2', 'FF4FF6',.001, 'cubeIn')
+	doTweenColor('eyes2C', 'eyes2', 'FF4FF6',.00001, 'cubeIn')
 	doTweenAlpha("eyes2AF","eyes2",0,0.01,"smootherStepInOut")
 	
 	doTweenAlpha("fish1A","fish1",0,0.01,"smootherStepInOut")
 	doTweenAlpha("fish2A","fish2",0,0.01,"smootherStepInOut")
 	doTweenAlpha("fish3A","fish3",0,0.01,"smootherStepInOut")
+
+	
+	makeLuaSprite('BlackEdge720AAA','BlackEdge720',0,0);
+	setScrollFactor('BlackEdge720AAA', 0, 0);
+	addLuaSprite('BlackEdge720AAA', true);
+	doTweenAlpha('BlackEdge720AAAA', 'BlackEdge720AAA', 0.1, 0.001)
+	setObjectCamera('BlackEdge720AAA', 'other')
 
 end
 
@@ -337,8 +345,9 @@ function onBeatHit()
 	cameraShake('camNoteWhite', .003, secPerBeat*64)
 
 	
-	doTweenAlpha("WaterFilterA","WaterFilter",.5,0.01)
-	doTweenAlpha("WaterRayA","WaterRay",1,0.01)
+	doTweenAlpha("WaterFilterA","WaterFilter",1,0.01)
+	doTweenAlpha("WaterRayA","WaterRay",.8,0.01)
+	doTweenAlpha("WaterSurfaceA","WaterSurface",.4,.01)
 
 	
 	doTweenAlpha("fish1A","fish1",1,0.01,"smootherStepInOut")
@@ -347,6 +356,9 @@ function onBeatHit()
 
 	
 	doTweenAlpha("BlackEdge5A","BlackEdge5",.6,secPerBeat*4)
+
+	
+	doTweenAlpha('BlackEdge720AAAA', 'BlackEdge720AAA', 0.3, 0.001)
 	end
 
 
@@ -371,8 +383,9 @@ function onBeatHit()
 		cameraFlash('game', 'FFFFFF',.7 ,false)
 		doTweenAlpha("WaterFilterA","WaterFilter",0,.01)
 		doTweenAlpha("WaterRayA","WaterRay",0,.01)
+	doTweenAlpha("WaterSurfaceA","WaterSurface",0,.01)
 		triggerEvent("Change Character", 'bf', "bf")
-		doTweenColor('bfColorTween', 'boyfriend', 'A19DC0', 0.1, 'linear')
+		doTweenColor('bfColorTween', 'boyfriend', 'A19DC0', 0.00001, 'linear')
 	end
 	------------------
 
@@ -444,8 +457,9 @@ function onBeatHit()
 	doTweenAlpha("fish1A","fish1",0,0.01,"smootherStepInOut")
 	doTweenAlpha("fish2A","fish2",0,0.01,"smootherStepInOut")
 	doTweenAlpha("fish3A","fish3",0,0.01,"smootherStepInOut")
-	doTweenAlpha("WaterFilterA","WaterFilter",0,secPerBeat*32)
-	doTweenAlpha("WaterRayA","WaterRay",0,secPerBeat*32)
+	doTweenAlpha("WaterFilterA","WaterFilter",0,secPerBeat*8)
+	doTweenAlpha("WaterRayA","WaterRay",0,secPerBeat*8)
+	doTweenAlpha("WaterSurfaceA","WaterSurface",0,.001)
 	end
 
 	if curBeat == 280 then
@@ -614,8 +628,9 @@ function onBeatHit()
 	sparkleAnimStart(3,360*2,1,secPerBeat*1.5)
 	sparkleCD = 8
 	sparkle2Anim()
-	 doTweenColor('dadColorTween', 'dad', 'A19DC0', 0.1, 'linear')
-
+	 doTweenColor('dadColorTween', 'dad', 'A19DC0', 0.0001, 'linear')
+	 
+	doTweenAlpha('BlackEdge720AAAA', 'BlackEdge720AAA', 0.1, 0.001)
 	end
 
 	if curBeat == 377 then
@@ -798,11 +813,16 @@ function onBeatHit()
 	objectPlayAnimation('FlameR_Blue', 'FlameOff', true)
 	doTweenAlpha("BlackEdgeAlpha","BlackEdge",.9,secPerBeat*4,'cubeOut')
 	
+	doTweenAlpha('BlackEdge720AAAA', 'BlackEdge720AAA', 0.3, secPerBeat*4)
 	end
 
 	if curBeat == 572 then
 	
 	setBlur(35,secPerBeat*4)
+	doTweenAlpha("HUDAlpha","camHUD",0,secPerBeat*4)
+	doTweenAlpha("HUDAlpha1","camNoteNormal",0,secPerBeat*4)
+	doTweenAlpha("HUDAlpha2","camNoteDark",0,secPerBeat*4)
+	doTweenAlpha("HUDAlpha3","camNoteWhite",0,secPerBeat*4)
 	end
 
 

@@ -260,8 +260,8 @@ function onBeatHit()
 	caAmount = 1.5
 	caFactor = 6
 
-	doTweenColor('LimuHC', 'LimuH', 'B8B8B8', 0.01, 'linear')
-	doTweenColor('LimuH2C', 'LimuH2', '7A7A7A', 0.01, 'linear')
+	doTweenColor('LimuHC', 'LimuH', 'B8B8B8', 0.00001, 'linear')
+	doTweenColor('LimuH2C', 'LimuH2', '7A7A7A', 0.00001, 'linear')
 
 	noteBlinKFactor = 4
 
@@ -301,7 +301,7 @@ function onBeatHit()
 	
 	doTweenColor('Tentacle2C', 'Tentacle2', '242424', secPerBeat*4, 'cubeOut')
 	doTweenColor('LimuH', 'LimuH', 'FFFFFF', secPerBeat*4, 'cubeOut')
-	doTweenColor('LimuH2C', 'LimuH2', 'FFFFFF', 0.01, 'cubeOut')
+	doTweenColor('LimuH2C', 'LimuH2', 'FFFFFF', 0.00001, 'cubeOut')
 
 
 	end
@@ -330,7 +330,7 @@ function onBeatHit()
 
 
 	if curBeat == 196 then
-	doTweenColor('Tentacle2C', 'Tentacle2', 'A1A1A1', 0.01, 'linear')
+	doTweenColor('Tentacle2C', 'Tentacle2', 'A1A1A1', 0.00001, 'linear')
 
 	doTweenColor('LimuHC', 'LimuH', '7A7A7A', secPerBeat*4, 'cubeOut')
 	doTweenColor('LimuH2C', 'LimuH2', '7A7A7A', secPerBeat*4, 'cubeOut')
@@ -455,8 +455,8 @@ function onBeatHit()
 	
 	cameraFlash('game', 'FFFFFF',secPerBeat*4,false)
 	
-	doTweenColor('LimuH', 'LimuH', '7A7A7A', 0.001, 'cubeOut')
-	doTweenColor('whiteSolidC', 'whiteSolid', 'FFFFFF', 0.01, 'linear')
+	doTweenColor('LimuH', 'LimuH', '7A7A7A', 0.00001, 'cubeOut')
+	doTweenColor('whiteSolidC', 'whiteSolid', 'FFFFFF', 0.0001, 'linear')
 	doTweenAlpha("whiteSolidA2","whiteSolid",1,0.001)
 	doTweenAlpha("whiteSolidA","whiteSolid",0,secPerBeat*4)
 	
@@ -506,7 +506,7 @@ function onBeatHit()
 	doTweenAlpha("WaterRayA","WaterRay",0,.01)
 	doTweenAlpha("Tentacle2A","Tentacle2",0,.01)
 	
-	doTweenColor('LimuH', 'LimuH', '616161', 0.001, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', '616161', 0.00001, 'cubeOut')
 	end
 
 	if curBeat == 596 then
@@ -519,7 +519,7 @@ function onBeatHit()
 	end
 
 	if curBeat == 612 then
-	doTweenColor('LimuH', 'LimuH', '525252', 0.001, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', '525252', 0.0001, 'cubeOut')
 	cameraFlash('game', 'FFFFFF',secPerBeat,false)
 	
 	camShakeNotes(.015,secPerBeat/2)
@@ -530,7 +530,7 @@ function onBeatHit()
 	end
 
 	if curBeat == 628 then
-	doTweenColor('LimuH', 'LimuH', '303030', 0.001, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', '303030', 0.0001, 'cubeOut')
 	cameraFlash('game', 'FFFFFF',secPerBeat,false)
 	camShakeNotes(.015,secPerBeat/2)
 	cameraShake('game', .015, secPerBeat/2)
@@ -540,7 +540,7 @@ function onBeatHit()
 	end
 
 	if curBeat == 640 then
-	doTweenColor('LimuH', 'LimuH', '171717', 0.001, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', '171717', 0.0001, 'cubeOut')
 	cameraFlash('game', 'FFFFFF',secPerBeat,false)
 	camShakeNotes(.015,secPerBeat/2)
 	cameraShake('game', .015, secPerBeat/2)
@@ -550,7 +550,7 @@ function onBeatHit()
 	end
 
 	if curBeat == 644 then
-	doTweenColor('LimuH', 'LimuH', '0D0D0D', 0.001, 'cubeOut')
+	doTweenColor('LimuH', 'LimuH', '0D0D0D', 0.00001, 'cubeOut')
 	
 	doTweenColor('whiteSolidC', 'whiteSolid', 'FFFFFF', 0.01, 'linear')
 	doTweenAlpha("whiteSolidA","whiteSolid",0,.001)

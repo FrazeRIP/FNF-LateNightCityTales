@@ -920,7 +920,7 @@ class TitleState extends MusicBeatState
 					addMoreText('Chapter 1 ', 15);
 
 				case 52:
-					addMoreText('The call from the deep sea', 15);
+					addMoreText('The deep sea Chamberlain', 15);
 				case 56:
 					deleteCoolText();
 				case 57:

@@ -22,7 +22,7 @@ function onCreate()
 	makeAnimatedLuaSprite('LimuH2', 'characters/LimuH', -190, 55);
 	addLuaSprite('LimuH2', true);
 	--setBlendMode("LimuH2",'add')
-	doTweenColor('LimuH2C', 'LimuH2', '474747', 0.01, 'linear')
+	doTweenColor('LimuH2C', 'LimuH2', '474747', 0.000001, 'linear')
 	doTweenAlpha("LimuH2A","LimuH2",0,.01)
 
 	addAnimationByPrefix('LimuH2', 'LimuCryIdle', 'LimuCryIdle', 24, true)
@@ -44,7 +44,7 @@ function onCreate()
 	--------------
 	makeAnimatedLuaSprite('LimuH', 'characters/LimuH', -190, 55);
 	
-	doTweenColor('LimuHC', 'LimuH', '474747', 0.01, 'linear')
+	doTweenColor('LimuHC', 'LimuH', '474747', 0.0000001, 'linear')
 	addLuaSprite('LimuH', true);
 
 	addAnimationByPrefix('LimuH', 'LimuCryIdle', 'LimuCryIdle', 24, true)
@@ -73,7 +73,7 @@ function onCreate()
 	setScrollFactor('WaterSurface', 1, 1);
 	addLuaSprite('WaterSurface', true);
 	setBlendMode('WaterSurface','add')
-	doTweenColor('WaterSurfaceC', 'WaterSurface', 'a3a3a3', 0.01, 'linear')
+	doTweenColor('WaterSurfaceC', 'WaterSurface', 'a3a3a3', 0.0000001, 'linear')
 	doTweenAlpha("WaterSurfaceA","WaterSurface",0,.001)
 
 	--water ray
@@ -82,7 +82,7 @@ function onCreate()
 	scaleObject('WaterRay', 1.2, 1.2);
 	setScrollFactor('WaterRay', 1, 1);
 	addLuaSprite('WaterRay', true);
-	doTweenColor('WaterRayC', 'WaterRay', 'A3E9FF', 0.01, 'linear')
+	doTweenColor('WaterRayC', 'WaterRay', 'A3E9FF', 0.0000001, 'linear')
 	setBlendMode('WaterRay','multiply')
 	--water filter
 	makeAnimatedLuaSprite('WaterFilter', 'WaterFilter', offsetX, offsetY);
@@ -90,7 +90,7 @@ function onCreate()
 	setScrollFactor('WaterFilter', 1, 1);
 	addLuaSprite('WaterFilter', true);
 	scaleObject('WaterFilter', 1.5	, 1.5);
-	doTweenColor('WaterFilterC', 'WaterFilter', '747581', 0.01, 'linear')
+	doTweenColor('WaterFilterC', 'WaterFilter', '747581', 0.00000001, 'linear')
 	setBlendMode('WaterFilter','add')
 	--setObjectCamera('WaterFilter','other')
 	
@@ -131,7 +131,7 @@ function onCreate()
 	makeLuaSprite('whiteSolid', 'whiteSolid', 0, 0);
 	setScrollFactor('whiteSolid', 0, 0);
 	addLuaSprite('whiteSolid', true)
-	doTweenColor('whiteSolidC', 'whiteSolid', 'D119FF', 0.01, 'linear')
+	doTweenColor('whiteSolidC', 'whiteSolid', 'D119FF', 0.0000001, 'linear')
 	doTweenAlpha("whiteSolidA","whiteSolid",0,.001)
 	--setObjectCamera('whiteSolid','hud')
 

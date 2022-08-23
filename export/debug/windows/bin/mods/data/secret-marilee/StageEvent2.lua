@@ -71,7 +71,7 @@ function onCreatePost()
 	makeLuaSprite('statueGF','statueGF',600,270);
 	setScrollFactor('statueGF', 1, 1);
 	addLuaSprite('statueGF',false);
-	doTweenColor('statueGFC','statueGF','4A4A4A',0.01)
+	doTweenColor('statueGFC','statueGF','4A4A4A',0.00001)
 	doTweenAlpha("statueGFA","statueGF",0,0.001)
 	
 	makeLuaSprite('BlackEdge2','BlackEdge',-250,-100);
@@ -86,7 +86,7 @@ function onCreatePost()
 	doTweenY('EyeballsPos', 'Eyeballs', monsterEyeOrigPosY+650,0.01,"linear")
 	doTweenY('EyesocketPos', 'Eyesocket', monsterEyeOrigPosY+650,0.01,"linear")
 	
-	doTweenColor('whiteFade', 'whiteFade', '56D2E6', 0.01, 'linear')
+	doTweenColor('whiteFade', 'whiteFade', '56D2E6', 0.00001, 'linear')
 
 	doTweenAlpha("whiteFadeA","whiteFade",0,.001,"smootherStepInOut")
 
@@ -98,6 +98,15 @@ function onCreatePost()
 	scaleObject('DarkSolidD2', 1.2, 1.2);
 	setObjectCamera('DarkSolidD2','game')
 	addLuaSprite('DarkSolidD2', true);
+
+	triggerEvent("Change Character", 'bf', "bf-scare")
+	triggerEvent("Change Character", 'bf', "bf")
+	triggerEvent("Change Character", 'dad', "limulady3")
+	triggerEvent("Change Character", 'dad', "limulady2")
+	doTweenColor('bfColorTween', 'boyfriend', 'C1BDE0', 0.1, 'linear')
+	
+	doTweenColor('dadColorTween', 'dad', 'C1BDE0', 0.1, 'linear')
+	doTweenAlpha('DF3', 'DarkSolidD2', 0,secPerBeat ,'cubeOut')
 	
 end
 
@@ -122,14 +131,6 @@ function onStepHit()
 
 	if curStep == 2 and not isFinished then
 	
-	triggerEvent("Change Character", 'bf', "bf-scare")
-	triggerEvent("Change Character", 'bf', "bf")
-	triggerEvent("Change Character", 'dad', "limulady3")
-	triggerEvent("Change Character", 'dad', "limulady2")
-	doTweenColor('bfColorTween', 'boyfriend', 'C1BDE0', 0.1, 'linear')
-	
-	doTweenColor('dadColorTween', 'dad', 'C1BDE0', 0.1, 'linear')
-	doTweenAlpha('DF3', 'DarkSolidD2', 0,secPerBeat ,'cubeOut')
 	--doTweenAlpha("dialogueBackA3","camDialogBack",0,.2,'cubeOut')
 	--doTweenAlpha("dialogueA3","camDialog",0,.2,'cubeOut')
 	end

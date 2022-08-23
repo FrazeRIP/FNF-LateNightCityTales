@@ -48,14 +48,14 @@
 			"expression": "1-oneeye",
 			"text": "It's so dam dark!\\nHand me that candle over there."
 		},
-		{
-			"sound": "",
-			"speed": 0.05,
-			"portrait": "bf-dialog",
-			"boxState": "normal",
-			"expression": "talk",
-			"text": "*Hand in the CaNdlE'\\n"
-		},
+    {
+      "sound": "",
+      "speed": 0.05,
+      "portrait": "bf-dialog",
+      "boxState": "normal",
+      "expression": "1-candle",
+      "text": "*Hand in the CaNdlE'\\n"
+    },
 		{
 			"sound": "",
 			"speed": 0.05,

@@ -76,6 +76,8 @@ class FinState extends MusicBeatState
                     {
                     TipTextStart();
                     TitleState.unlockHideStage=true;
+                    FlxG.save.data.unlockHideStage=TitleState.unlockHideStage;
+                    FlxG.save.flush();
                     }
 
                     new FlxTimer().start(0.5,function(tmr:FlxTimer)
@@ -85,8 +87,6 @@ class FinState extends MusicBeatState
 				}});
             
         }
-        FlxG.save.data.unlockHideStage=TitleState.unlockHideStage;
-        FlxG.save.flush();
 
         super.create();
 
